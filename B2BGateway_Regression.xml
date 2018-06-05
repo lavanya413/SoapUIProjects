@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="293af41b-e941-42c2-855a-a4009f5b7bd3" activeEnvironment="Default" name="B2B_Reg_Existing" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="6a86ebaf-7ac7-42d8-86bb-4f0a0640c7b6" wadlVersion="http://wadl.dev.java.net/2009/02" name="" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints/><con:resource name="Token" path="/auth/oauth/v2/token" id="f5eb2aaa-2dc5-47d2-a44b-3d24a0c8f6e3"><con:settings/><con:parameters/><con:method name="Token" id="c3c0ebbd-bda5-4419-8bf6-3388b00a9138" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500 401 403</con:status><con:params/><con:element xmlns:tok="https://apidit.nj.adp.com/auth/oauth/v2/token">tok:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tok="https://apidit.nj.adp.com/auth/oauth/v2/token">tok:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:tok="https://apifit.nj.adp.com/auth/oauth/v2/token">tok:Fault</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/plain;charset=utf-8</con:mediaType><con:status>500</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="83afafbb-c92d-4020-837d-8293b3aa7d56" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://apidit.nj.adp.com</con:endpoint><con:request>client_id=df6aa89c-9253-45f3-b101-cae94ee903bf&amp;client_secret=acd9afb0-7224-4125-942a-d454afb15141&amp;grant_type=client_credentials</con:request><con:originalUri>https://apifit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="workers" path="/hr/v2/workers/G3YMY6WNZV1T8QPP" id="2ba39456-12fa-4b1d-80a9-5c23302d6082"><con:settings/><con:parameters/><con:method name="Method 1" id="6aee7d48-fa38-4fae-9e5b-610737ebdd74" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:wor="https://apifit.nj.adp.com/hr/v2/workers">wor:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>403 400</con:status><con:params/><con:element xmlns:wor="https://apifit.nj.adp.com/hr/v2/workers">wor:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:wor="https://apifit.nj.adp.com/hr/v2/workers">wor:Fault</con:element></con:representation><con:request name="Request 1" id="de98ee7f-b47e-4983-b23a-ad6984daa545" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_transactionID" value="testapi789"/>
+  <con:entry key="Authorization" value="Bearer 646b0f04-826b-4f09-b82b-0d747dd2b8ed"/>
+  <con:entry key="roleCode" value="practitioner"/>
+  <con:entry key="sm_serversessionid" value="testapp123"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>https://apidit.nj.adp.com</con:endpoint><con:request>{"events": [{"data": {
+   "transform": {"worker": {"person":    {
+      "disabledIndicator": true,
+      "disabilityTypeCode": {"codeValue": "AU"}
+   }}},
+   "eventContext": {"worker": {"associateOID": "G3BCN0FSY44V76ED"}}
+}}]}</con:request><con:originalUri>https://apidit.nj.adp.com/events/hr/v1/worker.disability.change</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry/></con:parameterOrder></con:request></con:method></con:resource><con:resource name="access-groups" path="/core/v1/access-groups" id="8589344e-819c-4f59-a990-7b51f4e750c6"><con:settings/><con:parameters/><con:method name="Method 1" id="098f5eac-77c2-4037-9317-aa9043e5909d" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>403</con:status><con:params/><con:element xmlns:acc="https://apifit.nj.adp.com/core/v1/access-groups">acc:Fault</con:element></con:representation><con:request name="Request 1" id="86bddeec-fdf2-49c4-b1af-d6c73d1d51c4" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="worker.personal-communication.email.add" path="/events/hr/v1/worker.personal-communication.email.add" id="9fbad890-c62f-4c9a-b4c9-e381656a2201"><con:settings/><con:parameters/><con:method name="Method 1" id="1d7f43e1-91ee-4863-b28c-2dd16f92bf9b" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:wor="https://apidit.nj.adp.com/events/hr/v1/worker.personal-communication.email.add">wor:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>201</con:status><con:params/><con:element xmlns:wor="https://apidit.nj.adp.com/events/hr/v1/worker.personal-communication.email.add">wor:Response</con:element></con:representation><con:request name="Request 1" id="d3dc79e7-1ffb-4bf1-a519-2ecfa4d85961" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="ClientSecret" value="88f0345b-7c4b-4073-aad1-1b8ae05eea47"/>
+  &lt;con:entry key="ClientId" value="24740620-5772-4247-81c7-889cea7f5dbe"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://apidit.nj.adp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "G3XW34EEWCQ4FVT5"
+          }
+        },
+        "transform": {
+          "worker": {
+            "person": {
+              "communication": {
+                "email": {
+                  "emailUri": "testingAddPersonal@gmail.com"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+} </con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="worker.disability.change" path="/events/hr/v1/worker.disability.change" id="6d326184-ff6b-4af9-81f6-c76de566d1c1"><con:settings/><con:parameters/><con:method name="Method 1" id="1da85664-7620-4337-8824-49a77895780a" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:wor="https://apifit.nj.adp.com/hr/v2/workers">wor:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="3684063e-e113-49e0-8add-c542aa3e355a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:request>{"events": [{"data": {
+   "transform": {"worker": {"person":    {
+      "disabledIndicator": true,
+      "disabilityTypeCode": {"codeValue": "AU"}
+   }}},
+   "eventContext": {"worker": {"associateOID": "G3BCN0FSY44V76ED"}}
+}}]}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="meta" path="/events/payroll/v1/worker.us-federal.tax-withholding.election.add/meta" id="ec950b73-e89a-40ca-b139-12246b30ccb9"><con:settings/><con:parameters/><con:method name="Method 1" id="ac36c495-5fa3-4ae3-b117-1e2098d76a97" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>502</con:status><con:params/><con:element xmlns:meta="https://apidit.nj.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add/meta">meta:Fault</con:element></con:representation><con:request name="Request 1" id="5166c4f4-59c3-4c2b-93a9-bd3168ea2ddb" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="Bearer f447455d-521c-4eae-8363-68ed6c3c26b1"/>
+  &lt;con:entry key="sm_transactionid" value="neelaveni1"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://apidit.nj.adp.com</con:endpoint><con:request/><con:originalUri>https://apidit.nj.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add/meta</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="PDIList" path="/payroll/v1/pay-data-input" id="6733d0ab-dfed-4ad6-a68b-659e64c2f0b5"><con:settings/><con:parameters/><con:method name="Method 1" id="c6059d98-ab6c-49cc-964e-2bf408ba2d79" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:pay="https://iat-api.adp.com/payroll/v1/pay-data-input">pay:Response</con:element></con:representation><con:request name="Request 1" id="586f0fb0-11e3-459e-bee9-32791ccf4e25" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="PDIDetail" path="/payroll/v1/pay-data-input/dd060500-738e-4f11-a97b-1400fe2f5749" id="2e4dec98-8dcf-4c95-acaa-f36a35c779a2"><con:settings/><con:parameters><con:parameter><con:name>pay-data-input-id</con:name><con:value>pay-data-input-id</con:value><con:style>TEMPLATE</con:style><con:default>pay-data-input-id</con:default></con:parameter></con:parameters><con:method name="Method 1" id="ccd9673c-9965-41a3-865f-119ddca08de9" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:b68="https://iat-api.adp.com/payroll/v1/pay-data-input/9b682f83-99ab-4d1a-bc1f-e1a53cac7609">b68:Response</con:element></con:representation><con:request name="Request 1" id="796d9393-3c46-4e03-9303-09d6219afd72" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="PDIMeta" path="/payroll/v1/pay-data-input/meta" id="7e301a04-8328-4186-8734-581fbeb65ef5"><con:settings/><con:parameters/><con:method name="Method 1" id="e2136e5a-aaf0-4ee4-aea5-e4bcdb1b3972" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:meta="https://iat-api.adp.com/payroll/v1/pay-data-input/meta">meta:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:meta="https://iat-api.adp.com/payroll/v1/pay-data-input/meta">meta:Response</con:element></con:representation><con:request name="Request 1" id="a8252b81-21a3-4f8b-95d2-042f71b9f465" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="PDIAddMeta" path="/events/payroll/v1/pay-data-input.add/meta" id="4f89b075-c88f-48c5-81f0-bace58b9bd66"><con:settings/><con:parameters/><con:method name="Method 1" id="8809653a-bb24-4b79-a089-4d031f8cf52b" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:meta="https://iat-api.adp.com/payroll/v1/pay-data-input/meta">meta:Response</con:element></con:representation><con:request name="Request 1" id="7a3f57e4-3fe9-47f7-9dc0-5bedc53ced3c" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="PDIAdd" path="/events/payroll/v1/pay-data-input.add" id="2ba1de01-7b0e-477e-9aae-a031c845e70f"><con:settings/><con:parameters/><con:method name="Method 1" id="dc0f01f4-848b-4f8f-805f-c10adee81708" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:pay="https://iat-api.adp.com/payroll/v1/pay-data-input">pay:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="6bb3e12e-ceb9-4be3-87de-12cee8de84e5" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:request>{
+   "events": [
+      {
+         "data": {
+            "eventContext": {
+               "payrollGroupCode": {
+                  "codeValue": "W"
+               }
+            },
+            "transform": {
+               "payDataInput": {
+                  "payeePayInputs": [
+                     {
+                        "associateOID": "G3RT35V685H9VD6Q",
+                        "payPeriodStartDate": "2015-09-11",
+                        "payPeriodEndDate": "2015-09-17",
+                        "payrollProfilePayInputs": [
+                           {
+                              "payInputs": [
+                                 {
+                                    "earningInputs": [
+                                       {
+                                          "earningCode": {
+                                             "codeValue": "REG"
+                                          },
+                                          "rateCode": {
+                                             "codeValue": "BASE"
+                                          },
+                                          "numberOfHours": "0.00",
+                                          "rate": {
+                                             "rateValue": "599.00"
+                                          }
+                                       }
+                                    ],
+                                    "payAllocation": {
+                                       "allocationTypeCode": {
+                                          "codeValue": "dept"
+                                       },
+                                       "allocationID": "002"
+                                    }
+                                 }
+                              ]
+                           }
+                        ],
+                        "payNumber": "1"
+                     },
+                     {
+                        "associateOID": "G33AEYSXPZKAQN7M",
+                        "payPeriodStartDate": "2015-09-11",
+                        "payPeriodEndDate": "2015-09-17",
+                        "payrollProfilePayInputs": [
+                           {
+                              "payInputs": [
+                                 {
+                                    "earningInputs": [
+                                       {
+                                          "earningCode": {
+                                             "codeValue": "REG"
+                                          },
+                                          "rateCode": {
+                                             "codeValue": "BASE"
+                                          },
+                                          "numberOfHours": "63.00",
+                                          "rate": {
+                                             "rateValue": "0.00"
+                                          }
+                                       }
+                                    ],
+                                    "payAllocation": {
+                                       "allocationTypeCode": {
+                                          "codeValue": "dept"
+                                       },
+                                       "allocationID": "001"
+                                    }
+                                 }
+                              ]
+                           }
+                        ],
+                        "payNumber": "0"
+                     }
+                  ]
+               },
+               "eventStatusCode": {
+                  "codeValue": "Submitted"
+               }
+            }
+         }
+      }
+   ]
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="PDIReplace" path="/events/payroll/v1/pay-data-input.replace" id="d23fe778-2a60-49cf-87ed-210308609f0c"><con:settings/><con:parameters/><con:method name="Method 1" id="d7d079f0-4fb6-4cec-b451-a623460ef140" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:pay="https://iat-api.adp.com/payroll/v1/pay-data-input">pay:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="86d67ec0-62c4-46dd-b808-f6b99f3fdc9f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="PDIRepalceMeta" path="/events/payroll/v1/pay-data-input.replace/meta" id="07864166-4bba-44ca-b063-f9f602b3ff18"><con:settings/><con:parameters/><con:method name="Method 1" id="3e27b339-0c11-4aeb-a506-ba4f84852fab" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:meta="https://iat-api.adp.com/payroll/v1/pay-data-input/meta">meta:Response</con:element></con:representation><con:request name="Request 1" id="0d4e3dfc-6cea-4ac2-9fb9-f21bf19614e2" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="worker.pay-distribution.change" path="/events/payroll/v1/worker.pay-distribution.change" id="a0f69a42-d6e6-4c7c-a57c-4ec19be48809"><con:settings/><con:parameters/><con:method name="Method 1" id="064241d8-dee2-496c-b552-15afa5a12dc1" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>403 500</con:status><con:params/><con:element xmlns:wor="https://apidit.nj.adp.com/events/payroll/v1/worker.pay-distribution.change">wor:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:wor="https://apidit.nj.adp.com/events/payroll/v1/worker.pay-distribution.change">wor:Response</con:element></con:representation><con:request name="Request 1" id="2a91c11a-b4d8-4c63-a54f-46fb0752a2a7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:request>{"events": [{"data": {
+   "transform":    {
+      "effectiveDateTime": "2016-04-20",
+      "payDistribution": {"distributionInstructions": [      {
+         "depositAccount":          {
+            "BBAN": "1234566789",
+            "financialParty": {"routingTransitID": {"schemeCode": {"codeValue": "061211809"}}}
+         },
+         "precedenceCode": {"codeValue": ""},
+         "distributionAmount": {"amountValue": "958"},
+         "remainingBalanceIndicator": false
+      }]}
+   },
+   "eventContext": {"worker": {"associateOID": "G3SRDJCYW8E1KH8M"}}
+}}]}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="associate.ksaoc.language.add" path="/events/talent/v1/associate.ksaoc.language.add" id="a56e1eeb-0ab8-4aaa-afa9-0318837c93a8"><con:settings/><con:parameters><con:parameter><con:name>EMPLOYEE_OID</con:name><con:value>G3SRDJCYW8E1KH8M</con:value><con:style>QUERY</con:style><con:default>G3SRDJCYW8E1KH8M</con:default></con:parameter></con:parameters><con:method name="Method 1" id="ae2fb247-85a4-41ca-9cdc-f672f8b77101" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:nop="https://apidit.nj.adp.com/public/error/nopod.html">nop:Fault</con:element></con:representation><con:request name="Request 1" id="7a368b1c-9f29-43fe-9b25-46573447db0a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:request>{"events": [{"data": {
+   "eventContext": {"associateOID": "G3SRDJCYW8E1KH8M"},
+   "transform": {"associateLanguage":    {
+      "languageCode": {"codeValue": "SP"},
+      "selfAssessedProficiencyScore": {"scoreCode": {"codeValue": "N"}},
+       "competencyDimensions":       [
+                  {
+            "itemID": "R",
+            "dimensionNameCode": {
+
+  "codeValue": "R"
+
+},
+            "hasDimensionIndicator": true
+         },
+                  {
+            "itemID": "W",
+            "dimensionNameCode": {
+
+  "codeValue": "W"
+
+},
+            "hasDimensionIndicator": false
+         },
+                  {
+            "itemID": "S",
+            "dimensionNameCode": {
+
+  "codeValue": "S"
+
+},
+            "hasDimensionIndicator": true
+         }
+      ]
+   }}
+}}]}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Onboard" path="/events/staffing/v1/applicant.onboard/meta" id="def1c7b4-04a1-4bc9-9500-7d136d789d9d"><con:settings/><con:parameters/><con:method name="Method 1" id="e3155310-41d0-4849-a3d1-74a4e0b1ce63" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401 403</con:status><con:params/><con:element xmlns:meta="https://api.adp.com/events/staffing/v1/applicant.onboard/meta">meta:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:meta="https://api.adp.com/events/staffing/v1/applicant.onboard/meta">meta:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>401 400</con:status><con:params/><con:element xmlns:meta="https://api.adp.com/events/staffing/v1/applicant.onboard/meta">meta:Fault</con:element></con:representation><con:request name="Request 1" id="664dd3d0-ee6a-420b-abf2-de00407b7348" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Codelist" path="/codelists/payroll/v1/payroll-processing/departments/run" id="246e631e-0ec8-4eeb-ae7f-7c3d3a22730c"><con:settings/><con:parameters/><con:method name="Method 1" id="ab83cce8-18e6-40bd-821c-116a00fa1188" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:run="https://iat-api.adp.com/codelists/payroll/v1/payroll-processing/earnings/run">run:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>403 500</con:status><con:params/><con:element xmlns:run="https://iat-api.adp.com/codelists/payroll/v1/payroll-processing/earnings/run">run:Fault</con:element></con:representation><con:request name="Request 1" id="ad5abe02-2b2e-49ae-abf5-66b001db7d6b" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="8cd4b55a-01e0-4dc8-905b-163bcfc2f8a6" name="B2B_Gateway"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="85f5df6b-bf31-4650-8a35-358249eb5e4e" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_Positive_Flow" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="properties" name="Properties" id="904441cd-e10c-4ecc-a2e6-45973ee90837"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Access_Token</con:name><con:value>4d94fec8-265c-46b0-9ed9-d2bc18cc5241</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="fetchDBData" id="ec080fc1-ccc8-4883-acbc-004fc2bc2c12"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="190a5a47-c68f-4ec0-b333-509d8333afa1"><con:settings/><con:config service="" resourcePath="/auth/oauth/v2/token" methodName="Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="83afafbb-c92d-4020-837d-8293b3aa7d56" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=client_credentials</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="012bc14e-2cf7-4593-a5b4-8932f9f724b2" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Extract_AccessToken" id="a5a21ff6-4047-471f-bc01-21529c5214f0"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import com.eviware.soapui.support.types.StringToStringsMap
+
+def propTestStep
+def temp
+def authValue
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_AccessToken"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+authValue = "Bearer " + temp
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Access_Token",temp)
+
+request = testRunner.testCase.getTestStepByName("WorkerOnboardMeta").testRequest
+headers = request.getRequestHeaders()
+headers.remove( "Authorization");
+headers.put("Authorization", authValue)
+
+request.setRequestHeaders(headers)
+log.info "Authorization header is set for the feature call !!"</script></con:config></con:testStep><con:testStep type="restrequest" name="WorkerOnboardMeta" id="146bb078-834a-4a08-846a-e6810a2d6465"><con:settings/><con:config service="" resourcePath="/events/staffing/v1/applicant.onboard/meta" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="WorkerOnboardMeta" id="664dd3d0-ee6a-420b-abf2-de00407b7348" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 4d94fec8-265c-46b0-9ed9-d2bc18cc5241" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request/><con:originalUri>https://api.adp.com/events/staffing/v1/applicant.onboard/meta</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="8f3ce16f-7504-4804-8d92-f66ac423439d" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="54c219c9-713c-456b-8294-cc0f213197f5"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="dabde632-e62e-4956-ab40-711f251e874a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_Token_Invalid_ClientSecret" searchProperties="true"><con:settings/><con:testStep type="groovy" name="fetchDBData" id="d9fb1f80-95dd-47c7-b746-f1f74c1e8c60"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="c45f6dbd-260f-4ce6-95a7-c23545670238"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="a7477620-ad5d-4674-94d8-3981925f15ac" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=client_credentials</con:request><con:originalUri>https://apifit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="2223a231-c498-4725-8663-3fd4be56a151" name="Valid HTTP Status Codes"><con:configuration><codes>401</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7b16809e-27dc-445f-9439-30f5414c5b91" name="Contains"><con:configuration><token>invalid_client</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="bc3e98ea-e6ee-4d52-88fd-32896368b9ab"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="807eb7e3-1e27-48df-b24e-fd2a31594580" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_Token_Invalid_ClientId" searchProperties="true"><con:settings/><con:testStep type="groovy" name="fetchDBData" id="fbf75b5b-e4c7-4d07-9c18-3713d859f6b6"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="27fe6ab0-fd32-4e74-88a9-7cdbe5a0e9a3"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="a7477620-ad5d-4674-94d8-3981925f15ac" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=client_credentials</con:request><con:originalUri>https://apifit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="2223a231-c498-4725-8663-3fd4be56a151" name="Valid HTTP Status Codes"><con:configuration><codes>401</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7b16809e-27dc-445f-9439-30f5414c5b91" name="Contains"><con:configuration><token>invalid_client</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="e9148238-c3ff-4b1f-8728-984e025f36a2"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="574fccce-165c-4204-b7e6-1362ac4467b7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_Token_Invalid_GrantType" searchProperties="true"><con:settings/><con:testStep type="groovy" name="fetchDBData" id="7554305a-49c6-476d-a2bf-22fc60dd0d7d"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="6f6aeb22-fe67-479e-b5f2-e5061a50243a"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="a7477620-ad5d-4674-94d8-3981925f15ac" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=authorization_code</con:request><con:originalUri>https://apifit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="2223a231-c498-4725-8663-3fd4be56a151" name="Valid HTTP Status Codes"><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7b16809e-27dc-445f-9439-30f5414c5b91" name="Contains"><con:configuration><token>invalid_request</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="1b10a523-c9cf-4fb8-9362-3e1c32bf01cf"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e0716b00-7a5b-4b24-9a2f-1e8f993da7d1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_Token_No_GrantType" searchProperties="true"><con:settings/><con:testStep type="groovy" name="fetchDBdata" id="cf64ff91-4dfe-4f91-8985-9ee1ff2a903b"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="01453575-3df4-449c-aefb-8c42baf1e72b"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="a7477620-ad5d-4674-94d8-3981925f15ac" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=</con:request><con:originalUri>https://apifit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="2223a231-c498-4725-8663-3fd4be56a151" name="Valid HTTP Status Codes"><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7b16809e-27dc-445f-9439-30f5414c5b91" name="Contains"><con:configuration><token>invalid_request</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="b2e22b41-d1b7-47ed-9642-9c853ed1952c"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f7015f41-43a6-4a80-85de-ca1055091011" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_Token_No_ClientId" searchProperties="true"><con:settings/><con:testStep type="groovy" name="fetchDBData" id="1f5bb1e8-dc1c-4a3f-a96d-d88c3bb87518"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="9a7e0272-3023-4ee8-805d-dc8bcbfb0d92"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="a7477620-ad5d-4674-94d8-3981925f15ac" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=client_credentials</con:request><con:originalUri>https://apifit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="2223a231-c498-4725-8663-3fd4be56a151" name="Valid HTTP Status Codes"><con:configuration><codes>401</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7b16809e-27dc-445f-9439-30f5414c5b91" name="Contains"><con:configuration><token>invalid_client</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="33d1f982-a599-4bff-85ba-5ba4d7206bcd"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="24006586-1e30-4dfd-9d82-86be14d2abc5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_Token_No_ClientSecret" searchProperties="true"><con:settings/><con:testStep type="groovy" name="fetchDBdata" id="376342c1-657d-4282-99f3-9c0eebf815b8"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="d0b86e23-8650-468a-ba39-62e79b4fea69"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="a7477620-ad5d-4674-94d8-3981925f15ac" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=client_credentials</con:request><con:originalUri>https://apifit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="2223a231-c498-4725-8663-3fd4be56a151" name="Valid HTTP Status Codes"><con:configuration><codes>401</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7b16809e-27dc-445f-9439-30f5414c5b91" name="Contains"><con:configuration><token>invalid_client</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="26d7e408-7299-47d8-af40-f6735d8d727d"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0b8960d1-302a-4af2-a353-4f4725dc88f7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_FeatureCall_OutOfScope" searchProperties="true"><con:settings/><con:testStep type="properties" name="Properties" id="28c2b9c9-9beb-4ede-be52-d15479389cfb"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Access_Token</con:name><con:value>bb401bb6-cf7b-4774-9bd5-72c394b60d2c</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="fetchDBData" id="bcda81ea-5343-4933-a035-190d01afbf9c"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="a2f882d8-2b06-42b4-aa99-44b460c29335"><con:settings/><con:config service="" resourcePath="/auth/oauth/v2/token" methodName="Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="83afafbb-c92d-4020-837d-8293b3aa7d56" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=client_credentials</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="012bc14e-2cf7-4593-a5b4-8932f9f724b2" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Extract_AccessToken" id="ea45439e-f332-4add-b99b-8d281526d85c"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import com.eviware.soapui.support.types.StringToStringsMap
+
+def propTestStep
+def temp
+def authValue
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_AccessToken"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+authValue = "Bearer " + temp
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Access_Token",temp)
+
+request = testRunner.testCase.getTestStepByName("Get_AccessGroups").testRequest
+headers = request.getRequestHeaders()
+headers.remove( "Authorization");
+headers.put("Authorization", authValue)
+
+request.setRequestHeaders(headers)
+log.info "Authorization header is set for the feature call !!"</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessGroups" id="b162839e-88e1-4abf-a21e-16006a2f1f32"><con:settings/><con:config service="" resourcePath="/core/v1/access-groups" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessGroups" id="86bddeec-fdf2-49c4-b1af-d6c73d1d51c4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer bb401bb6-cf7b-4774-9bd5-72c394b60d2c" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request/><con:originalUri>https://apifit.nj.adp.com/core/v1/access-groups</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="10b6a387-54dd-4ae1-a951-1103f3173156" name="Valid HTTP Status Codes"><con:configuration><codes>403</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="b86b927e-4fd2-43eb-87f9-b6bb087497a1" name="Contains"><con:configuration><token>invalid_scope</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="995212ef-c4f4-4ce9-8586-48e9f140074e"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cc0eebeb-4437-45b5-911d-9f503f9ffa57" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_Token_Suspended_Subscription" searchProperties="true"><con:settings/><con:testStep type="properties" name="Properties" id="81cda7f3-91f6-493f-a78f-2cfccc7bca75"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Access_Token</con:name><con:value>c924afc6-13a5-4302-8455-4e233931a80c</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="fetchDBData" id="d6c5fcfc-02b3-492c-af81-1f6a9aa34f71"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="bf872e6d-0431-4ed7-8c7a-75fb051d1e2e"><con:settings/><con:config service="" resourcePath="/auth/oauth/v2/token" methodName="Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="83afafbb-c92d-4020-837d-8293b3aa7d56" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=client_credentials</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="012bc14e-2cf7-4593-a5b4-8932f9f724b2" name="Valid HTTP Status Codes"><con:configuration><codes>403</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f774b820-457a-45aa-bb94-f1dbad9d9bbd" name="Contains"><con:configuration><token>suspended</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="3af470a9-2971-478d-8ee6-7e2929f56eb4"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ef67ae3d-6470-4454-84c5-f4c447d5d4ee" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2B_FeatureCall_InvalidToken" searchProperties="true"><con:settings/><con:testStep type="properties" name="Properties" id="612f48c3-9059-419a-9920-63947b052f02"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Access_Token</con:name><con:value>28f65c4f-1e4e-4c30-b0aa-e708b23d9366</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="fetchDBData" id="24e8339b-83a4-4de1-843f-5a871cfe9c74"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+TableName = "b2b_gw_reg_"+Env
+common.setEnvironment(Env)
+sql = common.SqlConnect()
+testName = testRunner.testCase.name
+
+log.info "select * from "+TableName+" where Testname='"+testName+"'"
+sql.eachRow("select * from "+TableName+" where Testname='"+testName+"'"){
+	context.testCase.testSuite.project.setPropertyValue("ClientId",it.ClientId)
+	context.testCase.testSuite.project.setPropertyValue("ClientSecret",it.ClientSecret)	
+}
+
+
+log.info "Test case name : "+testRunner.testCase.name
+
+common.SqlClose(sql)</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_AccessToken" id="6cf0e93b-3258-498c-b819-b72bd49587ba"><con:settings/><con:config service="" resourcePath="/auth/oauth/v2/token" methodName="Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_AccessToken" id="83afafbb-c92d-4020-837d-8293b3aa7d56" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>client_id=${#Project#ClientId}&amp;client_secret=${#Project#ClientSecret}&amp;grant_type=client_credentials</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="012bc14e-2cf7-4593-a5b4-8932f9f724b2" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="WorkerOnboardMeta" id="5812b69a-cd02-448a-8ca4-1ea33bbb0320"><con:settings/><con:config service="" resourcePath="/events/staffing/v1/applicant.onboard/meta" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="WorkerOnboardMeta" id="664dd3d0-ee6a-420b-abf2-de00407b7348" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 28f65c4f-1e4e-4c30-b0aa-e708b23d9366" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request/><con:originalUri>https://api.adp.com/events/staffing/v1/applicant.onboard/meta</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="8f3ce16f-7504-4804-8d92-f66ac423439d" name="Valid HTTP Status Codes"><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="9a606bc9-c178-41e0-8b2d-817a26b94ae5" name="Contains"><con:configuration><token>Validation error</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="DBUpdate" id="a8d05277-2475-4aaa-8a43-4386ed052ebb"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.Assertable
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+def TableName
+def Env
+def query
+def testName
+def currentStepInd = context.currentStepIndex
+def previousStep = testRunner.testCase.getTestStepAt(currentStepInd - 1)
+def testCaseNumber
+
+//===============> DB Connections
+Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+sql = common.SqlConnect()
+TableName = "b2b_gw_reg_"+Env
+testName = testRunner.testCase.name
+log.info "Test case name : "+testRunner.testCase.name
+
+//================> Retrieving project, test case number
+sql.eachRow("select * from "+TableName+" where TestName='"+testName+"'"){
+	testCaseNumber = it.TestCaseNumber
+}
+def project = context.testCase.testSuite.project
+def testSuite = project.getTestSuiteAt(0)
+def testCase = testSuite.getTestCaseAt(testCaseNumber)
+log.info "previousStep.name : "+previousStep.name
+def testStepSrc = testCase.getTestStepByName(previousStep.name)
+def counter = testStepSrc.getAssertionList().size()
+
+log.info "Counter size : "+counter
+
+for (count=0; count&lt;=counter-1; count++)
+{
+log.info("Assertion :" + testStepSrc.getAssertionAt(count).getName() + " :: " + testStepSrc.getAssertionAt(count).getStatus())
+error = testStepSrc.getAssertionAt(count).getErrors()
+sql.executeUpdate("Update " + TableName + " SET Status='Pass' where TestName='"+ testName +"'")
+if (error != null)
+{
+log.info(error[0].getMessage())
+sql.executeUpdate("Update " + TableName + " SET Status='Fail' where TestName='"+ testName +"'")
+}
+log.info("—————————- Line to seperate each assertion status in logs —————–")
+}
+
+common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bbb9f0aa-5774-41df-86f9-0481eec5ef54" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Result" searchProperties="true"><con:settings/><con:testStep type="groovy" name="sendMail" id="9c5d691d-aa14-4c3e-a96f-ffc9da2a855f"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+def TimeTaken
+def slurper = new JsonSlurper()
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+def FeatureNameOri
+def FeatureName
+def y
+
+
+//context.testCase.testSuite.project.setPropertyValue("Environment",Env)
+common.sendMail(runningStatus)</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="07862e86-d0b0-47a9-a3c1-a8c6db915753" name="Lib"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f552aafe-5651-4ff7-ab1b-2b37117dd3f0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="LibCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Common" id="f63eb8a6-5a77-49dd-b2c1-99b6ecf6d7bc"><con:settings/><con:config><script><![CDATA[import groovy.sql.Sql
+import javax.mail.*
+import javax.mail.internet.MimeMessage
+import javax.mail.internet.*
+import javax.activation.*
+com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("com.mysql.jdbc.Driver")
+
+class Common
+{
+	def log
+	def context
+	def testRunner
+	def IP
+	// Class constructor with same case as Class name
+	def Common(logIn,contextIn,testRunnerIn)
+	{
+		this.log = logIn
+		this.context = contextIn
+		this.testRunner = testRunnerIn
+	}
+	def SqlConnect()
+	{
+	       def db
+	       def sql = null
+	       try{
+	                       db = [url:'jdbc:mysql://localhost:3306/test', user:'root', password:'root', driver:'com.mysql.jdbc.Driver']
+	                       sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
+	                       log.info "MySql DB Connect: Connected !!"
+	       }catch(Exception e){
+	                       log.info "MySql DB Connect: Failed !!"
+	                       log.info "Exception:$e" 
+	                       sql = null                               
+	       }
+	       return sql;
+	}
+
+	def setEnvironment(environment){
+		if(environment.equalsIgnoreCase("IAT"))		{
+			
+			IP = "https://iat-api.adp.com"
+		}
+		else if(environment.equalsIgnoreCase("DIT"))
+		{
+			IP = "https://apidit.nj.adp.com"
+		}
+		else if(environment.equalsIgnoreCase("FIT"))
+		{
+			IP = "https://apifit.nj.adp.com"
+		}
+		else if(environment.equalsIgnoreCase("UAT"))
+		{
+			IP = "https://uat-api.adp.com"
+		}
+		else if(environment.equalsIgnoreCase("PROD"))
+		{
+			IP = "https://accounts.adp.com"
+		}
+				
+		context.testCase.testSuite.project.setPropertyValue("EndPoint",IP)
+		context.testCase.testSuite.project.setPropertyValue("SmSessionEndPoint",IP)
+		if(environment.equalsIgnoreCase("PROD")){
+			context.testCase.testSuite.project.setPropertyValue("SmSessionEndPoint","https://accounts.adp.com")
+		}
+		log.info "Environemtn selected : "+IP
+	}
+	
+	def SqlClose(sql)
+	{
+	       sql.close()
+	       log.info "MySql DB Connect: Connection closed !!"
+	}
+	def getIP(Env,sql){
+	       def IP
+	       sql.eachRow("select * from apiproxy_serverip where Environment='" + Env + "_Gateway'"){
+	                       IP = it.IP
+	       }
+	       //log.info "IP set for the Environment $Env: $IP"
+	       return IP
+	}
+	def sendMail(RunStatus){
+	       def message
+	       def mailTable = ""
+	       def OverallStatus = ""
+	       def OverallStatusAll = ""
+	       def OverallStatusSub = "" 
+	       def tableHeading = ""
+	       def strToMail = testRunner.testCase.testSuite.project.getPropertyValue("MailID")
+	       def Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+	       Env = Env.toUpperCase()
+	       def subject = "B2B Regression - $Env - "
+	       def mailStyle = "<style type=text/css>#customers{font-family:Trebuchet MS, Calibri (Body), Calibri (Body), Calibri (Body);border-collapse:collapse;}#customers td, #customers th {font-size:1em;border:1px solid #98bf21;padding:3px 7px 2px 7px;}#customers th {font-size:16px;text-align:left;padding-top:5px;padding-bottom:4px;background-color:#44AACA;color:#ffffff;} table{ width:95%;} .first{width:500px;font-size:10px;} .other{width:200px;font-size:10px;}</style>"
+	       def mailBodyText = "<center><span style='font-size:10.0pt;font-family:Calibri (Body),Calibri (Body);color:plum'> </span></center><dd>"
+	       def endText = "<br><dd><dd><p><i>For queries/issues/suggestions please contact Marketplace QA Team</i></p>"
+	       def mailAddress_To
+	       if(RunStatus.equals("Good")){
+	                       tableHeading = "<table id=customers><TR><th class=other>ScenarioName</th><th class=other>ClientID</th><th class=other>ClientSecret</th><th class=other>Status</th></TR>"
+	                       mailTable = getMailTable() + "</table>"
+	                       OverallStatusAll = (getSumList()).split("~~~")
+	                       OverallStatus = OverallStatusAll[0]
+	                       OverallStatusSub = OverallStatusAll[1]
+	                       log.info OverallStatusSub
+	                       if(!(OverallStatusSub.contains("Failed: 0"))){
+	                       	log.info "There is some failures. So setting the mail IDs to failed list..."
+	                       	strToMail = testRunner.testCase.testSuite.project.getPropertyValue("MailID")
+	                       } 
+	                       
+	       }
+	       else{
+	                       mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> *** 1) Environment value entered may be not matching the records.***** 2) Feature/SOR name(s) used does not match the records.***** 3) Test DB is Down.***</font></b></p>"
+	       }
+	       try{
+	       			   mailAddress_To = strToMail.split(";");
+	                       Properties props = new Properties()
+	                       props.put("mail.host", "mailrelay.nj.adp.com")                               
+	                       Session mailConnection = Session.getInstance(props, null)
+	                       Message msg = new MimeMessage(mailConnection)
+	                       Address fromAddress = new InternetAddress("e2etest@adp.com", "adpadp@11")
+	                       //Address b = new InternetAddress(strToMail);
+	                       if ((OverallStatusSub.contains("Passed: 0, Failed: 0"))){
+	                       	mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> Check for the proper environment value and enter the proper Feature name... OR .... Enter data to that feature in the DB in that table.</font></b></p>"
+	                       	message = mailStyle + mailBodyText + OverallStatus + mailTable + endText
+	                       }
+	                       else{
+	                       	message = mailStyle + mailBodyText + OverallStatus + tableHeading + mailTable + endText
+	                       }
+	                       msg.setContent(message, "text/html; charset=ISO-8859-1")
+	                       msg.setFrom(fromAddress)
+	                      InternetAddress[] mailAddress_TO = new InternetAddress [mailAddress_To.length];
+						 for(int i=0;i<mailAddress_To.length;i++)
+						 { 	
+						 	log.info "Mail_IDs to be used:" +  mailAddress_To[i]
+						     mailAddress_TO[i] = new InternetAddress(mailAddress_To[i]);
+						 }          
+						 msg.addRecipients(Message.RecipientType.TO, mailAddress_TO);
+	                       msg.setSubject(subject+OverallStatusSub)
+	                       Transport.send(msg)
+	                       log.info "Send Mail: SUCCESS!!"
+	       }catch(Exception e){
+	                       log.info "Oooops... Encountered an issue while sending mail !!!"
+	                       log.info "Exception:$e"
+	       }
+	}
+	def getMailTable(){
+	       def sql
+	       def Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+	       def mailTable = ""
+	       //def RunForValues
+	       //def RunForArray
+	       def TableName
+	       def resultWc = ""
+	       def query
+	       def URI
+	       def columnValue = [null]
+	       def rowOrderOri
+	       def rowOrderArray
+	       def j
+	       def FeatureNameOri
+	       def FeatureName	       	      
+
+	       log.info "Entering getMailTable() function !!"
+	       sql = SqlConnect()
+	       if(sql != null){
+			TableName = "b2b_gw_reg_" + Env
+
+			query = "Select distinct RowOrder_Mail from " + TableName +" where Report='Yes'"
+			sql.eachRow(query){
+				rowOrderOri = it.RowOrder_Mail
+				rowOrderOri = rowOrderOri.toUpperCase()
+			}
+			log.info "rowOrderOri : "+rowOrderOri
+			rowOrderArray = rowOrderOri.split("~")
+			log.info "rowOrderArray.length : "+rowOrderArray.length
+			for (j=0;j<rowOrderArray.length;j++){
+				log.info "Inside for loop of RowOrder_Mail"	
+				query = "Select * From " + TableName + " where Policy='" + rowOrderArray[j] + "' AND Report='Yes'"
+				if(((sql.rows(query)).size()) != 0){				
+					mailTable = mailTable + "<TR bgcolor='Gray'><TD colspan='4' Align='center'><style=font-family:Calibri (Body);color:#1882A4;font-size:16px;font-weight:bold><B>" + rowOrderArray[j] + "</B></TD></TR>"
+				}
+				query = "Select * From " + TableName + " where Policy='" + rowOrderArray[j] + "' and Report='Yes'"
+					sql.eachRow(query){
+		              		if(true){		                              
+		                              if(it.Status.equalsIgnoreCase("Pass")){
+		                              	
+		                                     resultWc = "<B><font color = GREEN>Pass</font></B>"
+		                             		 
+		                              }
+		                              else{
+		                                     resultWc = "<B><font color = RED>Fail</font></B>"
+		                              }
+		                              mailTable = mailTable + "<TR><td class=other>$it.TestName<td class=other>$it.ClientID</td><td class=other>$it.ClientSecret</td><td class=other>$resultWc</td></TR>"
+		              		}
+		              		else{
+		              			log.info "This URI is skipped from adding to the mail because Auth Value is false."		              			 
+		              		}
+		              } 
+              } 
+	       	
+			SqlClose(sql) 
+			                  
+	       }else{
+	                       log.info "Issue Creating the mail table"
+	                       mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> *** 1) Environment value entered may be not matching the records.***** 2) Feature/SOR name(s) used does not match the records.***** 3) Test DB is Down.***</font></b></p>"
+	       }
+	       
+	       return mailTable
+	}
+	def getSumList(){
+	       def sql
+	       def Env
+	       def SumList = ""
+	       def TableName
+	       def TotalAPI
+	       def Tsize = 0
+	       def passC
+	       def Psize = 0
+	       def Fsize = 0
+	       def query
+	       def query1
+	       def columnValue = [null]
+	       def FeatureNameOri
+	       def FeatureName
+	       def i
+
+		  log.info "Entering getSumList() function !!"
+	       sql = SqlConnect()
+	       if(sql != null){
+	                       Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+	                       
+	                       TableName = "b2b_gw_reg_" + Env
+
+					   		query = "Select * From " + TableName + " where Report='Yes'"
+					   		
+		                       	query1 = "Select * From " + TableName + " where Status='Pass' and Report='Yes'"
+						   	
+						   	TotalAPI = sql.rows(query)
+		                       	Tsize = Tsize + TotalAPI.size()
+		                       	passC = sql.rows(query1)
+		                       	Psize = Psize + passC.size()
+					   	                                                             
+	                       Fsize = Tsize - Psize
+	                       SumList = "<p><b>Total APIs Executed : <b>$Tsize</b><br>Total Passed : <b>$Psize</b><br>Total Failed : <b>$Fsize</b></b></p><br>~~~Passed: $Psize, Failed: $Fsize"
+	                       SqlClose(sql)
+	       }else{
+	                       log.info "Issue Creating the Sum List"
+	       }
+	       return SumList
+	}
+}
+
+context.setProperty( "common", new Common( log, context, testRunner) )
+log.info "Library Context:"+context
+]]></script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>Environment</con:name><con:value>PROD</con:value></con:property><con:property><con:name>ClientId</con:name><con:value>01980141-ba64-4a72-ae61-3397a40be75c</con:value></con:property><con:property><con:name>ClientSecret</con:name><con:value>9ca175d5-dc3b-46c0-b120-6bab2cd26e4a</con:value></con:property><con:property><con:name>EndPoint</con:name><con:value>https://accounts.adp.com</con:value></con:property><con:property><con:name>SmSessionEndPoint</con:name><con:value>https://accounts.adp.com</con:value></con:property><con:property><con:name>MailID</con:name><con:value>subrahmanyam.lagisetti@adp.com</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

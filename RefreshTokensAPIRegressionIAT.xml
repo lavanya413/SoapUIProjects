@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="41735683-3700-4c97-a8e4-2090b8dc87e8" activeEnvironment="Default" name="GatewayRefreshTokenRegressionIAT" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" lastOpened="2017-11-16T10:10:01.905-05:00" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="25855392-a04c-4137-9024-23b592d6956e" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://iat-api.adp.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:endpoint>https://iat-api.adp.com</con:endpoint><con:endpoint>https://ike6cxyhhd.execute-api.us-east-1.amazonaws.com</con:endpoint></con:endpoints><con:resource name="Wfn_Token" path="/auth/oauth/v2/token" id="1261e096-386f-4b63-8d9c-4f274d32b3f7"><con:settings/><con:parameters/><con:method name="Wfn_Token" id="d76bf934-43ea-4d08-aa9b-003e98b9e9ea" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>500 400</con:status><con:params/><con:element xmlns:tok="http://apidit.nj.adp.com/auth/oauth/v2/token">tok:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tok="http://apidit.nj.adp.com/auth/oauth/v2/token">tok:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401 403 503</con:status><con:params/><con:element xmlns:tok="https://apidit.nj.adp.com/auth/oauth/v2/token">tok:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="postWfnToken" id="3aa490d8-0d47-47bd-8d28-edb8cab5b11f" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>client_id=54a9abd6-67b5-4652-8fae-7196e1cac971&amp;client_secret=8c2049cc-dd4b-4377-902c-10779b97e850&amp;grant_type=client_credentials</con:request><con:originalUri>http://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Wfn_Session_Call" path="/auth/oauth/v2/authorize" id="5f010682-0b0a-4600-b7eb-dbda79b19e7a"><con:settings/><con:parameters><con:parameter><con:name>response_type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>redirect_uri</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>scope</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Wfn_Session_Call" id="061bdab4-9598-48ea-a21b-b3fe9259dca4" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>302</con:status><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>text/plain;charset=UTF-8</con:mediaType><con:status>302</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:aut="https://accounts.adp.com/auth/oauth/v2/authorize">aut:Fault</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:request name="getWfnSession" id="0b48b6a8-a8ca-4166-bd63-77dc5a83754e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="Wfn_SMSession_Call" path="/auth/oauth/v2/authorize" id="605da9ce-22d5-4c72-9b54-b22ccbb3939b"><con:settings/><con:parameters><con:parameter><con:name>response_type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>redirect_uri</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>scope</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Wfn_SMSession_Call" id="061bdab4-9598-48ea-a21b-b3fe9259dca4" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>302</con:status><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>400 401</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>302</con:status><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>text/plain;charset=UTF-8</con:mediaType><con:status>307</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="getWfnSMSession" id="0b48b6a8-a8ca-4166-bd63-77dc5a83754e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="Wfn_AuthorizeConsent_Call" path="/auth/oauth/v2/authorize/consent" id="5ca27708-4352-48bd-b405-6d3b04b49172"><con:settings/><con:parameters/><con:method name="Wfn_AuthorizeConsent_Call" id="64a88385-f14f-4b24-a6dd-3dee5ecc270d" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>302</con:status><con:params/></con:representation><con:request name="getWfnAuthorizeConsent" id="b6217ba3-8668-4820-8d6b-d42d264a50b7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="94a42a73-0997-4994-a87c-a73d1861d16d" name="GatewayRefreshTokenRegressionTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="118af67c-ec9e-426f-9080-1507ff35b476" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Generate_Refresh_Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="properties" name="Properties" id="b0e61252-133a-4e26-bb0c-7d47f74437a2"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Session_ID</con:name><con:value>sessionID=455475f2-ccc2-43e2-bba3-7cfb31fa60b4&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18</con:value></con:property><con:property><con:name>Sm_session</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=bd607213-1d18-4a8d-8222-c79941d31d55&amp;redirect_uri=https://testadp.appdirect.com&amp;scope=openid%20api%20profile&amp;grant_type=authorization_code</con:value></con:property><con:property><con:name>Session_ID_value</con:name><con:value>455475f2-ccc2-43e2-bba3-7cfb31fa60b4</con:value></con:property><con:property><con:name>Set_Cookie</con:name><con:value>SMSESSION=ytF++FxNsxwqgaQnZCTJSNbgbsFYbRYiFXNhutiFbcZ+UMvsn4yDq1J7QBGb8dqIub7OQKZ/4OIqzvwGaeokMPZ97pCYnmfnQnNTBk6lonA+hSVdH7XmRM6eQ4fcnNNjAOCT+Mz0bF54G8Tr31dWcP2kslOiM/wOyc1ltbzFwUQdQFSmPSHd9jLySK3z+r3ZoniaV8WgBU8gensc7RW32OQ7M76wm4WLvp84v26bhG+D5tquQVXrswDL20u8cNhBAcTxnRikJekNmz+yRFWNpgCsCmy6l7vOyrkabQRC91NSRpQM2p/adRqIvZf4MKBPVwMlzeLfDTEEjFTy/1Oqn0TyNI1qnc9wIj+hZmyzqM9GjjX1BsgIHxDuobUn8INHGVpf1pHQfClp38MF6cbk+P5Rug/iv7qXo/e+NClTUIqzjRzAnumTVc61vDvevPk0dpYgpzIDE93PryBuG9rYfXnvoPg1HYlnPZaOSmYdHkLX/gKeDyv0ks9LpSYGCXqrSnDL3+P85ev1FVm5kVQeir60PgGRB/zSjau96AKwSvi2coNgJVl+FzfWhQf6So1kdp1Mx4pfB7I1jkNPNEF+3Uonc+nPcqQFvpiOC4wGIKTaNkzMEzciZnIT5vlGjVJwh6QFNCk0WqXm5EN7esn5T3z96ixBjfaWLEp9GPTupwX5zQIGHLi8ou0qRsay3E6QIsMk9ToKn4Pbz3QUeXcrXlOIO/DWIFKt0QPU2KBg50P+9V9LY9gDBM2dm2DU6etEU3dOU3OkbeJryTeMkXuc/rQznDrIJ++ylp86ezN46fSwuwHEvJBUv7PoPMG3z1YmnP11y5H44mFF1KBkh2KPM5eP9k1mV7Vp9ahiDil2qKB+ASx5hzoiZ+fYsSFErYuQtnmrlE3EArGwfZnqQkMFiwWNAZBp833QjrO2wtYV9aOlpZbrQL/MhAQriUli06iYRKSL4X5MFKohIEh329Ir50EXzm76M2KmUrACOOmBFNd/uFJCt2v0mPAeOkjV2LMeXfAc4VneB325/9xfDPwo7XoDlTSLAO7S</con:value></con:property><con:property><con:name>Authorize_confirm</con:name><con:value>sessionID=5f53c04b-72eb-4b87-9596-6affcdc58515&amp;action=Confirm</con:value></con:property><con:property><con:name>accessTokenPayload</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=5b9815e9-6d37-452c-bef4-185aabd82fde&amp;redirect_uri=https://marketplace.adp.com/&amp;scope=openid%20api%20profile&amp;grant_type=authorization_code</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Get_SessionID" id="9f843297-5233-4ee9-887c-14a1fb7bf2e3"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_Session_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_SessionID" id="46e5185b-a519-49f8-a772-ca7595c620be" mediaType="application/x-www-form-urlencoded" postQueryString="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:originalUri>https://accounts.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="627f4dd7-80e6-4202-a442-6879a2405dbd" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value="openid api profile"/>
+  <con:entry key="response_type" value="code"/>
+  <con:entry key="redirect_uri" value="https://testadp.appdirect.com"/>
+  <con:entry key="client_id" value="888ed931-bb1d-496f-a5a9-3d71e6171c47"/>
+</con:parameters><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_SessionID_groovy" id="b49a4272-3d04-47ba-8aa8-902856ebe7f5"><con:settings/><con:config><script>import java.util.regex.*
+def response
+def match
+def postJSON = "sessionID=528dcac3-4c93-4bbe-aa3d-6423a60c2b8f&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18"
+def propTestStep
+def responseHeads
+def httpStatus
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseContent
+responseHeads = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseHeaders
+httpStatus = responseHeads["#status#"]
+log.info "Response Status for the GET SessionID call: " + httpStatus
+
+//log.info "Response:$response"
+
+httpsLocation = (responseHeads["Location"]).toString()
+log.info "Location:$httpsLocation"
+
+Pattern myRegex = ~/regex/
+match = (httpsLocation =~ /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/)[0]
+//Matcher myatcher = Pattern.compile(/regex/).matcher("subject")
+log.info "SessionID value: " + match.toString()
+
+log.info postJSON
+postJSON = postJSON.replace("528dcac3-4c93-4bbe-aa3d-6423a60c2b8f", match.toString())
+log.info "The Payload to get the smSession vlaue: "+postJSON
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Session_ID",postJSON)
+propTestStep.setPropertyValue("Session_ID_value",match.toString())</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession" id="6fd8684a-9afb-4d5b-8515-b6558a5e85d6"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession_With_Authorize_Consent" id="0a88009d-21a0-48a7-9abc-56bda81af619"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize/consent" methodName="Wfn_AuthorizeConsent_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession_With_Authorize_Consent" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_code_sm_groovy" id="2ca7f099-b45b-478c-9e5f-93b60a02c375"><con:settings/><con:config><script><![CDATA[import com.eviware.soapui.support.types.StringToStringsMap
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def payload = "client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&code=<<code>>&redirect_uri=https://testadp.appdirect.com&scope=openid%20api%20profile&grant_type=authorization_code"
+def runner
+def myTestCase = context.testCase
+def TestCase = testRunner.testCase.testSuite.testCases["Get_Token_B2C"]
+def codeValue
+def httpStatus
+def httpStatusTemp
+def cookieValue
+def AC_payload = "sessionID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&action=Confirm"
+//def sessionID_value
+def propTestStep = context.testCase.getTestStepByName("Properties")
+//payload = propTestStep.getPropertyValue("accessTokenPayload")
+AC_payload = propTestStep.getPropertyValue("smSessionPayload")
+response = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseContent
+//log.info "Response:$response"
+
+httpResponseHeaders = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseHeaders
+//log.info "Got the RH"
+httpStatus = (httpResponseHeaders["#status#"]).toString()
+codeValue = httpResponseHeaders["Location"][0]
+log.info "httpStatus for the smSession call: " + httpStatus
+log.info "CodeValue: " + codeValue
+
+
+
+//if(httpStatus.contains("200")){
+if(codeValue.toString().contains("code=")){
+
+	log.info "Calling the Get token call since status is 302"	
+	codeValue = httpResponseHeaders["Location"][0]
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+	propTestStep.setPropertyValue("Sm_session",payload)	
+
+}
+else if(!codeValue.toString().contains("code=")){
+	
+	log.info "Calling authorize with action=confirm since the status 200 received"
+
+	cookieValuetemp = httpResponseHeaders["Set-Cookie"][0]
+	cookieValuetemp = cookieValuetemp.replace("; Domain=.adp.com; Path=/; Secure", "")
+	//log.info cookieValuetemp
+
+	cookieValue = ((cookieValuetemp =~ /(SMSESSION=.*)/)[0][1]).toString()		
+	propTestStep.setPropertyValue("Set_Cookie",cookieValue)
+	log.info "Cookie Value is seen: " + cookieValue
+
+	//sessionID_value = propTestStep.getPropertyValue("Session_ID_value")
+	AC_payload = AC_payload.replace("action=Login", "action=Confirm")
+	log.info "Payload for Authorize_confirm: " + AC_payload
+
+	
+	propTestStep.setPropertyValue("Authorize_confirm",AC_payload)	
+	request = testRunner.testCase.getTestStepByName("Authorize_confirm").testRequest
+	headers = request.getRequestHeaders()
+	headers.remove( "Cookie");
+	headers.put("Cookie", cookieValue)
+
+	request.setRequestHeaders(headers)
+
+	log.info "Cookie header is set successfully"
+	log.info "cookieValue: " + cookieValue
+	
+	runner = TestCase.testSteps["Authorize_confirm"]
+	runner.run(testRunner, context)
+	//testRunner.runTestStepByName("Authorize_confirm_http")
+	log.info "Run Success for Authorize_confirm case!!"
+
+	httpResponseHeaders = context.testCase.testSteps["Authorize_confirm"].testRequest.response.responseHeaders
+	httpStatusTemp = (httpResponseHeaders["#status#"]).toString()
+	log.info "HttpStatus for Authorize call: " + httpStatusTemp
+	codeValue = httpResponseHeaders["Location"][0]
+
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+
+	propTestStep.setPropertyValue("Sm_session",payload)
+
+}
+
+
+//runner = TestCase.testSteps["Get_token"]
+//runner.run(testRunner, context)
+//log.info "Run Success for Get_token case!!"
+
+else{
+	log.info "Invalid Status Code. Script will fail"
+}
+
+/*
+match = ((httpStatus =~ /code=(.*)\&/)[0][1]).toString()
+log.info match
+
+payload = payload.replace("d9a881a1-fcc9-4d8a-916b-e65fed398ada", match.toString())
+log.info payload
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Sm_session",payload)
+*/
+//log.info "compelete headers:"
+					//log.info httpResponseHeaders
+					//temp = httpResponseHeaders["Cache-Control"]]]></script></con:config></con:testStep><con:testStep type="restrequest" name="Authorize_confirm" id="d85e6e74-6f44-4651-b729-053a44704e43" disabled="true"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Authorize_confirm" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Cookie" value="SMSESSION=W0WBaUGTQDvYjqXb1wnQldW50WJ5vR2BnsLtlA+K2GlPTi3aQ+vq72GL/qekzK3bGC7xsiBwMXiecCf8KZQG1OjkPVCdRzvzy+f4tT//ro0yK8Muzm/b8Y98Wt6op5aMcw+jtNoa3IKhalJ4C3R04qvRHuIqUZW+saoaQGOixqy0Q3GNYLouK3X5kqQ92C1Q+CYXI4Ll3yDmLWdHYasOSwlpV4Sx6yy8vLZ6ABpMtMNAFpY7WhM5pNgR3d4KQ5EqMti+tJcDhV0Iv40po6DzU48cHoqjjN5gl4c6H/KC7UnhyEt1cChtGqKQJg229jO8m7vTOReQ6Cs/AUb9IsWZ0I6hW/5nxFnUvgyvGaUHNS9KEJ6A5DB5DwqAbHkMboy/jIXdUGgRsFR8oLoswys4g2DEJ3Lt4a2r54jYw63h/TofLgmATZPgJk6AlqlmikebqFyDDDMbHoz1ijVvy8qMOOe3ZgTzHDwnyxZaKqf/pT5KoZSfAb7EgF1aq8NQoLzjHMmJxarAs78WfUbkBVIdfyOvT0nBM+SLIRWsM2jJ7lizFRikRRJBpJgrMBopPDm7mEIgTK+JtvanwChVU9VHt5kyvGwB1EzTVYYsHm5e3WOs3lpwJ8bfjmpj75rmKWaEa3A3+uH1PqzfQXyGMGBDwYx04fU+rkwHxfFD9hxa5DN+xqtu3Fj65aU1EhFuMPrxHF2BC2LMFGWt8jWCSKfPDiMjeaCtqogFJSaVA+ZfECffoJC+yB3zdKDqsrYvqw/XY7FgPeAKYEN6e1FUquaBKDjjBVYZIFklRofvWo/PmPEJLqZppE0NwRovq38glfg7Hb/Pas+GnLIuGrDBmXZGVyAe1B7rBIWTql52ijOB5rzfdgQDs39b+px84/8OTU7ediZp7muXTt6xFOHOvvJ6yIRjOI7by44QTPXRXiecow2UwbSmfkN4STXF23j11u43PS6sa05mfjE72rP6V5zAPdy12DJURrNS;"/>
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Authorize_confirm}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="210fdb11-7f51-4c66-8787-46cc79eb8e27" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="$badparam" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>$orderby</con:entry><con:entry>$expand</con:entry><con:entry>limit</con:entry><con:entry>offset</con:entry><con:entry>$top</con:entry><con:entry>$skip</con:entry><con:entry>$filter</con:entry><con:entry>$select</con:entry><con:entry>$badparam</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_token" id="29e4edef-8109-4594-a47b-e62cf36a7aee"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/token" methodName="Wfn_Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_token" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Sm_session}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="78077eba-0b9d-4787-bdd4-21fe90861835" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="ae0c70ad-7131-49f7-b7e7-343d5ad8b551" name="Validate That Refresh Token Is Generated"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def refreshToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+refreshToken = json.refresh_token
+
+log.info "Refresh Token:" + refreshToken +":"
+
+assert refreshToken != null
+</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_token_groovy" id="deaee3e1-c44c-491b-a390-95c5144a4980"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def temp
+def accessToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+accessToken = "Bearer " + temp
+
+testRunner.testCase.testSuite.setPropertyValue("Access_Token",accessToken);
+
+//Refresh Token
+response1 = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response1"
+
+def slurper1 = new JsonSlurper()
+def json1 = slurper1.parseText response1
+
+temp1 = json1.refresh_token
+
+log.info "Refresh Token: " + temp1
+
+refreshToken = temp1
+
+testRunner.testCase.testSuite.setPropertyValue("Refresh_Token",refreshToken);
+
+
+
+log.info "Authorization is header is set for the workers call !!"</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="c89f9ed0-25bf-4309-9ab3-0b1ed52cdb18" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Generate_Access_Token_Using_Refresh_Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="properties" name="Properties" id="6d8211b2-1ded-4453-870d-5ea8178c6a24"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Session_ID</con:name><con:value>sessionID=a29251d7-95b4-4649-86aa-6c0f6c50ea49&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18</con:value></con:property><con:property><con:name>Sm_session</con:name><con:value><![CDATA[client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&code=2344eba4-13c7-4764-8c04-16f207fe1115&redirect_uri=https://testadp.appdirect.com&scope=openid%20api%20profile&refresh_token=da72c791-98ed-45b6-a7fd-d4edf4ae2268&grant_type=refresh_token]]></con:value></con:property><con:property><con:name>Session_ID_value</con:name><con:value>a29251d7-95b4-4649-86aa-6c0f6c50ea49</con:value></con:property><con:property><con:name>Set_Cookie</con:name><con:value>SMSESSION=ytF++FxNsxwqgaQnZCTJSNbgbsFYbRYiFXNhutiFbcZ+UMvsn4yDq1J7QBGb8dqIub7OQKZ/4OIqzvwGaeokMPZ97pCYnmfnQnNTBk6lonA+hSVdH7XmRM6eQ4fcnNNjAOCT+Mz0bF54G8Tr31dWcP2kslOiM/wOyc1ltbzFwUQdQFSmPSHd9jLySK3z+r3ZoniaV8WgBU8gensc7RW32OQ7M76wm4WLvp84v26bhG+D5tquQVXrswDL20u8cNhBAcTxnRikJekNmz+yRFWNpgCsCmy6l7vOyrkabQRC91NSRpQM2p/adRqIvZf4MKBPVwMlzeLfDTEEjFTy/1Oqn0TyNI1qnc9wIj+hZmyzqM9GjjX1BsgIHxDuobUn8INHGVpf1pHQfClp38MF6cbk+P5Rug/iv7qXo/e+NClTUIqzjRzAnumTVc61vDvevPk0dpYgpzIDE93PryBuG9rYfXnvoPg1HYlnPZaOSmYdHkLX/gKeDyv0ks9LpSYGCXqrSnDL3+P85ev1FVm5kVQeir60PgGRB/zSjau96AKwSvi2coNgJVl+FzfWhQf6So1kdp1Mx4pfB7I1jkNPNEF+3Uonc+nPcqQFvpiOC4wGIKTaNkzMEzciZnIT5vlGjVJwh6QFNCk0WqXm5EN7esn5T3z96ixBjfaWLEp9GPTupwX5zQIGHLi8ou0qRsay3E6QIsMk9ToKn4Pbz3QUeXcrXlOIO/DWIFKt0QPU2KBg50P+9V9LY9gDBM2dm2DU6etEU3dOU3OkbeJryTeMkXuc/rQznDrIJ++ylp86ezN46fSwuwHEvJBUv7PoPMG3z1YmnP11y5H44mFF1KBkh2KPM5eP9k1mV7Vp9ahiDil2qKB+ASx5hzoiZ+fYsSFErYuQtnmrlE3EArGwfZnqQkMFiwWNAZBp833QjrO2wtYV9aOlpZbrQL/MhAQriUli06iYRKSL4X5MFKohIEh329Ir50EXzm76M2KmUrACOOmBFNd/uFJCt2v0mPAeOkjV2LMeXfAc4VneB325/9xfDPwo7XoDlTSLAO7S</con:value></con:property><con:property><con:name>Authorize_confirm</con:name><con:value>sessionID=5f53c04b-72eb-4b87-9596-6affcdc58515&amp;action=Confirm</con:value></con:property><con:property><con:name>accessTokenPayload</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=5b9815e9-6d37-452c-bef4-185aabd82fde&amp;redirect_uri=https://marketplace.adp.com/&amp;scope=openid%20api%20profile&amp;grant_type=authorization_code</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Get_SessionID" id="19d5d6f2-b712-4644-9736-373a57d3a318"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_Session_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_SessionID" id="46e5185b-a519-49f8-a772-ca7595c620be" mediaType="application/x-www-form-urlencoded" postQueryString="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:originalUri>https://accounts.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="627f4dd7-80e6-4202-a442-6879a2405dbd" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value="openid api profile"/>
+  <con:entry key="response_type" value="code"/>
+  <con:entry key="redirect_uri" value="https://testadp.appdirect.com"/>
+  <con:entry key="client_id" value="888ed931-bb1d-496f-a5a9-3d71e6171c47"/>
+</con:parameters><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_SessionID_groovy" id="0840d778-7cec-4e9a-ac93-c0e20d77a664"><con:settings/><con:config><script>import java.util.regex.*
+def response
+def match
+def postJSON = "sessionID=528dcac3-4c93-4bbe-aa3d-6423a60c2b8f&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18"
+def propTestStep
+def responseHeads
+def httpStatus
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseContent
+responseHeads = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseHeaders
+httpStatus = responseHeads["#status#"]
+log.info "Response Status for the GET SessionID call: " + httpStatus
+
+//log.info "Response:$response"
+
+httpsLocation = (responseHeads["Location"]).toString()
+log.info "Location:$httpsLocation"
+
+Pattern myRegex = ~/regex/
+match = (httpsLocation =~ /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/)[0]
+//Matcher myatcher = Pattern.compile(/regex/).matcher("subject")
+log.info "SessionID value: " + match.toString()
+
+log.info postJSON
+postJSON = postJSON.replace("528dcac3-4c93-4bbe-aa3d-6423a60c2b8f", match.toString())
+log.info "The Payload to get the smSession vlaue: "+postJSON
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Session_ID",postJSON)
+propTestStep.setPropertyValue("Session_ID_value",match.toString())</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession" id="bb80a6bb-1c46-4262-b8dc-9354681f9141"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession_With_Authorize_Consent" id="0364b88b-cb55-4723-a310-2ce0bd909eec"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize/consent" methodName="Wfn_AuthorizeConsent_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession_With_Authorize_Consent" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_code_sm_groovy" id="84e5ef54-3f70-4d1b-a68d-e08d85685262"><con:settings/><con:config><script><![CDATA[import com.eviware.soapui.support.types.StringToStringsMap
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def refreshToken = testRunner.testCase.testSuite.getPropertyValue("Refresh_Token");
+log.info "Refresh_Token: " + refreshToken
+
+def payload = "client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&code=<<code>>&redirect_uri=https://testadp.appdirect.com&scope=openid%20api%20profile&refresh_token="+refreshToken+"&grant_type=refresh_token"
+
+def runner
+def myTestCase = context.testCase
+def TestCase = testRunner.testCase.testSuite.testCases["Get_Token_B2C"]
+def codeValue
+def httpStatus
+def httpStatusTemp
+def cookieValue
+def AC_payload = "sessionID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&action=Confirm"
+//def sessionID_value
+def propTestStep = context.testCase.getTestStepByName("Properties")
+//payload = propTestStep.getPropertyValue("accessTokenPayload")
+AC_payload = propTestStep.getPropertyValue("smSessionPayload")
+response = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseContent
+//log.info "Response:$response"
+
+httpResponseHeaders = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseHeaders
+//log.info "Got the RH"
+httpStatus = (httpResponseHeaders["#status#"]).toString()
+codeValue = httpResponseHeaders["Location"][0]
+log.info "httpStatus for the smSession call: " + httpStatus
+log.info "CodeValue: " + codeValue
+
+
+
+//if(httpStatus.contains("200")){
+if(codeValue.toString().contains("code=")){
+
+	log.info "Calling the Get token call since status is 302"	
+	codeValue = httpResponseHeaders["Location"][0]
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+	propTestStep.setPropertyValue("Sm_session",payload)	
+
+}
+else if(!codeValue.toString().contains("code=")){
+	
+	log.info "Calling authorize with action=confirm since the status 200 received"
+
+	cookieValuetemp = httpResponseHeaders["Set-Cookie"][0]
+	cookieValuetemp = cookieValuetemp.replace("; Domain=.adp.com; Path=/; Secure", "")
+	//log.info cookieValuetemp
+
+	cookieValue = ((cookieValuetemp =~ /(SMSESSION=.*)/)[0][1]).toString()		
+	propTestStep.setPropertyValue("Set_Cookie",cookieValue)
+	log.info "Cookie Value is seen: " + cookieValue
+
+	//sessionID_value = propTestStep.getPropertyValue("Session_ID_value")
+	AC_payload = AC_payload.replace("action=Login", "action=Confirm")
+	log.info "Payload for Authorize_confirm: " + AC_payload
+
+	
+	propTestStep.setPropertyValue("Authorize_confirm",AC_payload)	
+	request = testRunner.testCase.getTestStepByName("Authorize_confirm").testRequest
+	headers = request.getRequestHeaders()
+	headers.remove( "Cookie");
+	headers.put("Cookie", cookieValue)
+
+	request.setRequestHeaders(headers)
+
+	log.info "Cookie header is set successfully"
+	log.info "cookieValue: " + cookieValue
+	
+	runner = TestCase.testSteps["Authorize_confirm"]
+	runner.run(testRunner, context)
+	//testRunner.runTestStepByName("Authorize_confirm_http")
+	log.info "Run Success for Authorize_confirm case!!"
+
+	httpResponseHeaders = context.testCase.testSteps["Authorize_confirm"].testRequest.response.responseHeaders
+	httpStatusTemp = (httpResponseHeaders["#status#"]).toString()
+	log.info "HttpStatus for Authorize call: " + httpStatusTemp
+	codeValue = httpResponseHeaders["Location"][0]
+
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+
+	propTestStep.setPropertyValue("Sm_session",payload)
+
+}
+
+
+//runner = TestCase.testSteps["Get_token"]
+//runner.run(testRunner, context)
+//log.info "Run Success for Get_token case!!"
+
+else{
+	log.info "Invalid Status Code. Script will fail"
+}
+
+/*
+match = ((httpStatus =~ /code=(.*)\&/)[0][1]).toString()
+log.info match
+
+payload = payload.replace("d9a881a1-fcc9-4d8a-916b-e65fed398ada", match.toString())
+log.info payload
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Sm_session",payload)
+*/
+//log.info "compelete headers:"
+					//log.info httpResponseHeaders
+					//temp = httpResponseHeaders["Cache-Control"]]]></script></con:config></con:testStep><con:testStep type="restrequest" name="Authorize_confirm" id="0784d529-3d1e-4387-a728-5a05fba2a845" disabled="true"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Authorize_confirm" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Cookie" value="SMSESSION=W0WBaUGTQDvYjqXb1wnQldW50WJ5vR2BnsLtlA+K2GlPTi3aQ+vq72GL/qekzK3bGC7xsiBwMXiecCf8KZQG1OjkPVCdRzvzy+f4tT//ro0yK8Muzm/b8Y98Wt6op5aMcw+jtNoa3IKhalJ4C3R04qvRHuIqUZW+saoaQGOixqy0Q3GNYLouK3X5kqQ92C1Q+CYXI4Ll3yDmLWdHYasOSwlpV4Sx6yy8vLZ6ABpMtMNAFpY7WhM5pNgR3d4KQ5EqMti+tJcDhV0Iv40po6DzU48cHoqjjN5gl4c6H/KC7UnhyEt1cChtGqKQJg229jO8m7vTOReQ6Cs/AUb9IsWZ0I6hW/5nxFnUvgyvGaUHNS9KEJ6A5DB5DwqAbHkMboy/jIXdUGgRsFR8oLoswys4g2DEJ3Lt4a2r54jYw63h/TofLgmATZPgJk6AlqlmikebqFyDDDMbHoz1ijVvy8qMOOe3ZgTzHDwnyxZaKqf/pT5KoZSfAb7EgF1aq8NQoLzjHMmJxarAs78WfUbkBVIdfyOvT0nBM+SLIRWsM2jJ7lizFRikRRJBpJgrMBopPDm7mEIgTK+JtvanwChVU9VHt5kyvGwB1EzTVYYsHm5e3WOs3lpwJ8bfjmpj75rmKWaEa3A3+uH1PqzfQXyGMGBDwYx04fU+rkwHxfFD9hxa5DN+xqtu3Fj65aU1EhFuMPrxHF2BC2LMFGWt8jWCSKfPDiMjeaCtqogFJSaVA+ZfECffoJC+yB3zdKDqsrYvqw/XY7FgPeAKYEN6e1FUquaBKDjjBVYZIFklRofvWo/PmPEJLqZppE0NwRovq38glfg7Hb/Pas+GnLIuGrDBmXZGVyAe1B7rBIWTql52ijOB5rzfdgQDs39b+px84/8OTU7ediZp7muXTt6xFOHOvvJ6yIRjOI7by44QTPXRXiecow2UwbSmfkN4STXF23j11u43PS6sa05mfjE72rP6V5zAPdy12DJURrNS;"/>
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Authorize_confirm}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="210fdb11-7f51-4c66-8787-46cc79eb8e27" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="$badparam" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>$orderby</con:entry><con:entry>$expand</con:entry><con:entry>limit</con:entry><con:entry>offset</con:entry><con:entry>$top</con:entry><con:entry>$skip</con:entry><con:entry>$filter</con:entry><con:entry>$select</con:entry><con:entry>$badparam</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_token" id="0f71dcfb-b864-49fe-b1ef-315b892499ae"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/token" methodName="Wfn_Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_token" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Sm_session}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="78077eba-0b9d-4787-bdd4-21fe90861835" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="39d7387b-cb04-4836-a788-dfa84d3e6037" name="Validate That Access Token Is Generated"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def accessToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+accessToken = json.access_token
+
+log.info "Access Token: " + accessToken + ":"
+
+assert accessToken != null</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_token_groovy" id="8eb10d32-1b47-46aa-95b8-968608d9e2e6"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def temp
+def accessToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+accessToken = "Bearer " + temp
+
+testRunner.testCase.testSuite.setPropertyValue("Access_Token",accessToken);
+
+log.info "Authorization is header is set for the workers call !!"</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="5256ebc7-0e11-4c6a-b802-23b939589505" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Generate_Access_Token_Using_Same_Refresh_Token_For_400" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="properties" name="Properties" id="12b72678-a35a-4acd-b722-737fb519f06c"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Session_ID</con:name><con:value>sessionID=eb86b9d5-4fc5-484a-ac96-c6e776d1405c&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18</con:value></con:property><con:property><con:name>Sm_session</con:name><con:value><![CDATA[client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&code=6b298022-786f-4c64-81f2-1e72bc0c5cb7&redirect_uri=https://testadp.appdirect.com&scope=openid%20api%20profile&refresh_token=da72c791-98ed-45b6-a7fd-d4edf4ae2268&grant_type=refresh_token]]></con:value></con:property><con:property><con:name>Session_ID_value</con:name><con:value>eb86b9d5-4fc5-484a-ac96-c6e776d1405c</con:value></con:property><con:property><con:name>Set_Cookie</con:name><con:value>SMSESSION=ytF++FxNsxwqgaQnZCTJSNbgbsFYbRYiFXNhutiFbcZ+UMvsn4yDq1J7QBGb8dqIub7OQKZ/4OIqzvwGaeokMPZ97pCYnmfnQnNTBk6lonA+hSVdH7XmRM6eQ4fcnNNjAOCT+Mz0bF54G8Tr31dWcP2kslOiM/wOyc1ltbzFwUQdQFSmPSHd9jLySK3z+r3ZoniaV8WgBU8gensc7RW32OQ7M76wm4WLvp84v26bhG+D5tquQVXrswDL20u8cNhBAcTxnRikJekNmz+yRFWNpgCsCmy6l7vOyrkabQRC91NSRpQM2p/adRqIvZf4MKBPVwMlzeLfDTEEjFTy/1Oqn0TyNI1qnc9wIj+hZmyzqM9GjjX1BsgIHxDuobUn8INHGVpf1pHQfClp38MF6cbk+P5Rug/iv7qXo/e+NClTUIqzjRzAnumTVc61vDvevPk0dpYgpzIDE93PryBuG9rYfXnvoPg1HYlnPZaOSmYdHkLX/gKeDyv0ks9LpSYGCXqrSnDL3+P85ev1FVm5kVQeir60PgGRB/zSjau96AKwSvi2coNgJVl+FzfWhQf6So1kdp1Mx4pfB7I1jkNPNEF+3Uonc+nPcqQFvpiOC4wGIKTaNkzMEzciZnIT5vlGjVJwh6QFNCk0WqXm5EN7esn5T3z96ixBjfaWLEp9GPTupwX5zQIGHLi8ou0qRsay3E6QIsMk9ToKn4Pbz3QUeXcrXlOIO/DWIFKt0QPU2KBg50P+9V9LY9gDBM2dm2DU6etEU3dOU3OkbeJryTeMkXuc/rQznDrIJ++ylp86ezN46fSwuwHEvJBUv7PoPMG3z1YmnP11y5H44mFF1KBkh2KPM5eP9k1mV7Vp9ahiDil2qKB+ASx5hzoiZ+fYsSFErYuQtnmrlE3EArGwfZnqQkMFiwWNAZBp833QjrO2wtYV9aOlpZbrQL/MhAQriUli06iYRKSL4X5MFKohIEh329Ir50EXzm76M2KmUrACOOmBFNd/uFJCt2v0mPAeOkjV2LMeXfAc4VneB325/9xfDPwo7XoDlTSLAO7S</con:value></con:property><con:property><con:name>Authorize_confirm</con:name><con:value>sessionID=5f53c04b-72eb-4b87-9596-6affcdc58515&amp;action=Confirm</con:value></con:property><con:property><con:name>accessTokenPayload</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=5b9815e9-6d37-452c-bef4-185aabd82fde&amp;redirect_uri=https://marketplace.adp.com/&amp;scope=openid%20api%20profile&amp;grant_type=authorization_code</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Get_SessionID" id="c12dbd16-ebba-42d1-b9ce-791827845a7b"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_Session_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_SessionID" id="46e5185b-a519-49f8-a772-ca7595c620be" mediaType="application/x-www-form-urlencoded" postQueryString="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:originalUri>https://accounts.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="627f4dd7-80e6-4202-a442-6879a2405dbd" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value="openid api profile"/>
+  <con:entry key="response_type" value="code"/>
+  <con:entry key="redirect_uri" value="https://testadp.appdirect.com"/>
+  <con:entry key="client_id" value="888ed931-bb1d-496f-a5a9-3d71e6171c47"/>
+</con:parameters><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_SessionID_groovy" id="0c3e38a9-fded-4da3-b3c8-1496741318aa"><con:settings/><con:config><script>import java.util.regex.*
+def response
+def match
+def postJSON = "sessionID=528dcac3-4c93-4bbe-aa3d-6423a60c2b8f&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18"
+def propTestStep
+def responseHeads
+def httpStatus
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseContent
+responseHeads = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseHeaders
+httpStatus = responseHeads["#status#"]
+log.info "Response Status for the GET SessionID call: " + httpStatus
+
+//log.info "Response:$response"
+
+httpsLocation = (responseHeads["Location"]).toString()
+log.info "Location:$httpsLocation"
+
+Pattern myRegex = ~/regex/
+match = (httpsLocation =~ /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/)[0]
+//Matcher myatcher = Pattern.compile(/regex/).matcher("subject")
+log.info "SessionID value: " + match.toString()
+
+log.info postJSON
+postJSON = postJSON.replace("528dcac3-4c93-4bbe-aa3d-6423a60c2b8f", match.toString())
+log.info "The Payload to get the smSession vlaue: "+postJSON
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Session_ID",postJSON)
+propTestStep.setPropertyValue("Session_ID_value",match.toString())</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession" id="05bea859-bfb7-4e1c-8404-5868fee609f3"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession_With_Authorize_Consent" id="3f85b65e-a053-40cd-baf8-0c16521ff5f2"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize/consent" methodName="Wfn_AuthorizeConsent_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession_With_Authorize_Consent" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_code_sm_groovy" id="d4f44f38-5fe1-44ea-afbd-7c8dcabf5b41"><con:settings/><con:config><script><![CDATA[import com.eviware.soapui.support.types.StringToStringsMap
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def refreshToken = testRunner.testCase.testSuite.getPropertyValue("Refresh_Token");
+log.info "Refresh_Token: " + refreshToken
+
+def payload = "client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&code=<<code>>&redirect_uri=https://testadp.appdirect.com&scope=openid%20api%20profile&refresh_token="+refreshToken+"&grant_type=refresh_token"
+def runner
+def myTestCase = context.testCase
+def TestCase = testRunner.testCase.testSuite.testCases["Get_Token_B2C"]
+def codeValue
+def httpStatus
+def httpStatusTemp
+def cookieValue
+def AC_payload = "sessionID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&action=Confirm"
+//def sessionID_value
+def propTestStep = context.testCase.getTestStepByName("Properties")
+//payload = propTestStep.getPropertyValue("accessTokenPayload")
+AC_payload = propTestStep.getPropertyValue("smSessionPayload")
+response = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseContent
+//log.info "Response:$response"
+
+httpResponseHeaders = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseHeaders
+//log.info "Got the RH"
+httpStatus = (httpResponseHeaders["#status#"]).toString()
+codeValue = httpResponseHeaders["Location"][0]
+log.info "httpStatus for the smSession call: " + httpStatus
+log.info "CodeValue: " + codeValue
+
+
+
+//if(httpStatus.contains("200")){
+if(codeValue.toString().contains("code=")){
+
+	log.info "Calling the Get token call since status is 302"	
+	codeValue = httpResponseHeaders["Location"][0]
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+	propTestStep.setPropertyValue("Sm_session",payload)	
+
+}
+else if(!codeValue.toString().contains("code=")){
+	
+	log.info "Calling authorize with action=confirm since the status 200 received"
+
+	cookieValuetemp = httpResponseHeaders["Set-Cookie"][0]
+	cookieValuetemp = cookieValuetemp.replace("; Domain=.adp.com; Path=/; Secure", "")
+	//log.info cookieValuetemp
+
+	cookieValue = ((cookieValuetemp =~ /(SMSESSION=.*)/)[0][1]).toString()		
+	propTestStep.setPropertyValue("Set_Cookie",cookieValue)
+	log.info "Cookie Value is seen: " + cookieValue
+
+	//sessionID_value = propTestStep.getPropertyValue("Session_ID_value")
+	AC_payload = AC_payload.replace("action=Login", "action=Confirm")
+	log.info "Payload for Authorize_confirm: " + AC_payload
+
+	
+	propTestStep.setPropertyValue("Authorize_confirm",AC_payload)	
+	request = testRunner.testCase.getTestStepByName("Authorize_confirm").testRequest
+	headers = request.getRequestHeaders()
+	headers.remove( "Cookie");
+	headers.put("Cookie", cookieValue)
+
+	request.setRequestHeaders(headers)
+
+	log.info "Cookie header is set successfully"
+	log.info "cookieValue: " + cookieValue
+	
+	runner = TestCase.testSteps["Authorize_confirm"]
+	runner.run(testRunner, context)
+	//testRunner.runTestStepByName("Authorize_confirm_http")
+	log.info "Run Success for Authorize_confirm case!!"
+
+	httpResponseHeaders = context.testCase.testSteps["Authorize_confirm"].testRequest.response.responseHeaders
+	httpStatusTemp = (httpResponseHeaders["#status#"]).toString()
+	log.info "HttpStatus for Authorize call: " + httpStatusTemp
+	codeValue = httpResponseHeaders["Location"][0]
+
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+
+	propTestStep.setPropertyValue("Sm_session",payload)
+
+}
+
+
+//runner = TestCase.testSteps["Get_token"]
+//runner.run(testRunner, context)
+//log.info "Run Success for Get_token case!!"
+
+else{
+	log.info "Invalid Status Code. Script will fail"
+}
+
+/*
+match = ((httpStatus =~ /code=(.*)\&/)[0][1]).toString()
+log.info match
+
+payload = payload.replace("d9a881a1-fcc9-4d8a-916b-e65fed398ada", match.toString())
+log.info payload
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Sm_session",payload)
+*/
+//log.info "compelete headers:"
+					//log.info httpResponseHeaders
+					//temp = httpResponseHeaders["Cache-Control"]]]></script></con:config></con:testStep><con:testStep type="restrequest" name="Authorize_confirm" id="b70e189b-c37f-432c-95da-21c623cac2fc" disabled="true"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Authorize_confirm" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Cookie" value="SMSESSION=W0WBaUGTQDvYjqXb1wnQldW50WJ5vR2BnsLtlA+K2GlPTi3aQ+vq72GL/qekzK3bGC7xsiBwMXiecCf8KZQG1OjkPVCdRzvzy+f4tT//ro0yK8Muzm/b8Y98Wt6op5aMcw+jtNoa3IKhalJ4C3R04qvRHuIqUZW+saoaQGOixqy0Q3GNYLouK3X5kqQ92C1Q+CYXI4Ll3yDmLWdHYasOSwlpV4Sx6yy8vLZ6ABpMtMNAFpY7WhM5pNgR3d4KQ5EqMti+tJcDhV0Iv40po6DzU48cHoqjjN5gl4c6H/KC7UnhyEt1cChtGqKQJg229jO8m7vTOReQ6Cs/AUb9IsWZ0I6hW/5nxFnUvgyvGaUHNS9KEJ6A5DB5DwqAbHkMboy/jIXdUGgRsFR8oLoswys4g2DEJ3Lt4a2r54jYw63h/TofLgmATZPgJk6AlqlmikebqFyDDDMbHoz1ijVvy8qMOOe3ZgTzHDwnyxZaKqf/pT5KoZSfAb7EgF1aq8NQoLzjHMmJxarAs78WfUbkBVIdfyOvT0nBM+SLIRWsM2jJ7lizFRikRRJBpJgrMBopPDm7mEIgTK+JtvanwChVU9VHt5kyvGwB1EzTVYYsHm5e3WOs3lpwJ8bfjmpj75rmKWaEa3A3+uH1PqzfQXyGMGBDwYx04fU+rkwHxfFD9hxa5DN+xqtu3Fj65aU1EhFuMPrxHF2BC2LMFGWt8jWCSKfPDiMjeaCtqogFJSaVA+ZfECffoJC+yB3zdKDqsrYvqw/XY7FgPeAKYEN6e1FUquaBKDjjBVYZIFklRofvWo/PmPEJLqZppE0NwRovq38glfg7Hb/Pas+GnLIuGrDBmXZGVyAe1B7rBIWTql52ijOB5rzfdgQDs39b+px84/8OTU7ediZp7muXTt6xFOHOvvJ6yIRjOI7by44QTPXRXiecow2UwbSmfkN4STXF23j11u43PS6sa05mfjE72rP6V5zAPdy12DJURrNS;"/>
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Authorize_confirm}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="210fdb11-7f51-4c66-8787-46cc79eb8e27" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="$badparam" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>$orderby</con:entry><con:entry>$expand</con:entry><con:entry>limit</con:entry><con:entry>offset</con:entry><con:entry>$top</con:entry><con:entry>$skip</con:entry><con:entry>$filter</con:entry><con:entry>$select</con:entry><con:entry>$badparam</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_token" id="65d322f2-e527-43b7-b812-5e72690cbd0d"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/token" methodName="Wfn_Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_token" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Sm_session}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="78077eba-0b9d-4787-bdd4-21fe90861835" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="ff776b32-e51f-42b2-bf55-3c338891be5f" name="Verify That Grant Is Invalid"><con:configuration><path>$.</path><content>{"error":"invalid_grant","error_description":"The given grant is invalid"}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_token_groovy" id="01bdbe97-1d53-43ae-bcc3-3a5794a7c4e9"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def temp
+def accessToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+accessToken = "Bearer " + temp
+
+testRunner.testCase.testSuite.setPropertyValue("Access_Token",accessToken);
+
+log.info "Authorization is header is set for the workers call !!"</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="32fd9edf-716b-42e6-b9ff-1812eb8c6a12" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Generate_Access_Token_Without_Refresh_Token_For_400" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="properties" name="Properties" id="e374a26a-0bb9-4eb3-a535-28ab573a43fd"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Session_ID</con:name><con:value>sessionID=be62593d-afa5-4909-b427-3f0ac89bdda6&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18</con:value></con:property><con:property><con:name>Sm_session</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=cdc7585e-b64e-427f-b340-9628c5130901&amp;redirect_uri=https://testadp.appdirect.com&amp;scope=openid%20api%20profile&amp;grant_type=refresh_token</con:value></con:property><con:property><con:name>Session_ID_value</con:name><con:value>be62593d-afa5-4909-b427-3f0ac89bdda6</con:value></con:property><con:property><con:name>Set_Cookie</con:name><con:value>SMSESSION=ytF++FxNsxwqgaQnZCTJSNbgbsFYbRYiFXNhutiFbcZ+UMvsn4yDq1J7QBGb8dqIub7OQKZ/4OIqzvwGaeokMPZ97pCYnmfnQnNTBk6lonA+hSVdH7XmRM6eQ4fcnNNjAOCT+Mz0bF54G8Tr31dWcP2kslOiM/wOyc1ltbzFwUQdQFSmPSHd9jLySK3z+r3ZoniaV8WgBU8gensc7RW32OQ7M76wm4WLvp84v26bhG+D5tquQVXrswDL20u8cNhBAcTxnRikJekNmz+yRFWNpgCsCmy6l7vOyrkabQRC91NSRpQM2p/adRqIvZf4MKBPVwMlzeLfDTEEjFTy/1Oqn0TyNI1qnc9wIj+hZmyzqM9GjjX1BsgIHxDuobUn8INHGVpf1pHQfClp38MF6cbk+P5Rug/iv7qXo/e+NClTUIqzjRzAnumTVc61vDvevPk0dpYgpzIDE93PryBuG9rYfXnvoPg1HYlnPZaOSmYdHkLX/gKeDyv0ks9LpSYGCXqrSnDL3+P85ev1FVm5kVQeir60PgGRB/zSjau96AKwSvi2coNgJVl+FzfWhQf6So1kdp1Mx4pfB7I1jkNPNEF+3Uonc+nPcqQFvpiOC4wGIKTaNkzMEzciZnIT5vlGjVJwh6QFNCk0WqXm5EN7esn5T3z96ixBjfaWLEp9GPTupwX5zQIGHLi8ou0qRsay3E6QIsMk9ToKn4Pbz3QUeXcrXlOIO/DWIFKt0QPU2KBg50P+9V9LY9gDBM2dm2DU6etEU3dOU3OkbeJryTeMkXuc/rQznDrIJ++ylp86ezN46fSwuwHEvJBUv7PoPMG3z1YmnP11y5H44mFF1KBkh2KPM5eP9k1mV7Vp9ahiDil2qKB+ASx5hzoiZ+fYsSFErYuQtnmrlE3EArGwfZnqQkMFiwWNAZBp833QjrO2wtYV9aOlpZbrQL/MhAQriUli06iYRKSL4X5MFKohIEh329Ir50EXzm76M2KmUrACOOmBFNd/uFJCt2v0mPAeOkjV2LMeXfAc4VneB325/9xfDPwo7XoDlTSLAO7S</con:value></con:property><con:property><con:name>Authorize_confirm</con:name><con:value>sessionID=5f53c04b-72eb-4b87-9596-6affcdc58515&amp;action=Confirm</con:value></con:property><con:property><con:name>accessTokenPayload</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=5b9815e9-6d37-452c-bef4-185aabd82fde&amp;redirect_uri=https://marketplace.adp.com/&amp;scope=openid%20api%20profile&amp;grant_type=authorization_code</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Get_SessionID" id="a7198c52-5f46-4994-b814-c33a3e5dfab9"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_Session_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_SessionID" id="46e5185b-a519-49f8-a772-ca7595c620be" mediaType="application/x-www-form-urlencoded" postQueryString="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:originalUri>https://accounts.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="627f4dd7-80e6-4202-a442-6879a2405dbd" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value="openid api profile"/>
+  <con:entry key="response_type" value="code"/>
+  <con:entry key="redirect_uri" value="https://testadp.appdirect.com"/>
+  <con:entry key="client_id" value="888ed931-bb1d-496f-a5a9-3d71e6171c47"/>
+</con:parameters><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_SessionID_groovy" id="d66821db-7ab9-450d-933b-97a860a2c464"><con:settings/><con:config><script>import java.util.regex.*
+def response
+def match
+def postJSON = "sessionID=528dcac3-4c93-4bbe-aa3d-6423a60c2b8f&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18"
+def propTestStep
+def responseHeads
+def httpStatus
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseContent
+responseHeads = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseHeaders
+httpStatus = responseHeads["#status#"]
+log.info "Response Status for the GET SessionID call: " + httpStatus
+
+//log.info "Response:$response"
+
+httpsLocation = (responseHeads["Location"]).toString()
+log.info "Location:$httpsLocation"
+
+Pattern myRegex = ~/regex/
+match = (httpsLocation =~ /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/)[0]
+//Matcher myatcher = Pattern.compile(/regex/).matcher("subject")
+log.info "SessionID value: " + match.toString()
+
+log.info postJSON
+postJSON = postJSON.replace("528dcac3-4c93-4bbe-aa3d-6423a60c2b8f", match.toString())
+log.info "The Payload to get the smSession vlaue: "+postJSON
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Session_ID",postJSON)
+propTestStep.setPropertyValue("Session_ID_value",match.toString())</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession" id="3bd5723b-ba11-423e-9e05-765e52f98c1b"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession_With_Authorize_Consent" id="7b293cc1-e7c7-4033-bf2f-341ae085e79c"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize/consent" methodName="Wfn_AuthorizeConsent_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession_With_Authorize_Consent" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_code_sm_groovy" id="30425d84-de02-43c7-990b-9970a64f115b"><con:settings/><con:config><script><![CDATA[import com.eviware.soapui.support.types.StringToStringsMap
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def refreshToken = testRunner.testCase.testSuite.getPropertyValue("Refresh_Token");
+log.info "Refresh_Token: " + refreshToken
+
+def payload = "client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&code=<<code>>&redirect_uri=https://testadp.appdirect.com&scope=openid%20api%20profile&grant_type=refresh_token"
+
+def runner
+def myTestCase = context.testCase
+def TestCase = testRunner.testCase.testSuite.testCases["Get_Token_B2C"]
+def codeValue
+def httpStatus
+def httpStatusTemp
+def cookieValue
+def AC_payload = "sessionID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&action=Confirm"
+//def sessionID_value
+def propTestStep = context.testCase.getTestStepByName("Properties")
+//payload = propTestStep.getPropertyValue("accessTokenPayload")
+AC_payload = propTestStep.getPropertyValue("smSessionPayload")
+response = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseContent
+//log.info "Response:$response"
+
+httpResponseHeaders = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseHeaders
+//log.info "Got the RH"
+httpStatus = (httpResponseHeaders["#status#"]).toString()
+codeValue = httpResponseHeaders["Location"][0]
+log.info "httpStatus for the smSession call: " + httpStatus
+log.info "CodeValue: " + codeValue
+
+
+
+//if(httpStatus.contains("200")){
+if(codeValue.toString().contains("code=")){
+
+	log.info "Calling the Get token call since status is 302"	
+	codeValue = httpResponseHeaders["Location"][0]
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+	propTestStep.setPropertyValue("Sm_session",payload)	
+
+}
+else if(!codeValue.toString().contains("code=")){
+	
+	log.info "Calling authorize with action=confirm since the status 200 received"
+
+	cookieValuetemp = httpResponseHeaders["Set-Cookie"][0]
+	cookieValuetemp = cookieValuetemp.replace("; Domain=.adp.com; Path=/; Secure", "")
+	//log.info cookieValuetemp
+
+	cookieValue = ((cookieValuetemp =~ /(SMSESSION=.*)/)[0][1]).toString()		
+	propTestStep.setPropertyValue("Set_Cookie",cookieValue)
+	log.info "Cookie Value is seen: " + cookieValue
+
+	//sessionID_value = propTestStep.getPropertyValue("Session_ID_value")
+	AC_payload = AC_payload.replace("action=Login", "action=Confirm")
+	log.info "Payload for Authorize_confirm: " + AC_payload
+
+	
+	propTestStep.setPropertyValue("Authorize_confirm",AC_payload)	
+	request = testRunner.testCase.getTestStepByName("Authorize_confirm").testRequest
+	headers = request.getRequestHeaders()
+	headers.remove( "Cookie");
+	headers.put("Cookie", cookieValue)
+
+	request.setRequestHeaders(headers)
+
+	log.info "Cookie header is set successfully"
+	log.info "cookieValue: " + cookieValue
+	
+	runner = TestCase.testSteps["Authorize_confirm"]
+	runner.run(testRunner, context)
+	//testRunner.runTestStepByName("Authorize_confirm_http")
+	log.info "Run Success for Authorize_confirm case!!"
+
+	httpResponseHeaders = context.testCase.testSteps["Authorize_confirm"].testRequest.response.responseHeaders
+	httpStatusTemp = (httpResponseHeaders["#status#"]).toString()
+	log.info "HttpStatus for Authorize call: " + httpStatusTemp
+	codeValue = httpResponseHeaders["Location"][0]
+
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+
+	propTestStep.setPropertyValue("Sm_session",payload)
+
+}
+
+
+//runner = TestCase.testSteps["Get_token"]
+//runner.run(testRunner, context)
+//log.info "Run Success for Get_token case!!"
+
+else{
+	log.info "Invalid Status Code. Script will fail"
+}
+
+/*
+match = ((httpStatus =~ /code=(.*)\&/)[0][1]).toString()
+log.info match
+
+payload = payload.replace("d9a881a1-fcc9-4d8a-916b-e65fed398ada", match.toString())
+log.info payload
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Sm_session",payload)
+*/
+//log.info "compelete headers:"
+					//log.info httpResponseHeaders
+					//temp = httpResponseHeaders["Cache-Control"]]]></script></con:config></con:testStep><con:testStep type="restrequest" name="Authorize_confirm" id="8a0c82ec-46c4-4487-a9b4-ed11704a4375" disabled="true"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Authorize_confirm" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Cookie" value="SMSESSION=W0WBaUGTQDvYjqXb1wnQldW50WJ5vR2BnsLtlA+K2GlPTi3aQ+vq72GL/qekzK3bGC7xsiBwMXiecCf8KZQG1OjkPVCdRzvzy+f4tT//ro0yK8Muzm/b8Y98Wt6op5aMcw+jtNoa3IKhalJ4C3R04qvRHuIqUZW+saoaQGOixqy0Q3GNYLouK3X5kqQ92C1Q+CYXI4Ll3yDmLWdHYasOSwlpV4Sx6yy8vLZ6ABpMtMNAFpY7WhM5pNgR3d4KQ5EqMti+tJcDhV0Iv40po6DzU48cHoqjjN5gl4c6H/KC7UnhyEt1cChtGqKQJg229jO8m7vTOReQ6Cs/AUb9IsWZ0I6hW/5nxFnUvgyvGaUHNS9KEJ6A5DB5DwqAbHkMboy/jIXdUGgRsFR8oLoswys4g2DEJ3Lt4a2r54jYw63h/TofLgmATZPgJk6AlqlmikebqFyDDDMbHoz1ijVvy8qMOOe3ZgTzHDwnyxZaKqf/pT5KoZSfAb7EgF1aq8NQoLzjHMmJxarAs78WfUbkBVIdfyOvT0nBM+SLIRWsM2jJ7lizFRikRRJBpJgrMBopPDm7mEIgTK+JtvanwChVU9VHt5kyvGwB1EzTVYYsHm5e3WOs3lpwJ8bfjmpj75rmKWaEa3A3+uH1PqzfQXyGMGBDwYx04fU+rkwHxfFD9hxa5DN+xqtu3Fj65aU1EhFuMPrxHF2BC2LMFGWt8jWCSKfPDiMjeaCtqogFJSaVA+ZfECffoJC+yB3zdKDqsrYvqw/XY7FgPeAKYEN6e1FUquaBKDjjBVYZIFklRofvWo/PmPEJLqZppE0NwRovq38glfg7Hb/Pas+GnLIuGrDBmXZGVyAe1B7rBIWTql52ijOB5rzfdgQDs39b+px84/8OTU7ediZp7muXTt6xFOHOvvJ6yIRjOI7by44QTPXRXiecow2UwbSmfkN4STXF23j11u43PS6sa05mfjE72rP6V5zAPdy12DJURrNS;"/>
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Authorize_confirm}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="210fdb11-7f51-4c66-8787-46cc79eb8e27" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="$badparam" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>$orderby</con:entry><con:entry>$expand</con:entry><con:entry>limit</con:entry><con:entry>offset</con:entry><con:entry>$top</con:entry><con:entry>$skip</con:entry><con:entry>$filter</con:entry><con:entry>$select</con:entry><con:entry>$badparam</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_token" id="3b907482-5677-45ba-b8a3-76b70c3899f9"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/token" methodName="Wfn_Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_token" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Sm_session}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="78077eba-0b9d-4787-bdd4-21fe90861835" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="20d56604-c675-4d07-8ade-2a148e262d55" name="JsonPath Match"><con:configuration><path>$.</path><content>{"error":"invalid_request","error_description":"Missing or duplicate parameters"}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_token_groovy" id="c4773c82-a481-4090-9795-dfcd53f8d63f"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def temp
+def accessToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+accessToken = "Bearer " + temp
+
+testRunner.testCase.testSuite.setPropertyValue("Access_Token",accessToken);
+
+log.info "Authorization is header is set for the workers call !!"</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="3053feeb-889b-4986-9a81-cbc63af67e7c" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Generate_Access_Token_Without_Grant_Type_Refresh_Token_For_400" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="properties" name="Properties" id="edc4e077-d59c-497d-8aff-fa59f1490cbc"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Session_ID</con:name><con:value>sessionID=8ea310a3-50cc-4f6e-acd7-6e6570f5035c&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18</con:value></con:property><con:property><con:name>Sm_session</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=926869bc-902b-4640-b78e-b2aec69520a2&amp;redirect_uri=https://testadp.appdirect.com&amp;scope=openid%20api%20profile&amp;refresh_token=da72c791-98ed-45b6-a7fd-d4edf4ae2268</con:value></con:property><con:property><con:name>Session_ID_value</con:name><con:value>8ea310a3-50cc-4f6e-acd7-6e6570f5035c</con:value></con:property><con:property><con:name>Set_Cookie</con:name><con:value>SMSESSION=ytF++FxNsxwqgaQnZCTJSNbgbsFYbRYiFXNhutiFbcZ+UMvsn4yDq1J7QBGb8dqIub7OQKZ/4OIqzvwGaeokMPZ97pCYnmfnQnNTBk6lonA+hSVdH7XmRM6eQ4fcnNNjAOCT+Mz0bF54G8Tr31dWcP2kslOiM/wOyc1ltbzFwUQdQFSmPSHd9jLySK3z+r3ZoniaV8WgBU8gensc7RW32OQ7M76wm4WLvp84v26bhG+D5tquQVXrswDL20u8cNhBAcTxnRikJekNmz+yRFWNpgCsCmy6l7vOyrkabQRC91NSRpQM2p/adRqIvZf4MKBPVwMlzeLfDTEEjFTy/1Oqn0TyNI1qnc9wIj+hZmyzqM9GjjX1BsgIHxDuobUn8INHGVpf1pHQfClp38MF6cbk+P5Rug/iv7qXo/e+NClTUIqzjRzAnumTVc61vDvevPk0dpYgpzIDE93PryBuG9rYfXnvoPg1HYlnPZaOSmYdHkLX/gKeDyv0ks9LpSYGCXqrSnDL3+P85ev1FVm5kVQeir60PgGRB/zSjau96AKwSvi2coNgJVl+FzfWhQf6So1kdp1Mx4pfB7I1jkNPNEF+3Uonc+nPcqQFvpiOC4wGIKTaNkzMEzciZnIT5vlGjVJwh6QFNCk0WqXm5EN7esn5T3z96ixBjfaWLEp9GPTupwX5zQIGHLi8ou0qRsay3E6QIsMk9ToKn4Pbz3QUeXcrXlOIO/DWIFKt0QPU2KBg50P+9V9LY9gDBM2dm2DU6etEU3dOU3OkbeJryTeMkXuc/rQznDrIJ++ylp86ezN46fSwuwHEvJBUv7PoPMG3z1YmnP11y5H44mFF1KBkh2KPM5eP9k1mV7Vp9ahiDil2qKB+ASx5hzoiZ+fYsSFErYuQtnmrlE3EArGwfZnqQkMFiwWNAZBp833QjrO2wtYV9aOlpZbrQL/MhAQriUli06iYRKSL4X5MFKohIEh329Ir50EXzm76M2KmUrACOOmBFNd/uFJCt2v0mPAeOkjV2LMeXfAc4VneB325/9xfDPwo7XoDlTSLAO7S</con:value></con:property><con:property><con:name>Authorize_confirm</con:name><con:value>sessionID=5f53c04b-72eb-4b87-9596-6affcdc58515&amp;action=Confirm</con:value></con:property><con:property><con:name>accessTokenPayload</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=5b9815e9-6d37-452c-bef4-185aabd82fde&amp;redirect_uri=https://marketplace.adp.com/&amp;scope=openid%20api%20profile&amp;grant_type=authorization_code</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Get_SessionID" id="f79d8862-913a-470a-8003-02b0fffe6d4c"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_Session_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_SessionID" id="46e5185b-a519-49f8-a772-ca7595c620be" mediaType="application/x-www-form-urlencoded" postQueryString="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:originalUri>https://accounts.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="627f4dd7-80e6-4202-a442-6879a2405dbd" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value="openid api profile"/>
+  <con:entry key="response_type" value="code"/>
+  <con:entry key="redirect_uri" value="https://testadp.appdirect.com"/>
+  <con:entry key="client_id" value="888ed931-bb1d-496f-a5a9-3d71e6171c47"/>
+</con:parameters><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_SessionID_groovy" id="1a9d15bf-f009-4425-aea2-48361ba4b428"><con:settings/><con:config><script>import java.util.regex.*
+def response
+def match
+def postJSON = "sessionID=528dcac3-4c93-4bbe-aa3d-6423a60c2b8f&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18"
+def propTestStep
+def responseHeads
+def httpStatus
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseContent
+responseHeads = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseHeaders
+httpStatus = responseHeads["#status#"]
+log.info "Response Status for the GET SessionID call: " + httpStatus
+
+//log.info "Response:$response"
+
+httpsLocation = (responseHeads["Location"]).toString()
+log.info "Location:$httpsLocation"
+
+Pattern myRegex = ~/regex/
+match = (httpsLocation =~ /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/)[0]
+//Matcher myatcher = Pattern.compile(/regex/).matcher("subject")
+log.info "SessionID value: " + match.toString()
+
+log.info postJSON
+postJSON = postJSON.replace("528dcac3-4c93-4bbe-aa3d-6423a60c2b8f", match.toString())
+log.info "The Payload to get the smSession vlaue: "+postJSON
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Session_ID",postJSON)
+propTestStep.setPropertyValue("Session_ID_value",match.toString())</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession" id="f80104c4-7a4d-4758-95e5-7f26c6aa7528"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession_With_Authorize_Consent" id="fb8a8ffe-bdfd-4205-9ec9-59033303619c"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize/consent" methodName="Wfn_AuthorizeConsent_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession_With_Authorize_Consent" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_code_sm_groovy" id="26e4d1ee-bcbc-41e3-a5fe-0b3b783db22a"><con:settings/><con:config><script><![CDATA[import com.eviware.soapui.support.types.StringToStringsMap
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def refreshToken = testRunner.testCase.testSuite.getPropertyValue("Refresh_Token");
+log.info "Refresh_Token: " + refreshToken
+
+def payload = "client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&code=<<code>>&redirect_uri=https://testadp.appdirect.com&scope=openid%20api%20profile&refresh_token="+refreshToken
+
+def runner
+def myTestCase = context.testCase
+def TestCase = testRunner.testCase.testSuite.testCases["Get_Token_B2C"]
+def codeValue
+def httpStatus
+def httpStatusTemp
+def cookieValue
+def AC_payload = "sessionID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&action=Confirm"
+//def sessionID_value
+def propTestStep = context.testCase.getTestStepByName("Properties")
+//payload = propTestStep.getPropertyValue("accessTokenPayload")
+AC_payload = propTestStep.getPropertyValue("smSessionPayload")
+response = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseContent
+//log.info "Response:$response"
+
+httpResponseHeaders = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseHeaders
+//log.info "Got the RH"
+httpStatus = (httpResponseHeaders["#status#"]).toString()
+codeValue = httpResponseHeaders["Location"][0]
+log.info "httpStatus for the smSession call: " + httpStatus
+log.info "CodeValue: " + codeValue
+
+
+
+//if(httpStatus.contains("200")){
+if(codeValue.toString().contains("code=")){
+
+	log.info "Calling the Get token call since status is 302"	
+	codeValue = httpResponseHeaders["Location"][0]
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+	propTestStep.setPropertyValue("Sm_session",payload)	
+
+}
+else if(!codeValue.toString().contains("code=")){
+	
+	log.info "Calling authorize with action=confirm since the status 200 received"
+
+	cookieValuetemp = httpResponseHeaders["Set-Cookie"][0]
+	cookieValuetemp = cookieValuetemp.replace("; Domain=.adp.com; Path=/; Secure", "")
+	//log.info cookieValuetemp
+
+	cookieValue = ((cookieValuetemp =~ /(SMSESSION=.*)/)[0][1]).toString()		
+	propTestStep.setPropertyValue("Set_Cookie",cookieValue)
+	log.info "Cookie Value is seen: " + cookieValue
+
+	//sessionID_value = propTestStep.getPropertyValue("Session_ID_value")
+	AC_payload = AC_payload.replace("action=Login", "action=Confirm")
+	log.info "Payload for Authorize_confirm: " + AC_payload
+
+	
+	propTestStep.setPropertyValue("Authorize_confirm",AC_payload)	
+	request = testRunner.testCase.getTestStepByName("Authorize_confirm").testRequest
+	headers = request.getRequestHeaders()
+	headers.remove( "Cookie");
+	headers.put("Cookie", cookieValue)
+
+	request.setRequestHeaders(headers)
+
+	log.info "Cookie header is set successfully"
+	log.info "cookieValue: " + cookieValue
+	
+	runner = TestCase.testSteps["Authorize_confirm"]
+	runner.run(testRunner, context)
+	//testRunner.runTestStepByName("Authorize_confirm_http")
+	log.info "Run Success for Authorize_confirm case!!"
+
+	httpResponseHeaders = context.testCase.testSteps["Authorize_confirm"].testRequest.response.responseHeaders
+	httpStatusTemp = (httpResponseHeaders["#status#"]).toString()
+	log.info "HttpStatus for Authorize call: " + httpStatusTemp
+	codeValue = httpResponseHeaders["Location"][0]
+
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+
+	propTestStep.setPropertyValue("Sm_session",payload)
+
+}
+
+
+//runner = TestCase.testSteps["Get_token"]
+//runner.run(testRunner, context)
+//log.info "Run Success for Get_token case!!"
+
+else{
+	log.info "Invalid Status Code. Script will fail"
+}
+
+/*
+match = ((httpStatus =~ /code=(.*)\&/)[0][1]).toString()
+log.info match
+
+payload = payload.replace("d9a881a1-fcc9-4d8a-916b-e65fed398ada", match.toString())
+log.info payload
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Sm_session",payload)
+*/
+//log.info "compelete headers:"
+					//log.info httpResponseHeaders
+					//temp = httpResponseHeaders["Cache-Control"]]]></script></con:config></con:testStep><con:testStep type="restrequest" name="Authorize_confirm" id="2cfc5969-e779-4a75-b562-2ca1d313a302" disabled="true"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Authorize_confirm" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Cookie" value="SMSESSION=W0WBaUGTQDvYjqXb1wnQldW50WJ5vR2BnsLtlA+K2GlPTi3aQ+vq72GL/qekzK3bGC7xsiBwMXiecCf8KZQG1OjkPVCdRzvzy+f4tT//ro0yK8Muzm/b8Y98Wt6op5aMcw+jtNoa3IKhalJ4C3R04qvRHuIqUZW+saoaQGOixqy0Q3GNYLouK3X5kqQ92C1Q+CYXI4Ll3yDmLWdHYasOSwlpV4Sx6yy8vLZ6ABpMtMNAFpY7WhM5pNgR3d4KQ5EqMti+tJcDhV0Iv40po6DzU48cHoqjjN5gl4c6H/KC7UnhyEt1cChtGqKQJg229jO8m7vTOReQ6Cs/AUb9IsWZ0I6hW/5nxFnUvgyvGaUHNS9KEJ6A5DB5DwqAbHkMboy/jIXdUGgRsFR8oLoswys4g2DEJ3Lt4a2r54jYw63h/TofLgmATZPgJk6AlqlmikebqFyDDDMbHoz1ijVvy8qMOOe3ZgTzHDwnyxZaKqf/pT5KoZSfAb7EgF1aq8NQoLzjHMmJxarAs78WfUbkBVIdfyOvT0nBM+SLIRWsM2jJ7lizFRikRRJBpJgrMBopPDm7mEIgTK+JtvanwChVU9VHt5kyvGwB1EzTVYYsHm5e3WOs3lpwJ8bfjmpj75rmKWaEa3A3+uH1PqzfQXyGMGBDwYx04fU+rkwHxfFD9hxa5DN+xqtu3Fj65aU1EhFuMPrxHF2BC2LMFGWt8jWCSKfPDiMjeaCtqogFJSaVA+ZfECffoJC+yB3zdKDqsrYvqw/XY7FgPeAKYEN6e1FUquaBKDjjBVYZIFklRofvWo/PmPEJLqZppE0NwRovq38glfg7Hb/Pas+GnLIuGrDBmXZGVyAe1B7rBIWTql52ijOB5rzfdgQDs39b+px84/8OTU7ediZp7muXTt6xFOHOvvJ6yIRjOI7by44QTPXRXiecow2UwbSmfkN4STXF23j11u43PS6sa05mfjE72rP6V5zAPdy12DJURrNS;"/>
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Authorize_confirm}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="210fdb11-7f51-4c66-8787-46cc79eb8e27" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="$badparam" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>$orderby</con:entry><con:entry>$expand</con:entry><con:entry>limit</con:entry><con:entry>offset</con:entry><con:entry>$top</con:entry><con:entry>$skip</con:entry><con:entry>$filter</con:entry><con:entry>$select</con:entry><con:entry>$badparam</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_token" id="73e3dad6-f214-42e2-a42f-1919045d63fb"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/token" methodName="Wfn_Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_token" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Sm_session}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="78077eba-0b9d-4787-bdd4-21fe90861835" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="20d56604-c675-4d07-8ade-2a148e262d55" name="JsonPath Match"><con:configuration><path>$.</path><content>{"error":"invalid_request","error_description":"Missing or duplicate parameters"}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_token_groovy" id="3a054b7f-2143-4907-8a93-b969a0512567"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def temp
+def accessToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+accessToken = "Bearer " + temp
+
+testRunner.testCase.testSuite.setPropertyValue("Access_Token",accessToken);
+
+log.info "Authorization is header is set for the workers call !!"</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="8c9eeedd-b7ff-45bd-a0e3-f46c4591f269" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Generate_Access_Token_Without_Refresh_Token_And_Without_Grant_Type_For_400" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="properties" name="Properties" id="5be3a618-fa8c-43a7-802e-002db5c5ac42"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Session_ID</con:name><con:value>sessionID=529272e0-0a61-4334-a999-1af3382b8bd4&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18</con:value></con:property><con:property><con:name>Sm_session</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=cd4de6ea-cf4b-4167-8a71-63a6b8615be5&amp;redirect_uri=https://testadp.appdirect.com&amp;scope=openid%20api%20profile</con:value></con:property><con:property><con:name>Session_ID_value</con:name><con:value>529272e0-0a61-4334-a999-1af3382b8bd4</con:value></con:property><con:property><con:name>Set_Cookie</con:name><con:value>SMSESSION=ytF++FxNsxwqgaQnZCTJSNbgbsFYbRYiFXNhutiFbcZ+UMvsn4yDq1J7QBGb8dqIub7OQKZ/4OIqzvwGaeokMPZ97pCYnmfnQnNTBk6lonA+hSVdH7XmRM6eQ4fcnNNjAOCT+Mz0bF54G8Tr31dWcP2kslOiM/wOyc1ltbzFwUQdQFSmPSHd9jLySK3z+r3ZoniaV8WgBU8gensc7RW32OQ7M76wm4WLvp84v26bhG+D5tquQVXrswDL20u8cNhBAcTxnRikJekNmz+yRFWNpgCsCmy6l7vOyrkabQRC91NSRpQM2p/adRqIvZf4MKBPVwMlzeLfDTEEjFTy/1Oqn0TyNI1qnc9wIj+hZmyzqM9GjjX1BsgIHxDuobUn8INHGVpf1pHQfClp38MF6cbk+P5Rug/iv7qXo/e+NClTUIqzjRzAnumTVc61vDvevPk0dpYgpzIDE93PryBuG9rYfXnvoPg1HYlnPZaOSmYdHkLX/gKeDyv0ks9LpSYGCXqrSnDL3+P85ev1FVm5kVQeir60PgGRB/zSjau96AKwSvi2coNgJVl+FzfWhQf6So1kdp1Mx4pfB7I1jkNPNEF+3Uonc+nPcqQFvpiOC4wGIKTaNkzMEzciZnIT5vlGjVJwh6QFNCk0WqXm5EN7esn5T3z96ixBjfaWLEp9GPTupwX5zQIGHLi8ou0qRsay3E6QIsMk9ToKn4Pbz3QUeXcrXlOIO/DWIFKt0QPU2KBg50P+9V9LY9gDBM2dm2DU6etEU3dOU3OkbeJryTeMkXuc/rQznDrIJ++ylp86ezN46fSwuwHEvJBUv7PoPMG3z1YmnP11y5H44mFF1KBkh2KPM5eP9k1mV7Vp9ahiDil2qKB+ASx5hzoiZ+fYsSFErYuQtnmrlE3EArGwfZnqQkMFiwWNAZBp833QjrO2wtYV9aOlpZbrQL/MhAQriUli06iYRKSL4X5MFKohIEh329Ir50EXzm76M2KmUrACOOmBFNd/uFJCt2v0mPAeOkjV2LMeXfAc4VneB325/9xfDPwo7XoDlTSLAO7S</con:value></con:property><con:property><con:name>Authorize_confirm</con:name><con:value>sessionID=5f53c04b-72eb-4b87-9596-6affcdc58515&amp;action=Confirm</con:value></con:property><con:property><con:name>accessTokenPayload</con:name><con:value>client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&amp;client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&amp;code=5b9815e9-6d37-452c-bef4-185aabd82fde&amp;redirect_uri=https://marketplace.adp.com/&amp;scope=openid%20api%20profile&amp;grant_type=authorization_code</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Get_SessionID" id="5b106847-6ca9-4e01-8a42-631c41169797"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_Session_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_SessionID" id="46e5185b-a519-49f8-a772-ca7595c620be" mediaType="application/x-www-form-urlencoded" postQueryString="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:originalUri>https://accounts.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="627f4dd7-80e6-4202-a442-6879a2405dbd" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value="openid api profile"/>
+  <con:entry key="response_type" value="code"/>
+  <con:entry key="redirect_uri" value="https://testadp.appdirect.com"/>
+  <con:entry key="client_id" value="888ed931-bb1d-496f-a5a9-3d71e6171c47"/>
+</con:parameters><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_SessionID_groovy" id="971c3994-a620-440f-a5b0-a97b96eecee0"><con:settings/><con:config><script>import java.util.regex.*
+def response
+def match
+def postJSON = "sessionID=528dcac3-4c93-4bbe-aa3d-6423a60c2b8f&amp;action=Login&amp;username=sbarbato@iat9mark&amp;password=adpadp18"
+def propTestStep
+def responseHeads
+def httpStatus
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseContent
+responseHeads = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseHeaders
+httpStatus = responseHeads["#status#"]
+log.info "Response Status for the GET SessionID call: " + httpStatus
+
+//log.info "Response:$response"
+
+httpsLocation = (responseHeads["Location"]).toString()
+log.info "Location:$httpsLocation"
+
+Pattern myRegex = ~/regex/
+match = (httpsLocation =~ /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/)[0]
+//Matcher myatcher = Pattern.compile(/regex/).matcher("subject")
+log.info "SessionID value: " + match.toString()
+
+log.info postJSON
+postJSON = postJSON.replace("528dcac3-4c93-4bbe-aa3d-6423a60c2b8f", match.toString())
+log.info "The Payload to get the smSession vlaue: "+postJSON
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Session_ID",postJSON)
+propTestStep.setPropertyValue("Session_ID_value",match.toString())</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession" id="984aed4b-8e7f-4107-a455-95b1ed911d29"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_code_smSession_With_Authorize_Consent" id="5f3b39ce-c80d-4c1a-ae99-63e12160d515"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize/consent" methodName="Wfn_AuthorizeConsent_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_code_smSession_With_Authorize_Consent" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Session_ID}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="53d7ae8e-6d3d-4c86-9612-636cab4b10c7" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302, 307</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_code_sm_groovy" id="996418a4-199a-4f38-9833-35ef36b1d6f4"><con:settings/><con:config><script><![CDATA[import com.eviware.soapui.support.types.StringToStringsMap
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def refreshToken = testRunner.testCase.testSuite.getPropertyValue("Refresh_Token");
+log.info "Refresh_Token: " + refreshToken
+
+def payload = "client_id=888ed931-bb1d-496f-a5a9-3d71e6171c47&client_secret=47f1f83b-9af3-48be-aa6e-38788a74dbd4&code=<<code>>&redirect_uri=https://testadp.appdirect.com&scope=openid%20api%20profile"
+
+def runner
+def myTestCase = context.testCase
+def TestCase = testRunner.testCase.testSuite.testCases["Get_Token_B2C"]
+def codeValue
+def httpStatus
+def httpStatusTemp
+def cookieValue
+def AC_payload = "sessionID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&action=Confirm"
+//def sessionID_value
+def propTestStep = context.testCase.getTestStepByName("Properties")
+//payload = propTestStep.getPropertyValue("accessTokenPayload")
+AC_payload = propTestStep.getPropertyValue("smSessionPayload")
+response = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseContent
+//log.info "Response:$response"
+
+httpResponseHeaders = context.testCase.testSteps["Get_code_smSession_With_Authorize_Consent"].testRequest.response.responseHeaders
+//log.info "Got the RH"
+httpStatus = (httpResponseHeaders["#status#"]).toString()
+codeValue = httpResponseHeaders["Location"][0]
+log.info "httpStatus for the smSession call: " + httpStatus
+log.info "CodeValue: " + codeValue
+
+
+
+//if(httpStatus.contains("200")){
+if(codeValue.toString().contains("code=")){
+
+	log.info "Calling the Get token call since status is 302"	
+	codeValue = httpResponseHeaders["Location"][0]
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+	propTestStep.setPropertyValue("Sm_session",payload)	
+
+}
+else if(!codeValue.toString().contains("code=")){
+	
+	log.info "Calling authorize with action=confirm since the status 200 received"
+
+	cookieValuetemp = httpResponseHeaders["Set-Cookie"][0]
+	cookieValuetemp = cookieValuetemp.replace("; Domain=.adp.com; Path=/; Secure", "")
+	//log.info cookieValuetemp
+
+	cookieValue = ((cookieValuetemp =~ /(SMSESSION=.*)/)[0][1]).toString()		
+	propTestStep.setPropertyValue("Set_Cookie",cookieValue)
+	log.info "Cookie Value is seen: " + cookieValue
+
+	//sessionID_value = propTestStep.getPropertyValue("Session_ID_value")
+	AC_payload = AC_payload.replace("action=Login", "action=Confirm")
+	log.info "Payload for Authorize_confirm: " + AC_payload
+
+	
+	propTestStep.setPropertyValue("Authorize_confirm",AC_payload)	
+	request = testRunner.testCase.getTestStepByName("Authorize_confirm").testRequest
+	headers = request.getRequestHeaders()
+	headers.remove( "Cookie");
+	headers.put("Cookie", cookieValue)
+
+	request.setRequestHeaders(headers)
+
+	log.info "Cookie header is set successfully"
+	log.info "cookieValue: " + cookieValue
+	
+	runner = TestCase.testSteps["Authorize_confirm"]
+	runner.run(testRunner, context)
+	//testRunner.runTestStepByName("Authorize_confirm_http")
+	log.info "Run Success for Authorize_confirm case!!"
+
+	httpResponseHeaders = context.testCase.testSteps["Authorize_confirm"].testRequest.response.responseHeaders
+	httpStatusTemp = (httpResponseHeaders["#status#"]).toString()
+	log.info "HttpStatus for Authorize call: " + httpStatusTemp
+	codeValue = httpResponseHeaders["Location"][0]
+
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+
+	propTestStep.setPropertyValue("Sm_session",payload)
+
+}
+
+
+//runner = TestCase.testSteps["Get_token"]
+//runner.run(testRunner, context)
+//log.info "Run Success for Get_token case!!"
+
+else{
+	log.info "Invalid Status Code. Script will fail"
+}
+
+/*
+match = ((httpStatus =~ /code=(.*)\&/)[0][1]).toString()
+log.info match
+
+payload = payload.replace("d9a881a1-fcc9-4d8a-916b-e65fed398ada", match.toString())
+log.info payload
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Sm_session",payload)
+*/
+//log.info "compelete headers:"
+					//log.info httpResponseHeaders
+					//temp = httpResponseHeaders["Cache-Control"]]]></script></con:config></con:testStep><con:testStep type="restrequest" name="Authorize_confirm" id="f0fe0965-9c8a-4e5d-8504-6b10f41f9284" disabled="true"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/authorize" methodName="Wfn_SMSession_Call" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Authorize_confirm" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Cookie" value="SMSESSION=W0WBaUGTQDvYjqXb1wnQldW50WJ5vR2BnsLtlA+K2GlPTi3aQ+vq72GL/qekzK3bGC7xsiBwMXiecCf8KZQG1OjkPVCdRzvzy+f4tT//ro0yK8Muzm/b8Y98Wt6op5aMcw+jtNoa3IKhalJ4C3R04qvRHuIqUZW+saoaQGOixqy0Q3GNYLouK3X5kqQ92C1Q+CYXI4Ll3yDmLWdHYasOSwlpV4Sx6yy8vLZ6ABpMtMNAFpY7WhM5pNgR3d4KQ5EqMti+tJcDhV0Iv40po6DzU48cHoqjjN5gl4c6H/KC7UnhyEt1cChtGqKQJg229jO8m7vTOReQ6Cs/AUb9IsWZ0I6hW/5nxFnUvgyvGaUHNS9KEJ6A5DB5DwqAbHkMboy/jIXdUGgRsFR8oLoswys4g2DEJ3Lt4a2r54jYw63h/TofLgmATZPgJk6AlqlmikebqFyDDDMbHoz1ijVvy8qMOOe3ZgTzHDwnyxZaKqf/pT5KoZSfAb7EgF1aq8NQoLzjHMmJxarAs78WfUbkBVIdfyOvT0nBM+SLIRWsM2jJ7lizFRikRRJBpJgrMBopPDm7mEIgTK+JtvanwChVU9VHt5kyvGwB1EzTVYYsHm5e3WOs3lpwJ8bfjmpj75rmKWaEa3A3+uH1PqzfQXyGMGBDwYx04fU+rkwHxfFD9hxa5DN+xqtu3Fj65aU1EhFuMPrxHF2BC2LMFGWt8jWCSKfPDiMjeaCtqogFJSaVA+ZfECffoJC+yB3zdKDqsrYvqw/XY7FgPeAKYEN6e1FUquaBKDjjBVYZIFklRofvWo/PmPEJLqZppE0NwRovq38glfg7Hb/Pas+GnLIuGrDBmXZGVyAe1B7rBIWTql52ijOB5rzfdgQDs39b+px84/8OTU7ediZp7muXTt6xFOHOvvJ6yIRjOI7by44QTPXRXiecow2UwbSmfkN4STXF23j11u43PS6sa05mfjE72rP6V5zAPdy12DJURrNS;"/>
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Authorize_confirm}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="210fdb11-7f51-4c66-8787-46cc79eb8e27" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200,302</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="$badparam" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>$orderby</con:entry><con:entry>$expand</con:entry><con:entry>limit</con:entry><con:entry>offset</con:entry><con:entry>$top</con:entry><con:entry>$skip</con:entry><con:entry>$filter</con:entry><con:entry>$select</con:entry><con:entry>$badparam</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_token" id="f1bbd84c-909b-47d5-82b4-9b1526b64a5f"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/token" methodName="Wfn_Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_token" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>${Properties#Sm_session}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="78077eba-0b9d-4787-bdd4-21fe90861835" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="20d56604-c675-4d07-8ade-2a148e262d55" name="JsonPath Match"><con:configuration><path>$.</path><content>{"error":"invalid_request","error_description":"Missing or duplicate parameters"}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_token_groovy" id="1cb04291-a9b0-400e-921e-f32bfb886c33"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def temp
+def accessToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+accessToken = "Bearer " + temp
+
+testRunner.testCase.testSuite.setPropertyValue("Access_Token",accessToken);
+
+log.info "Authorization is header is set for the workers call !!"</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="2b019113-ca5b-4b93-9cb7-471ce013ab6a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Verify_That_Refresh_Token_Not_Generated_For_B2B" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Generate_token" id="a9816cb8-5241-41a9-9be9-6f950405ded4"><con:settings/><con:config service="https://iat-api.adp.com" resourcePath="/auth/oauth/v2/token" methodName="Wfn_Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Generate_token" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request>client_id=6f34e461-2def-4876-a77f-6c30e21dd159&amp;client_secret=a9bd7473-657a-48a6-8bdc-dbd88e7bf546&amp;grant_type=client_credentials</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="c38a60fe-b74a-433e-9cbf-7d045d330031" name="Not Contains refresh_token"><con:configuration><token>refresh_token</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Set_Global_Access_Token_Groovy" id="685b85e7-92a7-47f2-8411-e4956a5099c8"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def temp
+def accessToken
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Generate_token"].testRequest.response.responseContent
+log.info "Response: $response"
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+
+log.info "Access Token: " + temp
+
+accessToken = "Bearer " + temp
+
+testRunner.testCase.testSuite.setPropertyValue("Access_Token",accessToken);
+
+log.info "Authorization is header is set for the workers call !!"</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties><con:property><con:name>Access_Token</con:name><con:value>Bearer 98b95364-70ea-4ce3-90f8-ef85f22ad8f5</con:value></con:property><con:property><con:name>Access_Token_B2C</con:name><con:value>Bearer 5940ab98-c89e-4880-b7ce-712bffa9656b</con:value></con:property><con:property><con:name>Adp_Msg_Msgid</con:name><con:value/></con:property><con:property><con:name>Api_Id</con:name><con:value>Api15385</con:value></con:property><con:property><con:name>Delay_Time</con:name><con:value>4000</con:value></con:property><con:property><con:name>Item_Id</con:name><con:value/></con:property><con:property><con:name>Management_Domain_Id</con:name><con:value>76117</con:value></con:property><con:property><con:name>Modified_Operation_Implementation_Desc</con:name><con:value>ServTestModifiedDesc15385</con:value></con:property><con:property><con:name>Modified_Operation_Implementation_Name</con:name><con:value>ServTestModified15385</con:value></con:property><con:property><con:name>Modified_Service_Provider_Desc</con:name><con:value>ServProvTestModifiedDesc54668</con:value></con:property><con:property><con:name>Modified_Service_Provider_Name</con:name><con:value>ServProvTestModified54668</con:value></con:property><con:property><con:name>Operation_Implementation_Deployment_Id</con:name><con:value>2e6866e2-a189-4c0a-a453-88a9926e223b</con:value></con:property><con:property><con:name>Operation_Implementation_Id</con:name><con:value>aa216dc1-9bdd-4e45-8fa7-10588fd6bf30</con:value></con:property><con:property><con:name>Operation_Implementation_Name</con:name><con:value>ServTest15385</con:value></con:property><con:property><con:name>Operation_Implementation_Subscription_Id</con:name><con:value>1d71de0d-1a0a-40e8-9a03-78253d2afe82</con:value></con:property><con:property><con:name>Operation_Spec_Id</con:name><con:value>OSpec23223</con:value></con:property><con:property><con:name>Service_Id</con:name><con:value>de31d9af-332d-43ee-b2ca-28834d0a5168</con:value></con:property><con:property><con:name>Service_Name</con:name><con:value>TestService76117</con:value></con:property><con:property><con:name>Service_Provider_Id</con:name><con:value>eeb0d3d7-4d4d-4277-8b45-53b91d930c1b</con:value></con:property><con:property><con:name>Service_Provider_Name</con:name><con:value>ServProvTest54668</con:value></con:property><con:property><con:name>Service_Provider_Ooid</con:name><con:value>G3DHY9KFVPP9RGAK</con:value></con:property><con:property><con:name>Service_Subscription_Id</con:name><con:value>fb77d872-dc95-437f-ace8-d454fa220b97</con:value></con:property><con:property><con:name>Mongo_Host</con:name><con:value>dc1rfhcmmktpl28.whc.dc01.us.adp</con:value></con:property><con:property><con:name>Mongo_User</con:name><con:value>saragadv</con:value></con:property><con:property><con:name>Mongo_Password</con:name><con:value>64bM5RFA</con:value></con:property><con:property><con:name>Mongo_Port</con:name><con:value>27017</con:value></con:property><con:property><con:name>Local_Port</con:name><con:value>27889</con:value></con:property><con:property><con:name>Local_Host</con:name><con:value>localhost:27889</con:value></con:property><con:property><con:name>Refresh_Token</con:name><con:value>da72c791-98ed-45b6-a7fd-d4edf4ae2268</con:value></con:property></con:properties><con:reportParameters/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/><con:authRepository/><con:tags/></con:soapui-project>

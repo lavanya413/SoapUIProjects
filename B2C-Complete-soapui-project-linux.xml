@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bdff9ad1-4953-4538-9ee5-2cadcf6c7634" activeEnvironment="Default" name="B2C Complete" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="c9923a09-7166-4c86-880f-cd1390c79478" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://apifit.nj.adp.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://apifit.nj.adp.com</con:endpoint><con:endpoint>https://accounts.adp.com</con:endpoint></con:endpoints><con:resource name="GET_sessionID_FIT" path="/{RP}" id="b3faccd5-7f70-4df2-ae77-4526862bdf47"><con:settings/><con:parameters><con:parameter disableUrlEncoding="true"><con:name>RP</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Endpoint</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Authorize" id="573f8eb9-e4db-41b1-8afe-b2097b413f58" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:aut="http://apifit.nj.adp.com/auth/oauth/v2/authorize">aut:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/plain;charset=UTF-8</con:mediaType><con:status>302</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>502</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="6210d9a8-a901-46f8-acaa-375e9a91d417" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://{Endpoint}</con:endpoint><con:request/><con:originalUri>http://apifit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="RP" value="${Properties#ResourcePath}"/>
+  <con:entry key="Endpoint" value="${#Project#Environment}"/>
+</con:parameters><con:parameterOrder><con:entry>RP</con:entry><con:entry>Endpoint</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="authorize" path="/auth/oauth/v2/authorize/consent" id="00795b21-422a-424c-95b3-65f49fafb46d"><con:settings/><con:parameters><con:parameter><con:name>Endpoint</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="b00bc7d6-8ea9-4218-9ac7-35a80784cf99" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:aut="http://apifit.nj.adp.com/auth/oauth/v2/authorize">aut:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/></con:representation><con:request name="Request 1" id="81f6988a-dacd-45f0-a0c2-c1442a762b3b" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://{Endpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Endpoint" value="${#Project#Environment}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Endpoint</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="Token" path="/auth/oauth/v2/token" id="00795b21-422a-424c-95b3-65f49fafb46d"><con:settings/><con:parameters><con:parameter><con:name>Endpoint</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="b00bc7d6-8ea9-4218-9ac7-35a80784cf99" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tok="http://apifit.nj.adp.com/auth/oauth/v2/token">tok:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:tok="http://apifit.nj.adp.com/auth/oauth/v2/token">tok:Fault</con:element></con:representation><con:request name="Request 1" id="81f6988a-dacd-45f0-a0c2-c1442a762b3b" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://{Endpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Endpoint" value="${#Project#Environment}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Endpoint</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="6a518d6e-471e-4117-8cda-66e886283955" name="B2CSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3169b8c5-1ac8-49bb-bbae-c1868b53b4b0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="B2C_Case" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Initiate_Script" id="49b2b194-6c52-4be3-b403-146d0efd3b9c"><con:settings/><con:config><script><![CDATA[import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["B2C_Case"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+def TimeTaken
+def slurper = new JsonSlurper()
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+def FeatureNameOri
+def FeatureName
+def y
+
+try{
+	Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+	//TableName = "B2C_" + Env
+	TableName = "b2c_" + Env.toLowerCase()
+	sql = common.SqlConnect()
+	log.info "Checking Initial setup to start the test..."
+	query = "select * from " + TableName
+	TotalAPI = sql.rows(query)
+	log.info "Check success.. "
+}catch(Exception e){
+	runningStatus = "Bad"
+	log.info "Initial check failed... Cannot initiate the test."
+	log.info "Exception: "+e
+}
+
+if(sql != null && runningStatus != "Bad"){
+	log.info "********** Test Started **********"
+	if(Env.equalsIgnoreCase("PROD")){
+		IP = "accounts.adp.com"
+	}
+	else{
+		IP = common.getIP(Env,sql)
+	}
+	log.info "IP going to be used: " + IP
+	context.testCase.testSuite.project.setPropertyValue("Environment",IP)
+	log.info "Clearing the old access token values ..."
+	query = "Update " + TableName + " set AccessToken='null' where AuthValue='TRUE'"
+	sql.executeUpdate(query)
+	log.info "Access tokens cleared .... "
+	log.info "Initiating the Assigning Tokens steps ... "
+	query = "select distinct clientID, clientSecret, Username, Scope, RedirectURI, Password from " + TableName
+	TotalAPI = sql.rows(query)
+	log.info "Number of distinct Feature calls: "+TotalAPI.size()
+	
+	sql.eachRow(query){
+		try{
+			clientID = it.ClientID
+			redirectURI = it.RedirectURI
+			scope = it.scope
+			username = it.Username
+			password = it.Password
+			clientSecret = it.ClientSecret
+			sessionIDURI = "auth/oauth/v2/authorize?response_type=code&client_id=<<clientID>>&redirect_uri=<<redirectURI>>&scope=<<scope>>"
+
+			
+			smSessionPayload = "sessionID=<<sessionID>>&action=Login&username=<<username>>&password=<<password>>"
+			
+			accessTokenPayload = "client_id=<<clientID>>&client_secret=<<clientSecret>>&code=<<code>>&redirect_uri=<<redirectURI>>&scope=<<scope>>&grant_type=authorization_code"
+			
+			sessionIDURI = sessionIDURI.replace("<<clientID>>",clientID)
+			sessionIDURI = sessionIDURI.replace("<<redirectURI>>",redirectURI)
+			sessionIDURI = sessionIDURI.replace("<<scope>>",scope)
+		
+			propTestStep = myTestCase.getTestStepByName("Properties")
+			propTestStep.setPropertyValue("ResourcePath",sessionIDURI)
+			
+			log.info "Running sessionID call for URI: " + sessionIDURI
+			
+			runner = TestCase.testSteps["Get_SessionID"]
+			runner.run(testRunner, context)
+			log.info "Run Success !! Session Call"
+	
+			smSessionPayload = smSessionPayload.replace("<<username>>",username)
+			smSessionPayload = smSessionPayload.replace("<<password>>",password)
+			//log.info "smSessionPayload: "+smSessionPayload
+			propTestStep.setPropertyValue("smSessionPayload",smSessionPayload)
+			
+			log.info "collecting the sessionID value ..."
+			
+			runner = TestCase.testSteps["Get_SessionID_groovy"]
+			runner.run(testRunner, context)
+			//log.info "Run Success !!"
+	
+			log.info "Running the authorize call with action as login ..."
+			
+			runner = TestCase.testSteps["Get_smSession"]
+			runner.run(testRunner, context)
+			log.info "Run Success !!"
+	
+			accessTokenPayload = accessTokenPayload.replace("<<clientID>>",clientID)
+			accessTokenPayload = accessTokenPayload.replace("<<clientSecret>>",clientSecret)
+			accessTokenPayload = accessTokenPayload.replace("<<redirectURI>>",redirectURI)
+			accessTokenPayload = accessTokenPayload.replace("<<scope>>",scope)
+			propTestStep.setPropertyValue("accessTokenPayload",accessTokenPayload)
+	
+			runner = TestCase.testSteps["Get_code_sm_groovy"]
+			runner.run(testRunner, context)
+			//log.info "Run Success !!"
+	
+			log.info "Running the get token call ..."
+
+			if(Env.equalsIgnoreCase("PROD")){
+				IP = "api.adp.com"
+				log.info "Endpoint changed for token and features call ..."
+				log.info "IP going to be used: " + IP
+				context.testCase.testSuite.project.setPropertyValue("Environment",IP)
+			}
+	
+			runner = TestCase.testSteps["Get_token"]
+			runner.run(testRunner, context)
+			log.info "Run Success !!"
+	
+			response = context.testCase.testSteps["Get_token"].testRequest.response.responseContent
+			log.info "Response:$response"
+	
+			json = slurper.parseText response
+			temp = json.access_token
+			log.info "access_token value: " + temp
+			sql.executeUpdate("Update " + TableName + " SET AccessToken='"+ temp +"' where ClientID='"+ clientID +"' AND ClientSecret='"+clientSecret+"' AND Scope='"+scope+"' AND RedirectURI='"+redirectURI+"' AND Username='"+username+"'")						
+			log.info "DB Updated !!!"
+		}
+		catch(Exception e){
+			log.info "Some unknown error happened while trying to get the access token for this set of distinct resultset.."
+			log.info "Access Token cannot be retrieved!!! .. These URIs will be skipped while running the feature call" 
+		}
+	}
+	log.info "Assigning Tokens steps Completed ... "
+	log.info "Initiating the feature calls test using the access tokens .... "
+	FeatureNameOri = testRunner.testCase.testSuite.project.getPropertyValue("FeatureName")
+	FeatureName = FeatureNameOri.split("~")
+	
+	for(y=0;y<FeatureName.length;y++){
+		if(FeatureName[y].equalsIgnoreCase("All")){
+			query = "select * from " + TableName
+			log.info "Test requested to run for all the Feature calls ..."
+		}
+		else {
+			log.info "Test requested to run for individual features ... "
+			query = "select * from " + TableName + " where FeatureName='" + FeatureName[y] + "'"
+			log.info "Test running for feature: " + FeatureName[y]
+			TotalAPI = sql.rows(query)
+			log.info "Number of Feature calls to be run: " + TotalAPI.size()
+			if(TotalAPI.size() == 0){
+				log.info "Total calls for this Feature name is 0. Please enter proper feature name or add data to this feature in the DB !!!"
+			}
+			
+		}	
+		def accessToken
+		def rowID
+		def URI
+		def authValue
+		def newHeaders
+		def addHeaderstemp
+		def addHeaders
+		def headersList = ""
+		def headersListtemp
+		sql.eachRow(query){
+			rowID = it.ID
+			try{
+				
+				if((((it.AuthValue).trim()).equalsIgnoreCase("TRUE"))){
+					accessToken = it.AccessToken
+					
+					if(!(accessToken == "null")){
+						request = testRunner.testCase.getTestStepByName("GET_Feature_call").testRequest
+						headers = request.getRequestHeaders()
+						URI = (it.FeatureURI).trim()
+						log.info "Running the Feature call for URI: " + URI
+						
+						//newHeaders = it.AdditionalHeaders
+						if(((it.AdditionalHeaders).trim()).equalsIgnoreCase("default")){
+							log.info "No need of additional headers, running with default values"
+						}
+						else{
+							log.info "Additional headers required ... "
+							headersList = ""
+							newHeaders = (it.AdditionalHeaders).split("~")
+							for(i=0;i<newHeaders.length;i++){
+								addHeaderstemp = newHeaders[i]
+								addHeaderstemp = addHeaderstemp.replaceFirst(":","~:~")
+								addHeaders = addHeaderstemp.split("~:~")
+								
+								headers.remove(addHeaders[0])
+								headers.put(addHeaders[0], addHeaders[1])
+								headersList = headersList + addHeaders[0] + "~"
+								log.info "Header Added:- " + addHeaders[0]+ ": " + addHeaders[1]
+							}
+						}
+						propTestStep.setPropertyValue("ResourcePath",URI)
+						
+						authValue = "Bearer " + accessToken
+	
+						headers.remove( "Authorization");
+						headers.put("Authorization", authValue)
+
+						Random rndm = new Random();
+						def rd= rndm.nextInt(10000)
+						
+						headers.remove("sm_transactionID");
+						tempTransaction=it.FeatureName+"_"+rd
+						headers.put("sm_transactionID",tempTransaction);
+						sql.executeUpdate("Update "+TableName+"  SET  sm_transactionID='"+ tempTransaction +"' where FeatureURI='"+ it.FeatureURI +"' and FeatureName='"+it.FeatureName+"'")
+						log.info "transaction id : "+tempTransaction
+						
+						request.setRequestHeaders(headers)
+		
+						runner = TestCase.testSteps["GET_Feature_call"]
+						runner.run(testRunner, context)
+						log.info "Run Success !!"
+	
+						if(headersList != ""){
+							headersListtemp = headersList.split("~")
+							for(k=0;k<headersListtemp.length;k++){
+								headers.remove(headersListtemp[k])
+							}
+							request.setRequestHeaders(headers)
+						}
+						
+						//Getting the Response
+						//groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+						if(context.testCase.testSteps["GET_Feature_call"].testRequest.response!=null){
+							response = myTestCase.testSteps["GET_Feature_call"].testRequest.response.responseContent
+							TimeTaken = myTestCase.testSteps["GET_Feature_call"].testRequest.response.timeTaken
+							//log.info "GOt the TT"
+							httpResponseHeaders = myTestCase.testSteps["GET_Feature_call"].testRequest.response.responseHeaders
+							//log.info "Got the RH"
+							httpStatus = httpResponseHeaders["#status#"]
+							httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+							log.info "ResponseStatus:$httpStatus"				
+						}
+						else{
+							response = 'No Response'
+							log.info "**The response is NULL**"
+							httpStatusCode = "0"
+						}
+	
+						//Updating the Results
+						statusCodeINT = httpStatusCode.toInteger()
+						if(statusCodeINT == 200 || statusCodeINT == 201 || statusCodeINT == 202 || statusCodeINT == 204){
+								sql.executeUpdate("Update "+ TableName +" SET Result='Passed', Status='"+ httpStatusCode +"', ResponseTime='"+ TimeTaken +"', Response='' where ID='"+ rowID +"'")
+								log.info "TestCase PASS!!"
+						}
+						else{
+							sql.executeUpdate("Update "+ TableName +" SET Result='Failed', Status='"+ httpStatusCode +"', Response='"+ response +"', ResponseTime='"+ TimeTaken +"' where ID='"+ rowID +"'")
+							log.info "TestCase FAIL!!"
+						}
+					}
+					else{
+						log.info "Access Token value for this feature call is null... So this feature call cannot be run"
+						sql.executeUpdate("Update "+ TableName +" SET Result='NOT Executed', Status='NOT Executed', Response='Access Token value for this feature call is null... So this feature call cannot be run', ResponseTime='No RUN' where ID='"+ rowID +"'")
+					}
+				}
+				else{
+					log.info "Auth Value is set to FALSE.. So this feature call cannot be run"
+					sql.executeUpdate("Update "+ TableName +" SET Result='NOT Executed', Status='NOT Executed', Response='AuthValue is NOT TRUE', ResponseTime='No RUN' where ID='"+ rowID +"'")
+				}
+			}
+			catch(Exception e){
+				log.info "Exception occured while running this feature call"
+				log.info "Exception" + e
+				sql.executeUpdate("Update "+ TableName +" SET Result='Exception', Status='Exception', Response='Exception occured while running this feature call', ResponseTime='No RUN' where ID='"+ rowID +"'")
+			}
+		}
+	}
+	common.SqlClose(sql)
+}
+context.testCase.testSuite.project.setPropertyValue("Environment",Env)
+common.sendMail(runningStatus)]]></script></con:config></con:testStep><con:testStep type="properties" name="Properties" id="bc94f78e-322f-4931-8f7c-d4c39b2059a9"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>ResourcePath</con:name><con:value>/hr/v2/workers/G3RW2Y2ANJ5RYRMR</con:value></con:property><con:property><con:name>smSessionPayload</con:name><con:value>sessionID=4e07b32e-fb3c-48ef-a4c2-890fe73dd149&amp;action=Login&amp;username=mthomas@wfnqafr66p&amp;password=adpadp05</con:value></con:property><con:property><con:name>accessTokenPayload</con:name><con:value>client_id=8d64ac52-fa15-449e-a838-f8e0029dc6bf&amp;client_secret=7f2501c4-c20d-4fd1-8806-7d4c0b414383&amp;code=3db0b463-6015-4497-825f-07697d972e3f&amp;redirect_uri=https://adp.doublenetpay.com/adp/callback&amp;scope=openid%20api%20profile&amp;grant_type=authorization_code</con:value></con:property><con:property><con:name>Set_Cookie</con:name><con:value>SMSESSION="orqzhuOC4zMNZkQ+pOn1CM8UZzur9YOAFsgmtun33a4k9fV+henYZayS0I8V7Bk0WlBbP0t5WfllhHnkY1h6TvGsH0Zget2Vp7p9/4Vyyc6pDAQdTMpaSZ7nBHuzS4VoiIykdYwVabL5DTyFPjatKR8ZKbb9iv6Dbhg2JZmgXSU9Bir16mSE4Ta1pnHEns5U0HKLLhCw9JLJGYwMAhzkigsAECv81sg/LKz7Vh23SDHOMDY7HqRwaaytWVObL5pQPZjbmDHLhezSFairYyuGgb2bu1evkoG/GWNMOocOLalZC5cgJTIWv5C+ueOPueOdUEyjFjuC76xG2fNhw6rOKasNh8Xau1hquosTGRLTNK3G5ZgDqxRwW4GYCSUYE/R0uvlB31Ydpi1XqxmkhZ2KF15wrGWL6bkf3NgZq43OF/yowkF/zok6662R2tcOnyJfEeadDJcdjkaAG7KI3FlViww+dlzoWamsd2t+wAgr1pxQvb3PN+xbE10qHZ9AqEOvTYS4Vbb84DmO5MQI+xCNFng7+1ff3drqGBUZ19PiZVYj065wCVNND98EKgnUpCEIIvTbX71KBBRhxoq3kqWZQ33teSCqR+NbXAQ/b1Ip2/Rd096PaRZuDOYpNxPUn7kriYMI9zhBAQRcOhGns22DCaRaDrSQQZOC45IAkbiwE4bmcLqMO3LgTc9/koUMjaO5vWaDeoIU994KlMb3jwcZ0bvy0TntU1rmZ4tsF3Z6hSsNZAuOtN9CsY4/lYAVMU91fCceHLrERV7m+Hi/3Z/Xz2ef2vaVVZlL2lRGGSKAXeAkZX0G6orZkqtPulms5RBCdP3GkSVKBhkA4hGA48KoU7Ba4BigBlirgZi2jlslm3el/7aoA5AOym+qcATmk6Zug1+A5F2Kvia0Ew/oDQpkZu1PicwW4QIFWOmQBnCOGvIZQYKgIfxUkNSIDzYNdic+azCIklhI8jpz5+S4y/tbz7TURJwnQ12KGi0Su9liCeTa1J3lC+VH0D84kb6L7QddXvrHLrJt65E="</con:value></con:property><con:property><con:name>Authorize_confirm</con:name><con:value>sessionID=e30f236e-1a6c-4795-9154-d698293108de&amp;action=Confirm&amp;username=Yhours@wfn2fitmob&amp;password=adpadp10</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Get_SessionID" id="29b49b7e-1777-42d1-9e21-58fd6036712f" disabled="true"><con:settings/><con:config service="http://apifit.nj.adp.com" resourcePath="/{RP}" methodName="Authorize" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_SessionID" id="3da30020-c16f-44f9-8e85-539a028c9372" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://${#Project#Environment}</con:endpoint><con:request/><con:originalUri>http://apifit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="RP" value="${Properties#ResourcePath}"/>
+  <con:entry key="Endpoint" value="${#Project#Environment}"/>
+</con:parameters><con:parameterOrder><con:entry>RP</con:entry><con:entry>Endpoint</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_SessionID_groovy" id="288013a1-7c6a-48be-b05c-b7e6a71a3f58" disabled="true"><con:settings/><con:config><script>import java.util.regex.*
+def response
+def match
+def postJSON
+def propTestStep
+//def response
+def responseHeads
+def httpStatus
+def httpsLocation
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+response = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseContent
+responseHeads = context.testCase.testSteps["Get_SessionID"].testRequest.response.responseHeaders
+httpStatus = responseHeads["#status#"]
+log.info "Response Status for the GET SessionID call: " + httpStatus
+//log.info "Response:$response"
+
+log.info "ResponseHeads:$responseHeads"
+httpsLocation = (responseHeads["Location"]).toString()
+if(httpsLocation.equalsIgnoreCase("null")){
+		httpsLocation = (responseHeads["location"]).toString()
+	}
+log.info "Location:$httpsLocation"
+	
+Pattern myRegex = ~/regex/
+//match = (response =~ /value="(([a-zA-Z0-9]+)-.*)".*/)[0][1]
+match = (httpsLocation =~ /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/)[0]
+//Matcher myatcher = Pattern.compile(/regex/).matcher("subject")
+log.info "SessionID value: " + match.toString()
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+postJSON = propTestStep.getPropertyValue("smSessionPayload")
+
+//log.info postJSON
+postJSON = postJSON.replace("&lt;&lt;sessionID>>", match.toString())
+log.info "The Payload to get the smSession vlaue: "+postJSON
+
+propTestStep.setPropertyValue("smSessionPayload",postJSON)
+//propTestStep.setPropertyValue("smSessionPayload",match.toString())</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_smSession" id="59c2ba43-a1b3-4b45-88bd-db4486b9c2f0" disabled="true"><con:settings/><con:config service="http://apifit.nj.adp.com" resourcePath="/auth/oauth/v2/authorize/consent" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_smSession" id="81f6988a-dacd-45f0-a0c2-c1442a762b3b" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://${#Project#Environment}</con:endpoint><con:request>${Properties#smSessionPayload}</con:request><con:originalUri>http://apifit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="3ac8dd3c-325e-4d44-9dee-59a991b8a90c" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Endpoint" value="${#Project#Environment}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Endpoint</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Get_code_sm_groovy" id="dc83c50f-fdf9-4b07-a8ec-adbcfcbb2cb0" disabled="true"><con:settings/><con:config><script><![CDATA[import com.eviware.soapui.support.types.StringToStringsMap
+
+groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def payload = "client_id=6e392b58-e5c9-4c0d-a12b-8c96b81e0569&client_secret=49baccac-4509-47aa-8862-ba28ddf8d2da&code=d9a881a1-fcc9-4d8a-916b-e65fed398ada&redirect_uri=https://apifit.nj.adp.com:443/mag/openid/connect/v1/client/bcp?auth=done&scope=openid%20api%20profile&grant_type=authorization_code"
+def runner
+def myTestCase = context.testCase
+def TestCase = testRunner.testCase.testSuite.testCases["B2C_Case"]
+def codeValue
+def httpStatus
+def httpStatusTemp
+def cookieValue
+def AC_payload = "sessionID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&action=Confirm"
+//def sessionID_value
+def propTestStep = context.testCase.getTestStepByName("Properties")
+payload = propTestStep.getPropertyValue("accessTokenPayload")
+AC_payload = propTestStep.getPropertyValue("smSessionPayload")
+response = context.testCase.testSteps["Get_smSession"].testRequest.response.responseContent
+//log.info "Response:$response"
+
+httpResponseHeaders = context.testCase.testSteps["Get_smSession"].testRequest.response.responseHeaders
+//log.info "Got the RH"
+httpStatus = (httpResponseHeaders["#status#"]).toString()
+codeValue = httpResponseHeaders["Location"][0]
+log.info "httpStatus for the smSession call: " + httpStatus
+log.info "CodeValue: " + codeValue
+
+
+
+//if(httpStatus.contains("200")){
+if(codeValue.toString().contains("code=")){
+
+	log.info "Calling the Get token call since status is 302"	
+	codeValue = httpResponseHeaders["Location"][0]
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+	propTestStep.setPropertyValue("accessTokenPayload",payload)	
+
+}
+else if(!codeValue.toString().contains("code=")){
+	
+	log.info "Calling authorize with action=confirm since the status 200 received"
+
+	cookieValuetemp = httpResponseHeaders["Set-Cookie"][0]
+	cookieValuetemp = cookieValuetemp.replace("; Domain=.adp.com; Path=/; Secure", "")
+	//log.info cookieValuetemp
+
+	cookieValue = ((cookieValuetemp =~ /(SMSESSION=.*)/)[0][1]).toString()		
+	propTestStep.setPropertyValue("Set_Cookie",cookieValue)
+	log.info "Cookie Value is seen: " + cookieValue
+
+	//sessionID_value = propTestStep.getPropertyValue("Session_ID_value")
+	AC_payload = AC_payload.replace("action=Login", "action=Confirm")
+	log.info "Payload for Authorize_confirm: " + AC_payload
+
+	
+	propTestStep.setPropertyValue("Authorize_confirm",AC_payload)	
+	request = testRunner.testCase.getTestStepByName("Authorize_confirm").testRequest
+	headers = request.getRequestHeaders()
+	headers.remove( "Cookie");
+	headers.put("Cookie", cookieValue)
+
+	request.setRequestHeaders(headers)
+
+	log.info "Cookie header is set successfully"
+	log.info "cookieValue: " + cookieValue
+	
+	runner = TestCase.testSteps["Authorize_confirm"]
+	runner.run(testRunner, context)
+	//testRunner.runTestStepByName("Authorize_confirm_http")
+	log.info "Run Success for Authorize_confirm case!!"
+
+	httpResponseHeaders = context.testCase.testSteps["Authorize_confirm"].testRequest.response.responseHeaders
+	httpStatusTemp = (httpResponseHeaders["#status#"]).toString()
+	log.info "HttpStatus for Authorize call: " + httpStatusTemp
+	codeValue = httpResponseHeaders["Location"][0]
+
+	match = ((codeValue =~ /code=(.*)\&/)[0][1]).toString()
+	//log.info "Code Value: " + match
+
+	log.info "Got the code value from the location header: " + match
+
+	payload = payload.replace("<<code>>", match.toString())
+	log.info "Payload for Get_Token: " + payload
+
+	propTestStep.setPropertyValue("accessTokenPayload",payload)
+
+}
+
+
+//runner = TestCase.testSteps["Get_token"]
+//runner.run(testRunner, context)
+//log.info "Run Success for Get_token case!!"
+
+else{
+	log.info "Invalid Status Code. Script will fail"
+}
+
+/*
+match = ((httpStatus =~ /code=(.*)\&/)[0][1]).toString()
+log.info match
+
+payload = payload.replace("d9a881a1-fcc9-4d8a-916b-e65fed398ada", match.toString())
+log.info payload
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Sm_session",payload)
+*/
+//log.info "compelete headers:"
+					//log.info httpResponseHeaders
+					//temp = httpResponseHeaders["Cache-Control"]]]></script></con:config></con:testStep><con:testStep type="restrequest" name="Authorize_confirm" id="97d77376-1e6e-4c53-ab2e-0467415cd87b" disabled="true"><con:settings/><con:config service="http://apifit.nj.adp.com" resourcePath="/auth/oauth/v2/authorize/consent" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Authorize_confirm" id="87552401-8f3b-4c16-8aea-7bb127019ec6" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+  <con:entry key="Cookie" value="SMSESSION=&quot;orqzhuOC4zMNZkQ+pOn1CM8UZzur9YOAFsgmtun33a4k9fV+henYZayS0I8V7Bk0WlBbP0t5WfllhHnkY1h6TvGsH0Zget2Vp7p9/4Vyyc6pDAQdTMpaSZ7nBHuzS4VoiIykdYwVabL5DTyFPjatKR8ZKbb9iv6Dbhg2JZmgXSU9Bir16mSE4Ta1pnHEns5U0HKLLhCw9JLJGYwMAhzkigsAECv81sg/LKz7Vh23SDHOMDY7HqRwaaytWVObL5pQPZjbmDHLhezSFairYyuGgb2bu1evkoG/GWNMOocOLalZC5cgJTIWv5C+ueOPueOdUEyjFjuC76xG2fNhw6rOKasNh8Xau1hquosTGRLTNK3G5ZgDqxRwW4GYCSUYE/R0uvlB31Ydpi1XqxmkhZ2KF15wrGWL6bkf3NgZq43OF/yowkF/zok6662R2tcOnyJfEeadDJcdjkaAG7KI3FlViww+dlzoWamsd2t+wAgr1pxQvb3PN+xbE10qHZ9AqEOvTYS4Vbb84DmO5MQI+xCNFng7+1ff3drqGBUZ19PiZVYj065wCVNND98EKgnUpCEIIvTbX71KBBRhxoq3kqWZQ33teSCqR+NbXAQ/b1Ip2/Rd096PaRZuDOYpNxPUn7kriYMI9zhBAQRcOhGns22DCaRaDrSQQZOC45IAkbiwE4bmcLqMO3LgTc9/koUMjaO5vWaDeoIU994KlMb3jwcZ0bvy0TntU1rmZ4tsF3Z6hSsNZAuOtN9CsY4/lYAVMU91fCceHLrERV7m+Hi/3Z/Xz2ef2vaVVZlL2lRGGSKAXeAkZX0G6orZkqtPulms5RBCdP3GkSVKBhkA4hGA48KoU7Ba4BigBlirgZi2jlslm3el/7aoA5AOym+qcATmk6Zug1+A5F2Kvia0Ew/oDQpkZu1PicwW4QIFWOmQBnCOGvIZQYKgIfxUkNSIDzYNdic+azCIklhI8jpz5+S4y/tbz7TURJwnQ12KGi0Su9liCeTa1J3lC+VH0D84kb6L7QddXvrHLrJt65E=&quot;"/>
+</xml-fragment>]]></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://${#Project#Environment}</con:endpoint><con:request>${Properties#Authorize_confirm}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="210fdb11-7f51-4c66-8787-46cc79eb8e27" name="Valid HTTP Status Codes"><con:configuration><codes>200,302</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Endpoint" value="${#Project#Environment}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Endpoint</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get_token" id="35df94cd-2190-4d5b-bef2-7afbe0033198" disabled="true"><con:settings/><con:config service="http://apifit.nj.adp.com" resourcePath="/auth/oauth/v2/token" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_token" id="81f6988a-dacd-45f0-a0c2-c1442a762b3b" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://${#Project#Environment}</con:endpoint><con:request>${Properties#accessTokenPayload}</con:request><con:originalUri>http://apifit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="d9d29c63-6383-4469-81e2-50726cb06d2a" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Endpoint" value="${#Project#Environment}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Endpoint</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GET_Feature_call" id="84fe8805-93d2-4f41-868f-c4c52b757a3b" disabled="true"><con:settings/><con:config service="http://apifit.nj.adp.com" resourcePath="/{RP}" methodName="Authorize" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET_Feature_call" id="6210d9a8-a901-46f8-acaa-375e9a91d417" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="sm_transactionID" value="Worker_8693"/>
+  &lt;con:entry key="Authorization" value="Bearer cd15142f-b3ce-4224-a67a-bf506c0285db"/>
+  &lt;con:entry key="If-None-Match" value="none"/>
+&lt;/xml-fragment></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://${#Project#Environment}</con:endpoint><con:request/><con:originalUri>http://apifit.nj.adp.com/auth/oauth/v2/authorize</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="44b3e3d0-0509-4bab-9aae-baa12ae5854b" name="Valid HTTP Status Codes"><con:configuration><codes>300</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="RP" value="${Properties#ResourcePath}"/>
+  <con:entry key="Endpoint" value="${#Project#Environment}"/>
+</con:parameters><con:parameterOrder><con:entry>RP</con:entry><con:entry/></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="da031f90-9e16-424d-befe-8420f9ea95f8" name="Lib" disabled="true"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b1b0fd97-35f9-4323-90d6-b26abc29126a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="LibCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Common" id="4d09169b-6b86-45a4-bac0-a0d7cf9a1ef4"><con:settings/><con:config><script><![CDATA[import groovy.sql.Sql
+import javax.mail.*
+import javax.mail.internet.MimeMessage
+import javax.mail.internet.*
+import javax.activation.*
+com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("com.mysql.jdbc.Driver")
+
+class Common
+{
+	def log
+	def context
+	def testRunner
+	// Class constructor with same case as Class name
+	def Common(logIn,contextIn,testRunnerIn)
+	{
+		this.log = logIn
+		this.context = contextIn
+		this.testRunner = testRunnerIn
+	}
+	def SqlConnect()
+	{
+	       def db
+	       def sql = null
+	       try{
+	                       db = [url:'jdbc:mysql://localhost:3306/test', user:'root', password:'root', driver:'com.mysql.jdbc.Driver']
+	                       sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
+	                       log.info "MySql DB Connect: Connected !!"
+	       }catch(Exception e){
+	                       log.info "MySql DB Connect: Failed !!"
+	                       log.info "Exception:$e" 
+	                       sql = null                               
+	       }
+	       return sql;
+	}
+	def SqlClose(sql)
+	{
+	       sql.close()
+	       log.info "MySql DB Connect: Connection closed !!"
+	}
+	def getIP(Env,sql){
+	       def IP
+	       sql.eachRow("select * from apiproxy_serverip where Environment='" + Env + "_Gateway'"){
+	                       IP = it.IP
+	       }
+	       //log.info "IP set for the Environment $Env: $IP"
+	       return IP
+	}
+	def sendMail(RunStatus){
+	       def message
+	       def mailTable = ""
+	       def OverallStatus = ""
+	       def OverallStatusAll = ""
+	       def OverallStatusSub = "" 
+	       def tableHeading = ""
+	       def strToMail = testRunner.testCase.testSuite.project.getPropertyValue("MailID")
+	       def Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+	       Env = Env.toUpperCase()
+	       def subject = "B2C Test Automation - $Env - "
+	       def mailStyle = "<style type=text/css>#customers{font-family:Trebuchet MS, Calibri (Body), Calibri (Body), Calibri (Body);border-collapse:collapse;}#customers td, #customers th {font-size:1em;border:1px solid #98bf21;padding:3px 7px 2px 7px;}#customers th {font-size:16px;text-align:left;padding-top:5px;padding-bottom:4px;background-color:#44AACA;color:#ffffff;} table{ width:95%;} .first{width:500px;font-size:10px;} .other{width:200px;font-size:10px;}</style>"
+	       def mailBodyText = "<center><span style='font-size:10.0pt;font-family:Calibri (Body),Calibri (Body);color:plum'> </span></center><dd>"
+	       def endText = "<br><dd><dd><p><i>For queries/issues/suggestions please contact Marketplace QA Team</i></p>"
+	       def mailAddress_To
+	       if(RunStatus.equals("Good")){
+	                       tableHeading = "<table id=customers><TR><th class=other>FeatureURI</th><th class=other>ClientID</th><th class=other>ClientSecret</th><th class=other>sm_transactionID</th><th class=other>AccessToken(generated)</th><th class=other>Scope</th><th class=other>RedirectURI</th><th class=other>Username</th><th class=other>Password</th><th class=other>SOR</th><th class=other>Result</th><th class=other>Status</th><th class=other>ResponseTime(mSec)</th><th class=other>Response</th></TR>"
+	                       
+	                       OverallStatusAll = (getSumList()).split("~~~")
+	                       OverallStatus = OverallStatusAll[0]
+	                       OverallStatusSub = OverallStatusAll[1]
+	                       log.info OverallStatusSub
+	                       if(!(OverallStatusSub.contains("Failed: 0"))){
+	                       	log.info "There is some failures. So setting the mail IDs to failed list..."
+	                       	strToMail = testRunner.testCase.testSuite.project.getPropertyValue("MailID_Fail")
+	                       	tableHeading = "<table id=customers><TR><th class=other>FeatureURI</th><th class=other>ClientID</th><th class=other>sm_transactionID</th><th class=other>AccessToken(generated)</th><th class=other>Scope</th><th class=other>RedirectURI</th><th class=other>Username</th><th class=other>Password</th><th class=other>SOR</th><th class=other>Result</th><th class=other>Status</th><th class=other>ResponseTime(mSec)</th><th class=other>Response</th></TR>"
+	                       	mailTable = getMailTable("Failure") + "</table>"
+	                       	
+	                       } 
+	                      else{
+	                       	mailTable = getMailTable("AllPass") + "</table>"
+	                       }
+	                       
+	       }
+	       else{
+	                       mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> *** 1) Environment value entered may be not matching the records.***** 2) Feature/SOR name(s) used does not match the records.***** 3) Test DB is Down.***</font></b></p>"
+	       }
+	       try{
+	       			   mailAddress_To = strToMail.split(";");
+	                       Properties props = new Properties()
+	                       props.put("mail.host", "mailrelay.nj.adp.com")                               
+	                       Session mailConnection = Session.getInstance(props, null)
+	                       Message msg = new MimeMessage(mailConnection)
+	                       Address fromAddress = new InternetAddress("ADP.Marketplace.QA@ADP.com", "adpadp@11")
+	                       //Address b = new InternetAddress(strToMail);
+	                       if ((OverallStatusSub.contains("Passed: 0, Failed: 0"))){
+	                       	mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> Check for the proper environment value and enter the proper Feature name... OR .... Enter data to that feature in the DB in that table.</font></b></p>"
+	                       	message = mailStyle + mailBodyText + OverallStatus + mailTable + endText
+	                       }
+	                       else{
+	                       	message = mailStyle + mailBodyText + OverallStatus + tableHeading + mailTable + endText
+	                       }
+	                       msg.setContent(message, "text/html; charset=ISO-8859-1")
+	                       msg.setFrom(fromAddress)
+	                      InternetAddress[] mailAddress_TO = new InternetAddress [mailAddress_To.length];
+						 for(int i=0;i<mailAddress_To.length;i++)
+						 { 	
+						 	log.info "Mail_IDs to be used:" +  mailAddress_To[i]
+						     mailAddress_TO[i] = new InternetAddress(mailAddress_To[i]);
+						 }          
+						 msg.addRecipients(Message.RecipientType.TO, mailAddress_TO);
+	                       msg.setSubject(subject+OverallStatusSub)
+	                       Transport.send(msg)
+	                       log.info "Send Mail: SUCCESS!!"
+	       }catch(Exception e){
+	                       log.info "Oooops... Encountered an issue while sending mail !!!"
+	                       log.info "Exception:$e"
+	       }
+	}
+	def getMailTable(def status){
+	       def sql
+	       def Env
+	       def mailTable = ""
+	       //def RunForValues
+	       //def RunForArray
+	       def TableName
+	       def resultWc = ""
+	       def query
+	       def URI
+	       def columnValue = [null]
+	       def rowOrderOri
+	       def rowOrderArray
+	       def j
+	       def FeatureNameOri
+	       def FeatureName
+	      
+
+	       log.info "Entering getMailTable() function !!"
+	       sql = SqlConnect()
+	       if(sql != null){
+			Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+			FeatureNameOri = testRunner.testCase.testSuite.project.getPropertyValue("FeatureName")
+			FeatureNameOri = FeatureNameOri.toUpperCase()
+			FeatureName = FeatureNameOri.split("~")
+			//TableName = "B2C_" + Env.toUpperCase()
+			TableName = "b2c_" + Env.toLowerCase()
+			query = "Select distinct RowOrder_Mail from " + TableName
+			sql.eachRow(query){
+				rowOrderOri = it.RowOrder_Mail
+				rowOrderOri = rowOrderOri.toUpperCase()
+			}
+			rowOrderArray = rowOrderOri.split("~")
+			
+			for (j=0;j<rowOrderArray.length;j++){
+				if(!(FeatureNameOri.trim()).equalsIgnoreCase("All")){
+					if(!(FeatureNameOri.contains(rowOrderArray[j]))){
+						continue;
+					}
+				}
+				query = "Select * From " + TableName + " where FeatureName='" + rowOrderArray[j] + "' AND AuthValue='TRUE'"
+				if(((sql.rows(query)).size()) != 0){				
+					mailTable = mailTable + "<TR bgcolor='Gray'><TD colspan='13' Align='center'><style=font-family:Calibri (Body);color:#1882A4;font-size:16px;font-weight:bold><B>" + rowOrderArray[j] + "</B></TD></TR>"
+				}
+				query = "Select * From " + TableName + " where FeatureName='" + rowOrderArray[j] + "'"
+					sql.eachRow(query){
+		              		if(!(it.AuthValue.trim().equalsIgnoreCase("false"))){
+		                              URI = it.FeatureURI.trim()
+		                              if(it.Result.equalsIgnoreCase("Passed")){
+		                              	 if(it.Status.contains("204")){
+		                                              resultWc = "<B><font color = ORANGE>Pass</font></B>"
+		                             		 }
+		                             		 else{
+		                                              resultWc = "<B><font color = GREEN>Pass</font></B>"
+		                             		 }
+		                              }
+		                              else{
+		                                              resultWc = "<B><font color = RED>Fail</font></B>"
+		                              }
+		                              if(status.equalsIgnoreCase("AllPass")){
+		                              mailTable = mailTable + "<TR><td class=other>$URI<td class=other>$it.ClientID</td><td class=other>$it.ClientSecret</td><td class=other>$it.sm_transactionID</td><td class=other>$it.AccessToken</td><td class=other>$it.Scope</td><td class=other>$it.RedirectURI</td><td class=other>$it.Username</td><td class=other>$it.Password</td><td class=other>$it.SOR</td><td class=other>$resultWc</td><td class=other>$it.Status</td><td class=other>$it.ResponseTime</td><td class=other>$it.Response</td></TR>"
+		                              }
+		                               else{
+		                              mailTable = mailTable + "<TR><td class=other>$URI<td class=other>$it.ClientID</td><td class=other>$it.sm_transactionID</td><td class=other>$it.AccessToken</td><td class=other>$it.Scope</td><td class=other>$it.RedirectURI</td><td class=other>$it.Username</td><td class=other>$it.Password</td><td class=other>$it.SOR</td><td class=other>$resultWc</td><td class=other>$it.Status</td><td class=other>$it.ResponseTime</td><td class=other>$it.Response</td></TR>"
+		                              }
+		              		}
+		              		else{
+		              			log.info "This URI is skipped from adding to the mail because Auth Value is false."
+		              			log.info "URI: " + it.FeatureURI.trim() 
+		              		}
+		              } 
+		              
+			} 
+			SqlClose(sql)                   
+	       }else{
+	                       log.info "Issue Creating the mail table"
+	                       mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> *** 1) Environment value entered may be not matching the records.***** 2) Feature/SOR name(s) used does not match the records.***** 3) Test DB is Down.***</font></b></p>"
+	       }
+	       
+	       return mailTable
+	}
+	def getSumList(){
+	       def sql
+	       def Env
+	       def SumList = ""
+	       def TableName
+	       def TotalAPI
+	       def Tsize = 0
+	       def passC
+	       def Psize = 0
+	       def Fsize = 0
+	       def query
+	       def query1
+	       def columnValue = [null]
+	       def FeatureNameOri
+	       def FeatureName
+	       def i
+
+		  log.info "Entering getSumList() function !!"
+	       sql = SqlConnect()
+	       if(sql != null){
+	                       Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+	                       FeatureNameOri = testRunner.testCase.testSuite.project.getPropertyValue("FeatureName")
+					   FeatureName = FeatureNameOri.split("~")
+					   
+	                       //TableName = "B2C_" + Env.toUpperCase()
+			       TableName = "b2c_" + Env.toLowerCase()
+
+					   for(i=0;i<FeatureName.length;i++){
+						   	if(FeatureName[i].equalsIgnoreCase("All")){
+						   		query = "Select * From " + TableName + " where AuthValue='TRUE'"
+		                       		query1 = "Select * From " + TableName + " where Result='Passed'"
+						   	}
+						   	else{
+						   		query = "Select * From " + TableName + " where AuthValue='TRUE' AND FeatureName='" + FeatureName[i] + "'"
+		                       		query1 = "Select * From " + TableName + " where Result='Passed' AND FeatureName='" + FeatureName[i] + "'"
+						   	}
+						   	TotalAPI = sql.rows(query)
+		                       	Tsize = Tsize + TotalAPI.size()
+		                       	passC = sql.rows(query1)
+		                       	Psize = Psize + passC.size()
+					   }	                                                             
+	                       Fsize = Tsize - Psize
+	                       SumList = "<p><b>Total APIs Executed : <b>$Tsize</b><br>Total Passed : <b>$Psize</b><br>Total Failed : <b>$Fsize</b></b></p><br>~~~Passed: $Psize, Failed: $Fsize"
+	                       SqlClose(sql)
+	       }else{
+	                       log.info "Issue Creating the Sum List"
+	       }
+	       return SumList
+	}
+}
+
+context.setProperty( "common", new Common( log, context, testRunner) )
+log.info "Library Context:"+context]]></script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>Environment</con:name><con:value>PROD</con:value></con:property><con:property><con:name>MailID</con:name><con:value>reddaiah.challa@adp.com;subrahmanyam.lagisetti@adp.com</con:value></con:property><con:property><con:name>FeatureName</con:name><con:value>All</con:value></con:property><con:property><con:name>MailID_Fail</con:name><con:value>reddaiah.challa@adp.com;subrahmanyam.lagisetti@adp.com</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

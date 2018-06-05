@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ad0fb8fc-ea52-4253-9629-5bf173e00550" activeEnvironment="Default" name="SAML_Gateway" resourceRoot="${projectDir}" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="64d791ef-81dd-4079-9b80-d18741adb60a" wadlVersion="http://wadl.dev.java.net/2009/02" name="" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints/><con:resource name="Token" path="/auth/oauth/v2/token" id="765cdf27-5da3-4dbe-b17c-40ffdecda1ed"><con:settings/><con:parameters><con:parameter><con:name>grant_type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_secret</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>assertion</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>scope</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Token" id="f85caa8e-3c0f-441c-956a-e4cceeaf4cb2" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>407</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500 401</con:status><con:params/><con:element xmlns:tok="https://api.adp.com/auth/oauth/v2/token">tok:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tok="https://api.adp.com/auth/oauth/v2/token">tok:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:tok="https://api.adp.com/auth/oauth/v2/token">tok:Fault</con:element></con:representation><con:request name="Request 1" id="329e31f3-fcf3-4b7c-9e3a-9e61d7be83d1" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:originalUri>https://api.adp.com/auth/oauth/v2/token</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="client_secret" value="${Properties#clientSecret}"/>
+  <con:entry key="client_id" value="${Properties#clientID}"/>
+  <con:entry key="assertion" value="${Properties#SAMLResponse}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>assertion</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="SAMLResponse" path="/saml" id="765cdf27-5da3-4dbe-b17c-40ffdecda1ed"><con:settings/><con:parameters/><con:method name="GETSAML" id="f85caa8e-3c0f-441c-956a-e4cceeaf4cb2" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:even="https://api.adp.com/core/v1/event-notification-messages">even:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:even="https://api.adp.com/core/v1/event-notification-messages">even:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>404 401 400</con:status><con:params/><con:element xmlns:x="https://api.adp.com/core/v1/event-notification-messages/0x_414d51204250494e464f425136202020fa7f185736d8bf29">x:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:even="https://api.adp.com/core/v1/event-notification-messages">even:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>407</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>204</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="329e31f3-fcf3-4b7c-9e3a-9e61d7be83d1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Cookie" value="JSESSIONID=1644744A26C444C3A2F3FC3B60E5E039; Path=/myaline-fed-prod" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://feduatadmin.nj.adp.com:8080/myaline-fed-prod</con:endpoint><con:request/><con:originalUri>http://feduatadmin.nj.adp.com/myaline-fed-prod/saml</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Federation" path="/LoginServlet" id="765cdf27-5da3-4dbe-b17c-40ffdecda1ed"><con:settings/><con:parameters/><con:method name="FederationLogin" id="f85caa8e-3c0f-441c-956a-e4cceeaf4cb2" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401 403</con:status><con:params/><con:element xmlns:wor="https://api.adp.com/events/hr/v1/worker.business-communication.email.change">wor:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:wor="https://api.adp.com/events/hr/v1/worker.business-communication.email.change">wor:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/plain;charset=utf-8</con:mediaType><con:status>415</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:wor="https://api.adp.com/events/hr/v1/worker.business-communication.email.change">wor:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="329e31f3-fcf3-4b7c-9e3a-9e61d7be83d1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://feduatadmin.nj.adp.com:8080/myaline-fed-prod</con:endpoint><con:request>uid=userfour&amp;pwd=adpadp&amp;x=40&amp;y=13</con:request><con:originalUri>https://api.adp.com/events/hr/v1/worker.business-communication.email.change</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="userinfo" path="/core/v1/userinfo" id="68bd604d-19ca-4a02-9316-e24cd0cac926"><con:settings/><con:parameters/><con:method name="Method 1" id="8120b857-9589-44a6-825e-194e9c4c80dd" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="556db4d1-4326-4c88-991c-1f28bc30dfdb" mediaType="application/json"><con:settings/><con:endpoint>https://iat-api.adp.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="9019b5c1-cb15-496b-8ffe-8409a14c5372" name="SAML"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="cfb44160-bf40-4e76-8d8d-09bed35832ae" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SAML_Smoke" searchProperties="true"><con:settings/><con:testStep type="properties" name="Properties" id="1a508b64-7d12-423d-875d-0d8b8acf0288"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>SAML_AccessToken</con:name><con:value>Bearer null</con:value></con:property><con:property><con:name>clientID</con:name><con:value/></con:property><con:property><con:name>clientSecret</con:name><con:value/></con:property><con:property><con:name>eventID</con:name><con:value>e7b78163-ead3-4335-9968-99eb9132932f</con:value></con:property><con:property><con:name>Status</con:name><con:value>true</con:value></con:property><con:property><con:name>SAMLResponse</con:name></con:property><con:property><con:name>fed_user</con:name><con:value>userfour</con:value></con:property><con:property><con:name>fed_pwd</con:name><con:value>adpadp</con:value></con:property><con:property><con:name>Cookie</con:name><con:value/></con:property><con:property><con:name>fedurl</con:name><con:value/></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="Main" id="cd2d95f1-86c4-4e4d-9507-57f9f9c92fea"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+
+def common = context.common
+def sql
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def username
+def password
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.TestCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+def TimeTaken
+def slurper = new JsonSlurper()
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+def FeatureNameOri
+def FeatureName
+def y
+def fedURL
+
+sql = common.SqlConnect()
+propTestStep = context.testCase.getTestStepByName("Properties")
+
+try{
+  Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+  //TableName = "EN_" + Env
+  //testtable
+  TableName = "saml2_" + Env.toLowerCase()
+  
+  log.info "Checking Initial setup to start the test..."
+  query = "select * from " + TableName
+  TotalAPI = sql.rows(query)
+  log.info "Check success.. "
+}catch(Exception e){
+  runningStatus = "Bad"
+  context.testCase.testSuite.project.setPropertyValue("Environment",Env)
+  log.info "Initial check failed... Cannot initiate the test."
+  log.info "Exception: "+e
+}
+
+if(sql != null &amp;&amp; runningStatus != "Bad"){
+  log.info "********** Test Started **********"
+  if(Env.equalsIgnoreCase("PROD")){
+    IP = "https://api.adp.com"
+  }
+  else if(Env.equalsIgnoreCase("IAT")){
+    IP = "https://iat-api.adp.com"
+  }
+  else if(Env.equalsIgnoreCase("FIT")){
+    IP = "https://apifit.nj.adp.com"
+  }
+  else if(Env.equalsIgnoreCase("DIT")){
+    IP = "https://apidit.nj.adp.com"
+  }
+  
+  log.info "IP going to be used: " + IP
+  context.testCase.testSuite.project.setPropertyValue("URL",IP)
+
+if(Env.equalsIgnoreCase("PROD")){
+    fedURL = "http://feduatadmin.nj.adp.com:8080/myaline-fed-prod/"
+  }
+  else if(Env.equalsIgnoreCase("IAT")){
+    fedURL = "http://feduatadmin.nj.adp.com:8080/myaline-fed-stag/"
+  }
+  else if(Env.equalsIgnoreCase("FIT")){
+    fedURL = "http://feduatadmin.nj.adp.com:8080/marketplace-fed-fit/"
+  }
+  else if(Env.equalsIgnoreCase("DIT")){
+    fedURL = "http://feduatadmin.nj.adp.com:8080/marketplace-fed-test/"
+  }
+
+  log.info "FED URL going to be used: " + fedURL
+  propTestStep.setPropertyValue("fedurl",fedURL)
+  
+  log.info "Clearing the old access token values ..."
+  log.info "Update " + TableName + " set AccessToken='null' where AccessToken!='null'"
+  query = "Update " + TableName + " set AccessToken='null' where AccessToken!='null'"
+  sql.executeUpdate(query)
+  log.info "Access tokens cleared .... "
+  log.info "Initiating the Assigning Tokens steps ... "
+  query = "select distinct Username, Password, ClientID, ClientSecret from " + TableName
+  TotalAPI = sql.rows(query)
+  log.info "Number of distinct Feature calls: "+TotalAPI.size()
+  
+  sql.eachRow(query){
+    try{
+    	 username = it.Username
+    	 password = it.Password
+      clientID = it.ClientID      
+      clientSecret = it.ClientSecret
+            
+      //accessTokenPayload = "client_id="+clientID+"&amp;client_secret="+clientSecret+"&amp;grant_type=client_credentials"
+      propTestStep.setPropertyValue("fed_user",username)
+      propTestStep.setPropertyValue("fed_pwd",password)
+      propTestStep.setPropertyValue("clientID",clientID)
+      propTestStep.setPropertyValue("clientSecret",clientSecret)
+
+      //Empty queue before running the actual automation steps
+      //runner = TestCase.testSteps["Get_EventNotifications"]
+//      runner.run(testRunner, context)
+//      
+
+	runner = TestCase.testSteps["FederationAuthentication"]
+      runner.run(testRunner, context)
+      log.info "FederationAuthentication Run Success !!" 
+      
+      runner = TestCase.testSteps["ExtractFederationCookie"]
+      runner.run(testRunner, context)
+      log.info "ExtractFederationCookie Run Success !!"    
+
+      runner = TestCase.testSteps["SAMLResponse"]
+      runner.run(testRunner, context)
+      log.info "SAMLResponse Run Success !!"
+
+      Thread.sleep(4000);
+
+      runner = TestCase.testSteps["ExtractSAMLResponse"]
+      runner.run(testRunner, context)
+      log.info "ExtractSAMLResponse Run Success !!"
+
+      Thread.sleep(4000);
+
+      runner = TestCase.testSteps["Saml2TokenPost"]
+      runner.run(testRunner, context)
+      log.info "Saml2TokenPost Run Success !!"
+
+      Thread.sleep(4000);
+
+      runner = TestCase.testSteps["ExtractSAMLToken"]
+      runner.run(testRunner, context)
+      log.info "ExtractSAMLToken Run Success !!"
+
+      response = context.testCase.testSteps["Saml2TokenPost"].testRequest.response.responseContent
+      log.info "Response:$response"
+  
+      //response = context.testCase.testSteps["GetAccessToken"].testRequest.response.responseContent
+      //log.info "Response:$response"
+
+      //runner = TestCase.testSteps["ExtractAccessToken"]
+      //runner.run(testRunner, context)
+  
+      json = slurper.parseText response
+      temp = json.access_token
+      log.info "access_token value: " + temp
+
+      runner = TestCase.testSteps["UserInfoCall"]
+      runner.run(testRunner, context)
+      log.info "UserInfoCall Run Success !!"
+
+      runner=TestCase.testSteps["updateStatusDB"]
+      runner.run(testRunner, context)
+      Thread.sleep(10000);
+
+      runner = TestCase.testSteps["Saml2TokenPostWithScope"]
+      runner.run(testRunner, context)
+      log.info "Saml2TokenPostWithScope Run Success !!"
+
+      runner=TestCase.testSteps["updateStatusDB1"]
+      runner.run(testRunner, context)
+      Thread.sleep(10000);
+
+      runner = TestCase.testSteps["Saml2TokenPostWithoutClientID"]
+      runner.run(testRunner, context)
+      log.info "Saml2TokenPostWithoutClientID Run Success !!"
+
+      runner=TestCase.testSteps["updateStatusDB2"]
+      runner.run(testRunner, context)
+      Thread.sleep(10000);
+
+      runner = TestCase.testSteps["Saml2TokenPostWithoutClientSecret"]
+      runner.run(testRunner, context)
+      log.info "Saml2TokenPostWithoutClientSecret Run Success !!"
+
+      runner=TestCase.testSteps["updateStatusDB3"]
+      runner.run(testRunner, context)
+      Thread.sleep(10000);
+
+      runner = TestCase.testSteps["Saml2TokenPostWithoutGrantType"]
+      runner.run(testRunner, context)
+      log.info "Saml2TokenPostWithoutGrantType Run Success !!"
+
+      runner=TestCase.testSteps["updateStatusDB4"]
+      runner.run(testRunner, context)
+      Thread.sleep(10000);
+
+      runner = TestCase.testSteps["Saml2TokenPostWithoutAssertion"]
+      runner.run(testRunner, context)
+      log.info "Saml2TokenPostWithoutAssertion Run Success !!"
+
+      runner=TestCase.testSteps["updateStatusDB5"]
+      runner.run(testRunner, context)
+      Thread.sleep(10000);
+
+      runner = TestCase.testSteps["Saml2TokenPostWithInvalidScope"]
+      runner.run(testRunner, context)
+      log.info "Saml2TokenPostWithInvalidScope Run Success !!"
+
+      runner=TestCase.testSteps["updateStatusDB6"]
+      runner.run(testRunner, context)
+      Thread.sleep(10000);
+            
+      sql.executeUpdate("Update " + TableName + " SET AccessToken='"+ temp +"' where ClientID='"+ clientID +"' AND ClientSecret='"+clientSecret+"'")            
+
+
+//      runner=TestCase.testSteps["DynamicEmail"]
+//      runner.run(testRunner, context)
+//      
+//      Thread.sleep(4000);
+//
+//      runner = TestCase.testSteps["EmptyMessageQueue"]
+//      runner.run(testRunner, context)
+//      
+//      runner = TestCase.testSteps["GenerateAnEvent"]
+//      runner.run(testRunner, context)
+//
+//      Thread.sleep(4000);
+//
+//      runner=TestCase.testSteps["updateStatusDB"]
+//      runner.run(testRunner, context)
+//      Thread.sleep(10000);
+//      Thread.sleep(4000);
+//      runner = TestCase.testSteps["Get_EventNotifications"]
+//      runner.run(testRunner, context)
+//
+//      runner=TestCase.testSteps["ExtractAdpMsgID"]
+//      runner.run(testRunner, context)
+//      Thread.sleep(4000);
+//
+//      runner=TestCase.testSteps["updateStatusDB1"]
+//      runner.run(testRunner, context)
+//
+//      
+//      
+//      runner=TestCase.testSteps["Delete_EN"]
+//      runner.run(testRunner, context)
+//
+//      runner=TestCase.testSteps["ExtractAdpMsgIDFromDelete"]
+//      runner.run(testRunner, context)
+//      Thread.sleep(4000);
+//
+//      runner=TestCase.testSteps["updateStatusDB2"]
+//      runner.run(testRunner, context)
+//      
+//      Thread.sleep(10000);
+//      //log.info "Waiting"
+//
+//
+//      runner=TestCase.testSteps["Get_EventNotifications_AfterDeletion"]
+//      runner.run(testRunner, context)
+//
+//      runner=TestCase.testSteps["updateStatusDB3"]
+//      runner.run(testRunner, context)
+
+      runner=TestCase.testSteps["sendMail"]
+      runner.run(testRunner, context)
+
+      
+    }
+    catch(Exception e){
+      log.info "Some unknown error happened while trying to get the access token for this set of distinct resultset.."
+      log.info "Access Token cannot be retrieved!!! .. These URIs will be skipped while running the feature call" 
+    }
+  }
+  log.info "Assigning Tokens steps Completed ... "
+  log.info "Initiating the feature calls test using the access tokens .... "
+  
+  common.SqlClose(sql)
+}
+
+</script></con:config></con:testStep><con:testStep type="delay" name="Delay" id="e76de2b2-23de-454c-93bd-00434920cdf8"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="restrequest" name="FederationAuthentication" id="038c86c3-fede-43fc-b7cb-8773786a2ad7" disabled="true"><con:settings/><con:config service="" methodName="FederationLogin" resourcePath="/LoginServlet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="FederationAuthentication" id="f53ec212-d051-4732-b78c-a5a982ac17b4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/x-www-form-urlencoded" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${Properties#fedurl}</con:endpoint><con:request>uid=${Properties#fed_user}&amp;pwd=${Properties#fed_pwd}&amp;x=40&amp;y=13</con:request><con:originalUri>https://api.adp.com/events/hr/v1/worker.business-communication.email.change</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="1bb6e5fa-64d9-4ed6-a841-18268ea52294" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="ExtractFederationCookie" id="eb9fb496-7486-4ad0-85b0-9cee53e72a49" disabled="true"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+
+def propTestStep
+def temp
+def authValue
+
+//response = context.testCase.testSteps["FederationAuthentication"].testRequest.response.responseContent
+cookie = context.testCase.testSteps["FederationAuthentication"].testRequest.response.responseHeaders["Set-Cookie"][0].toString()
+
+log.info "Set-Cookie from Federation to get SAMLResponse==> " + cookie
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("Cookie",cookie)
+
+log.info "Cookie is set for SAMLResponse call !!"</script></con:config></con:testStep><con:testStep type="restrequest" name="SAMLResponse" id="3a68e0eb-8fa0-4f86-98cf-1274cef02458" disabled="true"><con:settings/><con:config service="" methodName="GETSAML" resourcePath="/saml" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="SAMLResponse" id="da2ef973-8308-42c7-bb61-cbb825713c0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Cookie" value="${Properties#Cookie}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${Properties#fedurl}</con:endpoint><con:request/><con:originalUri>https://api.adp.com/core/v1/event-notification-messages</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="79128e74-ac73-49c1-9354-b2f678828d31" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="ExtractSAMLResponse" id="841e4696-4964-4952-ab32-0a7b8af821ac" disabled="true"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+
+def propTestStep
+def samlResponse
+def authValue
+
+response = context.testCase.testSteps["SAMLResponse"].testRequest.response.responseContent
+//log.info "Response of SAMLToken::\n" + response
+samlResponse = response.toString().split("value=")[2].split("\"")[1].toString().trim()
+log.info "SAMLResponse for assertion==> " + samlResponse
+
+propTestStep = context.testCase.getTestStepByName("Properties")
+propTestStep.setPropertyValue("SAMLResponse",samlResponse)
+
+log.info "SAML Response is set for SAMLBearer Call !!"</script></con:config></con:testStep><con:testStep type="restrequest" name="Saml2TokenPost" id="31914f91-d927-4ec7-bcb1-067511840507" disabled="true"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Saml2TokenPost" id="ff3d7213-6ba2-4f1e-b771-f8ef0fd293d0" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+  &lt;con:entry key="sm_transactionID" value="Cluster12233"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#URL}</con:endpoint><con:request/><con:originalUri>https://iat-api.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b5baf033-5d80-4d26-af93-76360df56669" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value=""/>
+  <con:entry key="client_secret" value="${Properties#clientSecret}"/>
+  <con:entry key="grant_type" value="urn:ietf:params:oauth:grant-type:saml2-bearer"/>
+  <con:entry key="client_id" value="${Properties#clientID}"/>
+  <con:entry key="assertion" value="${Properties#SAMLResponse}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>assertion</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="ExtractSAMLToken" id="ff992754-2f37-4e66-90e7-5fc37ffc6663" disabled="true"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+
+def propTestStep
+def temp
+def authValue
+
+response = context.testCase.testSteps["Saml2TokenPost"].testRequest.response.responseContent
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+
+temp = json.access_token
+log.info "Access Token from SAML: " + temp
+propTestStep = context.testCase.getTestStepByName("Properties")
+authValue = "Bearer " + temp
+propTestStep.setPropertyValue("SAML_AccessToken",authValue)
+
+log.info "Authorization header is set for the feature call !!"</script></con:config></con:testStep><con:testStep type="restrequest" name="UserInfoCall" id="54d96b4e-30c8-45b5-8ad3-a92922c7f9fe" disabled="true"><con:settings/><con:config service="" resourcePath="/core/v1/userinfo" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="UserInfoCall" id="6e7692a3-6580-4664-91be-97156b51825c" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="${Properties#SAML_AccessToken}"/>
+  &lt;con:entry key="sm_transactionid" value="FEDERATIONTEST1"/>
+&lt;/xml-fragment></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">false</con:setting></con:settings><con:endpoint>${#Project#URL}</con:endpoint><con:request/><con:originalUri>https://iat-api.adp.com/core/v1/userinfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="442f7f4d-3466-4d4d-b432-815e8ef9e158" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="updateStatusDB" id="fb6f2012-a810-448c-8232-daf20a7c27d3" disabled="true"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+
+  try{
+  Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+  //TableName = "EN_" + Env
+  TableName = "saml2_" + Env.toLowerCase()
+  sql = common.SqlConnect()
+  log.info "Checking Initial setup to start the test..."
+
+  httpResponseHeaders = myTestCase.testSteps["UserInfoCall"].testRequest.response.responseHeaders
+  httpStatus = httpResponseHeaders["#status#"]
+  httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+  log.info "ResponseStatus:$httpStatus" 
+  statusCodeINT = httpStatusCode.toInteger()
+  log.info "ResponseCode:::::" + statusCodeINT
+  if(statusCodeINT == 200){
+      sql.executeUpdate("Update "+ TableName +" SET TestStatus='Passed' where EventName='UserInfoCall'")
+      log.info "Update "+ TableName +" SET TestStatus='Passed' where EventName='UserInfoCall'"
+  }
+  else{
+    sql.executeUpdate("Update "+ TableName +" SET TestStatus='Failed' where EventName='UserInfoCall'")
+    log.info "Update "+ TableName +" SET TestStatus='Failed' where EventName='UserInfoCall'"
+  }
+  
+  }catch(Exception e){
+    runningStatus = "Bad"
+    log.info "Initial check failed... Cannot initiate the test."
+    log.info "Exception: "+e
+  }
+
+  
+Thread.sleep(2000)
+  common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Saml2TokenPostWithScope" id="17194467-5d4f-4aff-93a8-a465f97e4147" disabled="true"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Saml2TokenPostWithScope" id="ff3d7213-6ba2-4f1e-b771-f8ef0fd293d0" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+  &lt;con:entry key="sm_transactionID" value="Cluster12233"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#URL}</con:endpoint><con:request/><con:originalUri>https://iat-api.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b5baf033-5d80-4d26-af93-76360df56669" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="client_secret" value="${Properties#clientSecret}"/>
+  <con:entry key="scope" value="api"/>
+  <con:entry key="grant_type" value="urn:ietf:params:oauth:grant-type:saml2-bearer"/>
+  <con:entry key="client_id" value="${Properties#clientID}"/>
+  <con:entry key="assertion" value="${Properties#SAMLResponse}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>assertion</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="updateStatusDB1" id="17cc8476-e671-4e1f-86ca-d09be5867bd8" disabled="true"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+
+  try{
+  Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+  //TableName = "EN_" + Env
+  TableName = "saml2_" + Env.toLowerCase()
+  sql = common.SqlConnect()
+  log.info "Checking Initial setup to start the test..."
+
+  httpResponseHeaders = myTestCase.testSteps["Saml2TokenPostWithScope"].testRequest.response.responseHeaders
+  httpStatus = httpResponseHeaders["#status#"]
+  httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+  log.info "ResponseStatus:$httpStatus" 
+  statusCodeINT = httpStatusCode.toInteger()
+  if(statusCodeINT == 200){
+      sql.executeUpdate("Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithScope'")
+      log.info "Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithScope'"
+  }
+  else{
+    sql.executeUpdate("Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithScope'")
+    log.info "Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithScope'"
+  }
+  
+  }catch(Exception e){
+    runningStatus = "Bad"
+    log.info "Initial check failed... Cannot initiate the test."
+    log.info "Exception: "+e
+  }
+
+  
+Thread.sleep(2000)
+  common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Saml2TokenPostWithoutClientID" id="c1d45029-6688-4d5d-8bc4-49228d91e7ee" disabled="true"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Saml2TokenPostWithoutClientID" id="ff3d7213-6ba2-4f1e-b771-f8ef0fd293d0" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+  &lt;con:entry key="sm_transactionID" value="Cluster12233"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#URL}</con:endpoint><con:request/><con:originalUri>https://iat-api.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b5baf033-5d80-4d26-af93-76360df56669" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>401</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value=""/>
+  <con:entry key="grant_type" value="urn:ietf:params:oauth:grant-type:saml2-bearer"/>
+  <con:entry key="client_id" value="${Properties#clientID}"/>
+  <con:entry key="assertion" value="${Properties#SAMLResponse}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>assertion</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="updateStatusDB2" id="e6d5bb41-03a8-49a4-ba88-4bce389c0e29" disabled="true"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+
+  try{
+  Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+  //TableName = "EN_" + Env
+  TableName = "saml2_" + Env.toLowerCase()
+  sql = common.SqlConnect()
+  log.info "Checking Initial setup to start the test..."
+
+  httpResponseHeaders = myTestCase.testSteps["Saml2TokenPostWithoutClientID"].testRequest.response.responseHeaders
+  httpStatus = httpResponseHeaders["#status#"]
+  httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+  log.info "ResponseStatus:$httpStatus" 
+  statusCodeINT = httpStatusCode.toInteger()
+  if(statusCodeINT == 401){
+      sql.executeUpdate("Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithoutClientID'")
+      log.info "Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithoutClientID'"
+  }
+  else{
+    sql.executeUpdate("Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithoutClientID'")
+    log.info "Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithoutClientID'"
+  }
+  
+  }catch(Exception e){
+    runningStatus = "Bad"
+    log.info "Initial check failed... Cannot initiate the test."
+    log.info "Exception: "+e
+  }
+
+  
+Thread.sleep(2000)
+  common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Saml2TokenPostWithoutClientSecret" id="7abe28ec-58bc-4f45-8a37-639d1396aee1" disabled="true"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Saml2TokenPostWithoutClientSecret" id="ff3d7213-6ba2-4f1e-b771-f8ef0fd293d0" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+  &lt;con:entry key="sm_transactionID" value="Cluster12233"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#URL}</con:endpoint><con:request/><con:originalUri>https://iat-api.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b5baf033-5d80-4d26-af93-76360df56669" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>401</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="client_secret" value="${Properties#clientSecret}"/>
+  <con:entry key="scope" value=""/>
+  <con:entry key="grant_type" value="urn:ietf:params:oauth:grant-type:saml2-bearer"/>
+  <con:entry key="assertion" value="${Properties#SAMLResponse}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>assertion</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="updateStatusDB3" id="b284f35a-330b-4d70-acab-77da2495724e" disabled="true"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+
+  try{
+  Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+  //TableName = "EN_" + Env
+  TableName = "saml2_" + Env.toLowerCase()
+  sql = common.SqlConnect()
+  log.info "Checking Initial setup to start the test..."
+
+  httpResponseHeaders = myTestCase.testSteps["Saml2TokenPostWithoutClientSecret"].testRequest.response.responseHeaders
+  httpStatus = httpResponseHeaders["#status#"]
+  httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+  log.info "ResponseStatus:$httpStatus" 
+  statusCodeINT = httpStatusCode.toInteger()
+  if(statusCodeINT == 401){
+      sql.executeUpdate("Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithoutClientSecret'")
+      log.info "Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithoutClientSecret'"
+  }
+  else{
+    sql.executeUpdate("Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithoutClientSecret'")
+    log.info "Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithoutClientSecret'"
+  }
+  
+  }catch(Exception e){
+    runningStatus = "Bad"
+    log.info "Initial check failed... Cannot initiate the test."
+    log.info "Exception: "+e
+  }
+
+  
+Thread.sleep(2000)
+  common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Saml2TokenPostWithoutGrantType" id="c07beb20-ab31-4443-bd24-22b4e41469c4" disabled="true"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Saml2TokenPostWithoutGrantType" id="ff3d7213-6ba2-4f1e-b771-f8ef0fd293d0" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+  &lt;con:entry key="sm_transactionID" value="Cluster12233"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#URL}</con:endpoint><con:request/><con:originalUri>https://iat-api.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b5baf033-5d80-4d26-af93-76360df56669" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>400</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="client_secret" value="${Properties#clientSecret}"/>
+  <con:entry key="scope" value=""/>
+  <con:entry key="client_id" value="${Properties#clientID}"/>
+  <con:entry key="assertion" value="${Properties#SAMLResponse}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>assertion</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="updateStatusDB4" id="df470778-4ab0-49ba-8769-4e12ea514ec6" disabled="true"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+
+  try{
+  Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+  //TableName = "EN_" + Env
+  TableName = "saml2_" + Env.toLowerCase()
+  sql = common.SqlConnect()
+  log.info "Checking Initial setup to start the test..."
+
+  httpResponseHeaders = myTestCase.testSteps["Saml2TokenPostWithoutGrantType"].testRequest.response.responseHeaders
+  httpStatus = httpResponseHeaders["#status#"]
+  httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+  log.info "ResponseStatus:$httpStatus" 
+  statusCodeINT = httpStatusCode.toInteger()
+  if(statusCodeINT == 400){
+      sql.executeUpdate("Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithoutGrantType'")
+      log.info "Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithoutGrantType'"
+  }
+  else{
+    sql.executeUpdate("Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithoutGrantType'")
+    log.info "Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithoutGrantType'"
+  }
+  
+  }catch(Exception e){
+    runningStatus = "Bad"
+    log.info "Initial check failed... Cannot initiate the test."
+    log.info "Exception: "+e
+  }
+
+  
+Thread.sleep(2000)
+  common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Saml2TokenPostWithoutAssertion" id="69e4c052-9c0a-48b4-84d9-a1e081d8fbba" disabled="true"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Saml2TokenPostWithoutAssertion" id="ff3d7213-6ba2-4f1e-b771-f8ef0fd293d0" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+  &lt;con:entry key="sm_transactionID" value="Cluster12233"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#URL}</con:endpoint><con:request/><con:originalUri>https://iat-api.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b5baf033-5d80-4d26-af93-76360df56669" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>400</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="client_secret" value="${Properties#clientSecret}"/>
+  <con:entry key="scope" value=""/>
+  <con:entry key="grant_type" value="urn:ietf:params:oauth:grant-type:saml2-bearer"/>
+  <con:entry key="client_id" value="${Properties#clientID}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>assertion</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="updateStatusDB5" id="07e59e36-f48f-471f-80dc-871280d66090" disabled="true"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+
+  try{
+  Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+  //TableName = "EN_" + Env
+  TableName = "saml2_" + Env.toLowerCase()
+  sql = common.SqlConnect()
+  log.info "Checking Initial setup to start the test..."
+
+  httpResponseHeaders = myTestCase.testSteps["Saml2TokenPostWithoutAssertion"].testRequest.response.responseHeaders
+  httpStatus = httpResponseHeaders["#status#"]
+  httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+  log.info "ResponseStatus:$httpStatus" 
+  statusCodeINT = httpStatusCode.toInteger()
+  if(statusCodeINT == 400){
+      sql.executeUpdate("Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithoutAssertion'")
+      log.info "Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithoutAssertion'"
+  }
+  else{
+    sql.executeUpdate("Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithoutAssertion'")
+    log.info "Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithoutAssertion'"
+  }
+  
+  }catch(Exception e){
+    runningStatus = "Bad"
+    log.info "Initial check failed... Cannot initiate the test."
+    log.info "Exception: "+e
+  }
+
+  
+Thread.sleep(2000)
+  common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Saml2TokenPostWithInvalidScope" id="0de54798-8e01-4cb0-8476-fb498ca2aa48" disabled="true"><con:settings/><con:config service="" methodName="Token" resourcePath="/auth/oauth/v2/token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Saml2TokenPostWithInalidScope" id="ff3d7213-6ba2-4f1e-b771-f8ef0fd293d0" mediaType="application/x-www-form-urlencoded" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="content-type" value="application/x-www-form-urlencoded"/>
+  &lt;con:entry key="sm_transactionID" value="Cluster12233"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#URL}</con:endpoint><con:request/><con:originalUri>https://iat-api.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b5baf033-5d80-4d26-af93-76360df56669" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>403</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="scope" value="scope"/>
+  <con:entry key="client_secret" value="${Properties#clientSecret}"/>
+  <con:entry key="grant_type" value="urn:ietf:params:oauth:grant-type:saml2-bearer"/>
+  <con:entry key="client_id" value="${Properties#clientID}"/>
+  <con:entry key="assertion" value="${Properties#SAMLResponse}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>assertion</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="updateStatusDB6" id="5baa0765-1a0a-4f25-940c-476007816c54" disabled="true"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+
+  try{
+  Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+  //TableName = "EN_" + Env
+  TableName = "saml2_" + Env.toLowerCase()
+  sql = common.SqlConnect()
+  log.info "Checking Initial setup to start the test..."
+
+  httpResponseHeaders = myTestCase.testSteps["Saml2TokenPostWithInvalidScope"].testRequest.response.responseHeaders
+  httpStatus = httpResponseHeaders["#status#"]
+  httpStatusCode = (httpStatus =~ "[1-5]\\d\\d")[0]
+  log.info "ResponseStatus:$httpStatus" 
+  statusCodeINT = httpStatusCode.toInteger()
+  if(statusCodeINT == 403){
+      sql.executeUpdate("Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithInvalidScope'")
+      log.info "Update "+ TableName +" SET TestStatus='Passed' where EventName='Saml2TokenPostWithInvalidScope'"
+  }
+  else{
+    sql.executeUpdate("Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithInvalidScope'")
+    log.info "Update "+ TableName +" SET TestStatus='Failed' where EventName='Saml2TokenPostWithInvalidScope'"
+  }
+  
+  }catch(Exception e){
+    runningStatus = "Bad"
+    log.info "Initial check failed... Cannot initiate the test."
+    log.info "Exception: "+e
+  }
+
+  
+Thread.sleep(2000)
+  common.SqlClose(sql)
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="sendMail" id="9406708b-6145-4963-b03a-86ee40f9b543" disabled="true"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringsMap
+import groovy.sql.Sql
+import groovy.json.JsonSlurper
+
+library = testRunner.testCase.testSuite.project.testSuites["Lib"]
+module = library.testCases["LibCase"].testSteps["Common"]
+module.run(testRunner, context)
+def common = context.common
+def sql
+
+def Env
+def query
+def TotalAPI
+def runningStatus = "Good"
+def clientID
+def clientSecret
+def scope
+def redirectURI
+def sessionIDURI
+def smSessionPayload
+def accessTokenPayload
+
+def TestCase = testRunner.testCase.testSuite.testCases["SAML_Smoke"]
+def myTestCase = context.testCase
+def runner
+def propTestStep
+def testStepName
+def groovyUtils
+def httpResponseHeaders
+def response
+def httpStatus
+def httpStatusCode
+def TimeTaken
+def slurper = new JsonSlurper()
+def json
+def temp
+def request
+def headers
+def IP
+def TableName
+def FeatureNameOri
+def FeatureName
+def y
+
+
+//context.testCase.testSuite.project.setPropertyValue("Environment",Env)
+common.sendMail(runningStatus)</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="ccc351b6-d762-4103-9580-2cbead5217be" name="Lib"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="99f1a742-c96d-4db6-98ac-a57720c2e66a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="LibCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Common" id="9ece6ba3-109f-41f4-911d-68000a59f919"><con:settings/><con:config><script><![CDATA[import groovy.sql.Sql
+import javax.mail.*
+import javax.mail.internet.MimeMessage
+import javax.mail.internet.*
+import javax.activation.*
+com.eviware.soapui.support.GroovyUtils.registerJdbcDriver("com.mysql.jdbc.Driver")
+
+class Common
+{
+  def log
+  def context
+  def testRunner
+  // Class constructor with same case as Class name
+  def Common(logIn,contextIn,testRunnerIn)
+  {
+    this.log = logIn
+    this.context = contextIn
+    this.testRunner = testRunnerIn
+  }
+  def SqlConnect()
+  {
+         def db
+         def sql = null
+         try{
+                         db = [url:'jdbc:mysql://localhost:3306/test', user:'root', password:'root', driver:'com.mysql.jdbc.Driver']
+                         sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
+                         log.info "MySql DB Connect: Connected !!"
+         }catch(Exception e){
+                         log.info "MySql DB Connect: Failed !!"
+                         log.info "Exception:$e" 
+                         sql = null                               
+         }
+         return sql;
+  }
+  def SqlClose(sql)
+  {
+         sql.close()
+         log.info "MySql DB Connect: Connection closed !!"
+  }
+  def getIP(Env,sql){
+         def IP
+         sql.eachRow("select * from apiproxy_serverip where Environment='" + Env + "_Gateway'"){
+                         IP = it.IP
+         }
+         //log.info "IP set for the Environment $Env: $IP"
+         return IP
+  }
+  def sendMail(RunStatus){
+         def message
+         def mailTable = ""
+         def OverallStatus = ""
+         def OverallStatusAll = ""
+         def OverallStatusSub = "" 
+         def tableHeading = ""
+         def strToMail = testRunner.testCase.testSuite.project.getPropertyValue("MailID")
+         def Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+         log.info Env
+         Env = Env.toUpperCase()
+         log.info Env
+         def subject = "SAML2 Gateway - $Env - "
+         def mailStyle = "<style type=text/css>#customers{font-family:Trebuchet MS, Calibri (Body), Calibri (Body), Calibri (Body);border-collapse:collapse;}#customers td, #customers th {font-size:1em;border:1px solid #98bf21;padding:3px 7px 2px 7px;}#customers th {font-size:16px;text-align:left;padding-top:5px;padding-bottom:4px;background-color:#44AACA;color:#ffffff;} table{ width:95%;} .first{width:500px;font-size:10px;} .other{width:200px;font-size:10px;}</style>"
+         def mailBodyText = "<center><span style='font-size:10.0pt;font-family:Calibri (Body),Calibri (Body);color:plum'> </span></center><dd>"
+         def endText = "<br><dd><dd><p><i>For queries/issues/suggestions please contact ADP Marketplace QA Team</i></p>"
+         def mailAddress_To
+         if(RunStatus.equals("Good")){
+                         tableHeading = "<table id=customers><TR><th class=other>EventName</th><th class=other>ClientID</th><th class=other>ClientSecret</th><th class=other>AccessToken(generated)</th><th class=other>TestStatus</th></TR>"
+                         mailTable = getMailTable() + "</table>"
+                         OverallStatusAll = (getSumList()).split("~~~")
+                         OverallStatus = OverallStatusAll[0]
+                         OverallStatusSub = OverallStatusAll[1]
+                         log.info OverallStatusSub
+                         if(!(OverallStatusSub.contains("Failed: 0"))){
+                          log.info "There is some failures. So setting the mail IDs to failed list..."
+                          strToMail = testRunner.testCase.testSuite.project.getPropertyValue("MailID")
+                         } 
+                         
+         }
+         else{
+                         mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> *** 1) Environment value entered may be not matching the records.***** 2) Feature/SOR name(s) used does not match the records.***** 3) Test DB is Down.***</font></b></p>"
+         }
+         try{
+                 mailAddress_To = strToMail.split(";");
+                         Properties props = new Properties()
+                         props.put("mail.host", "mailrelay.nj.adp.com")                               
+                         Session mailConnection = Session.getInstance(props, null)
+                         Message msg = new MimeMessage(mailConnection)
+                         Address fromAddress = new InternetAddress("ADP.Marketplace.QA@ADP.com", "adpadp@11")
+                         //Address b = new InternetAddress(strToMail);
+                         if ((OverallStatusSub.contains("Passed: 0, Failed: 0"))){
+                          mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> Check for the proper environment value and enter the proper Feature name... OR .... Enter data to that feature in the DB in that table.</font></b></p>"
+                          message = mailStyle + mailBodyText + OverallStatus + mailTable + endText
+                         }
+                         else{
+                          message = mailStyle + mailBodyText + OverallStatus + tableHeading + mailTable + endText
+                         }
+                         msg.setContent(message, "text/html; charset=ISO-8859-1")
+                         msg.setFrom(fromAddress)
+                        InternetAddress[] mailAddress_TO = new InternetAddress [mailAddress_To.length];
+             for(int i=0;i<mailAddress_To.length;i++)
+             {  
+              log.info "Mail_IDs to be used:" +  mailAddress_To[i]
+                 mailAddress_TO[i] = new InternetAddress(mailAddress_To[i]);
+             }          
+             msg.addRecipients(Message.RecipientType.TO, mailAddress_TO);
+                         msg.setSubject(subject+OverallStatusSub)
+                         Transport.send(msg)
+                         log.info "Send Mail: SUCCESS!!"
+         }catch(Exception e){
+                         log.info "Oooops... Encountered an issue while sending mail !!!"
+                         log.info "Exception:$e"
+         }
+  }
+  def getMailTable(){
+         def sql
+        def Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+         def mailTable = ""
+         //def RunForValues
+         //def RunForArray
+         def TableName
+         def resultWc = ""
+         def query
+         def URI
+         def columnValue = [null]
+         def rowOrderOri
+         def rowOrderArray
+         def j
+         def FeatureNameOri
+         def FeatureName
+        
+
+         log.info "Entering getMailTable() function !!"
+         sql = SqlConnect()
+         if(sql != null){
+      //TableName = "EN_" + Env.toUpperCase()
+      TableName = "saml2_" + Env.toLowerCase()
+      query = "Select * From " + TableName 
+      sql.eachRow(query){
+                  if("true"){
+                              URI = it.EventName.trim()
+                              if(it.TestStatus.equalsIgnoreCase("Passed")){
+                                 
+                                              resultWc = "<B><font color = GREEN>Pass</font></B>"
+                                 
+                              }
+                              else{
+                                              resultWc = "<B><font color = RED>Fail</font></B>"
+                              }
+                              mailTable = mailTable + "<TR><td class=other>$URI<td class=other>$it.ClientID</td><td class=other>$it.ClientSecret</td><td class=other>$it.AccessToken</td><td class=other>$resultWc</td></TR>"
+                  }
+                  else{
+                    log.info "This URI is skipped from adding to the mail because Auth Value is false."
+                    log.info "URI: " + it.FeatureURI.trim() 
+                  }
+              } 
+          
+      SqlClose(sql) 
+                        
+         }else{
+                         log.info "Issue Creating the mail table"
+                         mailTable = "<br><p><b>Test Automation Cannot be initiated !!. Encountered issue.<br><br>Possible Root Cause:<font color = RED> *** 1) Environment value entered may be not matching the records.***** 2) Feature/SOR name(s) used does not match the records.***** 3) Test DB is Down.***</font></b></p>"
+         }
+         
+         return mailTable
+  }
+  def getSumList(){
+         def sql
+         def Env
+         def SumList = ""
+         def TableName
+         def TotalAPI
+         def Tsize = 0
+         def passC
+         def Psize = 0
+         def Fsize = 0
+         def query
+         def query1
+         def columnValue = [null]
+         def FeatureNameOri
+         def FeatureName
+         def i
+
+      log.info "Entering getSumList() function !!"
+         sql = SqlConnect()
+         if(sql != null){
+                         Env = testRunner.testCase.testSuite.project.getPropertyValue("Environment")
+                         
+                         //TableName = "EN_" + Env.toUpperCase()
+        TableName = "saml2_" + Env.toLowerCase()
+
+                query = "Select * From " + TableName
+                            query1 = "Select * From " + TableName + " where TestStatus='Passed'"
+                
+                TotalAPI = sql.rows(query)
+                            Tsize = Tsize + TotalAPI.size()
+                            passC = sql.rows(query1)
+                            Psize = Psize + passC.size()
+                                                                           
+                         Fsize = Tsize - Psize
+                         SumList = "<p><b>Total APIs Executed : <b>$Tsize</b><br>Total Passed : <b>$Psize</b><br>Total Failed : <b>$Fsize</b></b></p><br>~~~Passed: $Psize, Failed: $Fsize"
+                         SqlClose(sql)
+         }else{
+                         log.info "Issue Creating the Sum List"
+         }
+         return SumList
+  }
+}
+
+context.setProperty( "common", new Common( log, context, testRunner) )
+log.info "Library Context:"+context]]></script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>Environment</con:name><con:value>PROD</con:value></con:property><con:property><con:name>ClientId</con:name><con:value>ffb77b72-bd6d-48b8-903a-31819d8414c1</con:value></con:property><con:property><con:name>ClientSecret</con:name><con:value>64b99e30-b870-4a3e-8c24-7a418208cfe7</con:value></con:property><con:property><con:name>MailID</con:name><con:value>subrahmanyam.lagisetti@adp.com</con:value></con:property><con:property><con:name>URL</con:name><con:value>https://api.adp.com</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

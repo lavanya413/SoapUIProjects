@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="41735683-3700-4c97-a8e4-2090b8dc87e8" activeEnvironment="Default" name="CanonicalUriRegressionIAT" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" lastOpened="2017-05-08T12:53:06.700-04:00" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="25855392-a04c-4137-9024-23b592d6956e" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://mkplproxy-iat.gslb.es.oneadp.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:endpoint>https://iat-api.adp.com</con:endpoint></con:endpoints><con:resource name="canonical-uri-get" path="/marketplace/v1/canonical-uri" id="9d102f63-277e-4eab-8da4-b37034053515"><con:settings/><con:parameters/><con:method name="Get_Canonical_Uri" id="dd11e44a-f415-4deb-bccb-59c08f043cc9" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tok="https://apidit.nj.adp.com/auth/oauth/v2/token">tok:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:tok="https://apidit.nj.adp.com/auth/oauth/v2/token">tok:Fault</con:element></con:representation><con:request name="getCanonicalUri" id="b4e03bfc-9ab9-44c3-b04d-8ad5359780a3" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Wfn_Token" path="/auth/oauth/v2/token" id="99d642de-8c09-4645-a43f-30576800cd83"><con:settings/><con:parameters/><con:method name="Wfn_Token" id="9c11e6b5-3337-444e-bad1-997a7142a148" method="POST"><con:settings/><con:parameters/><con:request name="postWfnToken" id="62a75af0-a509-4068-b7fd-ab183205a093" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Wfn_Session_Call" path="/auth/oauth/v2/authorize" id="c8223b5f-b7eb-4262-8c1f-e5d267e97e3d"><con:settings/><con:parameters><con:parameter><con:name>response_type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>redirect_uri</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>scope</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Wfn_Session_Call" id="47063f12-d012-4130-929d-72ade1990f63" method="POST"><con:settings/><con:parameters/><con:request name="getWfnSession" id="5c5cc45a-b684-45c2-adad-b3e167694912" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="post-address" path="/dev/address" id="e6ed52a9-5834-47c8-abe9-2d0e1da6af21"><con:settings/><con:parameters/><con:method name="PostAddress" id="f744162d-07a9-430a-a6af-428e52af4706" method="POST"><con:settings/><con:parameters/><con:request name="postAddress" id="c3916b15-eb32-4d55-9045-e3f73ab69426" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="get-address" path="/dev/address" id="21476afd-a63d-4a46-ad01-40bdd7fc76d9"><con:settings/><con:parameters/><con:method name="GetAddress" id="7147711e-0644-4df5-9832-ad83e8c7e368" method="GET"><con:settings/><con:parameters/><con:request name="getAddress" id="0ed793f7-81f8-4d8b-a378-ebab4695e0b8" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="get-time" path="/dev/api/time" id="f4af711c-ad99-4f77-84ae-97a73fab5e6f"><con:settings/><con:parameters/><con:method name="GetTime" id="8c31c6c3-a061-47da-bbaf-033b3428b96c" method="GET"><con:settings/><con:parameters/><con:request name="getTime" id="a047103d-de74-42c8-8cc7-25e8e4cf8355" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Wfn_SMSession_Call" path="/auth/oauth/v2/authorize" id="c1a35f2b-4be2-4954-a63c-7eee842c458c"><con:settings/><con:parameters><con:parameter><con:name>response_type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>redirect_uri</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>scope</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Wfn_SMSession_Call" id="0c83dfe0-ddbf-41be-b331-b1c773a76023" method="POST"><con:settings/><con:parameters/><con:request name="getWfnSMSession" id="c54d32d9-d202-4c75-8a4d-9a9ef12ed55c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="Wfn_AuthorizeConsent_Call" path="/auth/oauth/v2/authorize/consent" id="e8c5df5a-ba9a-46b4-9b26-4c23b1985e5d"><con:settings/><con:parameters><con:parameter><con:name>response_type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>redirect_uri</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>scope</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Wfn_AuthorizeConsent_Call" id="f3da7b2e-b922-4f89-905d-6c9b7bea04a0" method="POST"><con:settings/><con:parameters/><con:request name="getWfnAuthorizeConsent" id="0bc195b4-bf82-4e00-b33f-5df9d28e78b6" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>response_type</con:entry><con:entry>client_id</con:entry><con:entry>redirect_uri</con:entry><con:entry>scope</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="94a42a73-0997-4994-a87c-a73d1861d16d" name="CanonicalUriRegressionTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="4955cb53-e089-456c-8d02-cf1f8a762625" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get_Canonical_Uri_For_Exact_Match" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:testStep type="restrequest" name="Get_Canonical_Uri_For_Exact_Match" id="9e198479-39c5-4f65-89c4-178ff06d815c"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_For_Exact_Match" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-url-path" value="/hr/v2/workers"/>
+  <con:entry key="x-method" value="GET"/>
+  <con:entry key="sm_serversessionid" value="test"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3607bab4-0c9e-4ec5-a0fb-ee2652c8fdad" name="JsonPath Match"><con:configuration><path>$.</path><content>{"canonical-url":"/hr/workerInformationManagement/workerManagement/workerProfileManagement/worker.read","_gatewayConfig_":{"_grantTypes_":["authorization_code","urn:ietf:params:oauth:grant-type:saml2-bearer","urn:ietf:params:oauth:grant-type:jwt-bearer","client_credentials"],"_allowedRoleCodes_":["manager","practitioner","employee"]}}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="81fabff1-0d92-4068-8e21-eae5c09abdfe" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get_Canonical_Uri_With_Query_Parameter" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:testStep type="restrequest" name="Get_Canonical_Uri_With_Query_Parameter" id="580953e0-ed4e-4583-8f8f-ba2e9d1b1f92"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_With_Query_Parameter" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-url-path" value="/hr/v2/worker-demographics?skip=25"/>
+  <con:entry key="x-method" value="GET"/>
+  <con:entry key="sm_serversessionid" value="test"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="9516b0b4-8b0b-4265-bb81-785f70708e06" name="JsonPath Match"><con:configuration><path>$.</path><content>{"canonical-url":"/hr/workerInformationManagement/workerManagement/workerProfileManagement/workerDemographic.read","_gatewayConfig_":{"_grantTypes_":["authorization_code","urn:ietf:params:oauth:grant-type:saml2-bearer","urn:ietf:params:oauth:grant-type:jwt-bearer","client_credentials"],"_allowedRoleCodes_":["manager","practitioner","employee"]}}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="51e55677-d71d-4560-9b0a-edc0e9918b26" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get_Same_Canonical_Uri_With_Get_Service_Method" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:testStep type="restrequest" name="Get_Same_Canonical_Uri_With_Get_Service_Method" id="50f1abaa-6f05-427c-a549-e3f14385fba2"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Same_Canonical_Uri_With_Get_Service_Method" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_serversessionid" value="testCanonicalUriGet"/>
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-method" value="GET"/>
+  <con:entry key="x-url-path" value="/events/tax/v1/tax-credit-screening/questionnaire.complete/meta"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="1b6b4615-1543-4e91-8703-be9939cbc36a" name="JsonPath Match"><con:configuration><path>$.</path><content>{"canonical-url":"/tax/taxCreditServiceManagement/taxCreditScreeningManagement/questionnaireManagement/questionnaire.complete","_gatewayConfig_":{"_grantTypes_":["authorization_code","urn:ietf:params:oauth:grant-type:saml2-bearer","urn:ietf:params:oauth:grant-type:jwt-bearer","client_credentials"],"_allowedRoleCodes_":["practitioner"]}}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="751f1088-3a84-439d-a138-b745d5c6741d" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get_Same_Canonical_Uri_With_Post_Service_Method" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:testStep type="restrequest" name="Get_Same_Canonical_Uri_With_Post_Service_Method" id="3051104d-46bc-4519-b331-fbbf59e3c4a4"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Same_Canonical_Uri_With_Put_Service_Method" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_serversessionid" value="test"/>
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-method" value="POST"/>
+  <con:entry key="x-url-path" value="/events/tax/v1/tax-credit-screening/questionnaire.complete"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="48466f17-0562-4f08-a2f4-392a81010afc" name="JsonPath Match"><con:configuration><path>$.</path><content>{"canonical-url":"/tax/taxCreditServiceManagement/taxCreditScreeningManagement/questionnaireManagement/questionnaire.complete","_gatewayConfig_":{"_grantTypes_":["authorization_code","urn:ietf:params:oauth:grant-type:saml2-bearer","urn:ietf:params:oauth:grant-type:jwt-bearer","client_credentials"],"_allowedRoleCodes_":["practitioner"]}}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="453121c3-09f2-4900-b27d-83a144b44998" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get_Canonical_Uri_With_Regex_Match" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:testStep type="restrequest" name="Get_Canonical_Uri_With_Regex_Match" id="a427a155-73e4-4015-b67e-d1ac8154e885"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_With_Regex_Match" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_serversessionid" value="test"/>
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-method" value="GET"/>
+  <con:entry key="x-url-path" value="/codelists/hr/v3/worker-management/departmentcodevalues"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="f0fb50ea-d3fc-4ae0-bd44-81a6ff76e5b0" name="JsonPath Match"><con:configuration><path>$.*</path><content>[/hr/workerInformationManagement/workerManagement/codeListViewing/codelist.read, {"_grantTypes_":["authorization_code","urn:ietf:params:oauth:grant-type:saml2-bearer","urn:ietf:params:oauth:grant-type:jwt-bearer","client_credentials"],"_allowedRoleCodes_":["administrator","manager","practitioner","employee"]}]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="bdabd38d-cec1-48d1-a861-2284245047c9" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get_Canonical_Uri_That_Does_Not_Exist" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:testStep type="restrequest" name="Get_Canonical_Uri_That_Does_Not_Exist" id="413771fe-1bf7-4a79-ac74-ffce8daf39f0"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_That_Does_Not_Exist" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-url-path" value="/hr/v2/workers/G3MM13DCW60SXNZC"/>
+  <con:entry key="x-method" value="PUT"/>
+  <con:entry key="sm_serversessionid" value="test"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="b191b8dd-7635-4239-a636-72146cab3093" name="Contains"><con:configuration><token>Unable to match path to canonical</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="2e15da9d-798f-4e0c-8c7e-4445f95ee73e" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get_Canonical_Uri_For_Pay_Distributions" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:testStep type="restrequest" name="Get_Canonical_Uri_For_Pay_Distributions" id="a6292d3e-efec-42c1-86c8-152c48f77dc7"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_For_Pay_Distributions" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_serversessionid" value="test"/>
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-method" value="GET"/>
+  <con:entry key="x-url-path" value="/payroll/v2/workers/G3MM13DCW60SXNZC/pay-distributions"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3607bab4-0c9e-4ec5-a0fb-ee2652c8fdad" name="JsonPath Match"><con:configuration><path>$.*</path><content>[/payroll/payrollManagement/payrollInstructionManagement/payDistributionManagement/worker.payDistribution.read, {"_grantTypes_":["authorization_code","urn:ietf:params:oauth:grant-type:saml2-bearer","urn:ietf:params:oauth:grant-type:jwt-bearer","client_credentials"],"_allowedRoleCodes_":["manager","practitioner","employee"]}]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="d48727f1-bc19-4610-9158-910f4b8f1de1" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get_Canonical_Uri_For_Pay_Statements" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:testStep type="restrequest" name="Get_Canonical_Uri_For_Pay_Statements" id="6612d7e8-496b-40f2-baf3-7873970b60a7"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_For_Pay_Statements" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_serversessionid" value="test"/>
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-method" value="GET"/>
+  <con:entry key="x-url-path" value="/payroll/v1/workers/G3MM13DCW60SXNZC/pay-statements"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3607bab4-0c9e-4ec5-a0fb-ee2652c8fdad" name="JsonPath Match"><con:configuration><path>$.*</path><content>[/payroll/payrollManagement/statementManagement/payStatementViewing/payStatement.read, {"_grantTypes_":["authorization_code","urn:ietf:params:oauth:grant-type:saml2-bearer","urn:ietf:params:oauth:grant-type:jwt-bearer","client_credentials"],"_allowedRoleCodes_":["practitioner","employee"]}]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties><con:property><con:name>Access_Token</con:name><con:value>Bearer 597ad64f-fb14-4882-b7c3-feb098f2d879</con:value></con:property><con:property><con:name>Delay_Time</con:name><con:value>2000</con:value></con:property><con:property><con:name>Service_Provider_Id</con:name><con:value>41316808-b141-45d5-b191-9139b5d00814</con:value></con:property><con:property><con:name>Service_Provider_Name</con:name><con:value>ServProvTest14751</con:value></con:property><con:property><con:name>Modified_Service_Provider_Name</con:name><con:value>ServProvTestModified14751</con:value></con:property><con:property><con:name>Modified_Service_Provider_Desc</con:name><con:value>ServProvTestModifiedDesc14751</con:value></con:property><con:property><con:name>Adp_Msg_Msgid</con:name><con:value/></con:property><con:property><con:name>Item_Id</con:name><con:value/></con:property><con:property><con:name>Api_Id</con:name><con:value>Api33224</con:value></con:property><con:property><con:name>Operation_Implementation_Id</con:name><con:value>41da7524-f7eb-4c04-a60a-214d1bfe9b57</con:value></con:property><con:property><con:name>Operation_Implementation_Name</con:name><con:value>ServTest33224</con:value></con:property><con:property><con:name>Modified_Operation_Implementation_Name</con:name><con:value>ServTestModified33224</con:value></con:property><con:property><con:name>Modified_Operation_Implementation_Desc</con:name><con:value>ServTestModifiedDesc33224</con:value></con:property><con:property><con:name>Operation_Implementation_Deployment_Id</con:name><con:value>a5facfd7-99c1-4c1b-9145-254e0577aae0</con:value></con:property><con:property><con:name>Operation_Spec_Id</con:name><con:value>OSpec20248</con:value></con:property><con:property><con:name>Operation_Implementation_Subscription_Id</con:name><con:value>01058b1d-bbc1-48cb-bbb8-e5a09d0261eb</con:value></con:property></con:properties><con:reportParameters/></con:testSuite><con:testSuite id="5f882a16-4dfd-4cc3-81fc-7a20839d9796" name="CanonicalPatchRegressionTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7f5d120a-7ce4-4e79-bc6c-d184a935b826" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get_Canonical_Uri_From_Patch_With_X_Url_Path_And_X_Method" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Set_Access_Token_Groovy" id="1dc6e4ab-449b-4ac5-ad91-33804c97b180" disabled="true"><con:settings/><con:config><script>
+accessToken = testRunner.testCase.testSuite.getPropertyValue("Access_Token");
+log.info "accessToken: $accessToken"
+
+request = testRunner.testCase.getTestStepByName("Register_Service").testRequest
+headers = request.getRequestHeaders()
+headers.remove( "Authorization");
+headers.put("Authorization", accessToken)
+request.setRequestHeaders(headers)
+
+log.info "Authorization is header is set !!"</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_Canonical_Uri_With_Valid_X_Url_Path_And_X_Method_For_200" id="2f5d17ae-5f8a-4964-939c-85adf8f7c51d"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_With_Valid_X_Url_Path_And_X_Method_For_200" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_serversessionid" value="test"/>
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-method" value="POST"/>
+  <con:entry key="x-url-path" value="/events/marketplace/v1/service-provider.add"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="d18e9d09-0b12-413a-b34c-8deaff9e0b0a" name="Contains ${#TestSuite#Operation_Implementation_Deployment_Id}"><con:configuration><token>/marketplace/marketplaceManagement/serviceProviderInformationManagement/serviceProviderManagement/serviceProvider.add</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>e4a89981-d117-4f55-baef-23461184969a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2b35523c-abe1-4182-a066-178da4fbc5ae</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>26fed9a3-3aeb-480b-9bb8-61ca7289b858</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>80b8dda8-e04d-4e1e-8508-1e69703ff538</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>fad05406-ab32-4bf5-bd4e-6d330cd2674f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="56a8a0c9-e038-4859-9dc9-28842bf22932" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get_Canonical_Uri_From_Patch_With_Invalid_X_Url_Path" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Set_Access_Token_Groovy" id="4571c8dc-0f2f-4d52-b404-595cfe15924b" disabled="true"><con:settings/><con:config><script>
+accessToken = testRunner.testCase.testSuite.getPropertyValue("Access_Token");
+log.info "accessToken: $accessToken"
+
+request = testRunner.testCase.getTestStepByName("Register_Service").testRequest
+headers = request.getRequestHeaders()
+headers.remove( "Authorization");
+headers.put("Authorization", accessToken)
+request.setRequestHeaders(headers)
+
+log.info "Authorization is header is set !!"</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_Canonical_Uri_With_Invalid_X_Url_Path_For_404" id="14dcde56-ca4d-4afa-80e3-a8666398060c"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_With_Invalid_X_Url_Path_For_404" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_serversessionid" value="test"/>
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-method" value="POST"/>
+  <con:entry key="x-url-path" value="/events/marketplace/v1/service-provider.register"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>404</codes></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>e4a89981-d117-4f55-baef-23461184969a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2b35523c-abe1-4182-a066-178da4fbc5ae</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>26fed9a3-3aeb-480b-9bb8-61ca7289b858</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>80b8dda8-e04d-4e1e-8508-1e69703ff538</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="f4555534-05b4-47d4-80dd-f96a51da38e6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get_Canonical_Uri_With_Invalid_X_Method" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Set_Access_Token_Groovy" id="2508fe47-59c2-4624-b3dd-949e4ee30493" disabled="true"><con:settings/><con:config><script>
+accessToken = testRunner.testCase.testSuite.getPropertyValue("Access_Token");
+log.info "accessToken: $accessToken"
+
+request = testRunner.testCase.getTestStepByName("Register_Service").testRequest
+headers = request.getRequestHeaders()
+headers.remove( "Authorization");
+headers.put("Authorization", accessToken)
+request.setRequestHeaders(headers)
+
+log.info "Authorization is header is set !!"</script></con:config></con:testStep><con:testStep type="restrequest" name="Get_Canonical_Uri_With_Invalid_X_Method_For_404" id="0e9ebbb3-4ba0-4c74-b5a3-040310d1b2d8"><con:settings/><con:config service="http://mkplproxy-iat.gslb.es.oneadp.com" resourcePath="/marketplace/v1/canonical-uri" methodName="Get_Canonical_Uri" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get_Canonical_Uri_With_Invalid_X_Method_For_404" id="f9920fe7-27ff-4a4f-991c-6b9560f8f15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sm_serversessionid" value="test"/>
+  <con:entry key="sm_transactionId" value="test"/>
+  <con:entry key="x-method" value="GET"/>
+  <con:entry key="x-url-path" value="/events/marketplace/v1/service-provider.register"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>http://mkplproxy-iat.gslb.es.oneadp.com</con:endpoint><con:request>{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "core"
+      },
+      "eventStatusCode": {
+        "codeValue": "submit"
+      },
+      "actor": {
+        "geoCoordinate": {
+          "latitude": 40.816636,
+          "longitude": -74.310168
+        },
+        "deviceUserAgentID": "Apple-iPhone5C1"
+      },
+      "data": {
+        "transform": {
+          "operationImplementationDeployment": {
+            "operationImplementationID": "${#TestSuite#Operation_Implementation_Id}",
+            "operationImplementationDeploymentEndPoint": "http://127.0.0.1",
+            "operationImplementationDeploymentHost": "localhost",
+            "operationImplementationDeploymentProxy": "localpproxy",
+            "operationImplementationDeploymentRateLimit": {
+              "quantityValue": 123,
+              "unitCode": {
+                "codeValue": "mydepratecode",
+                "shortName": "My Dep Rate Code"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://apidit.nj.adp.com/auth/oauth/v2/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5022c080-69c9-4ae7-87f8-9e63a1d47a2b" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>404</codes></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="operationImplementationDeploymentID" value="${#TestSuite#Operation_Implementation_Deployment_Id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>operationImplementationDeploymentID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>e4a89981-d117-4f55-baef-23461184969a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2b35523c-abe1-4182-a066-178da4fbc5ae</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>26fed9a3-3aeb-480b-9bb8-61ca7289b858</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>80b8dda8-e04d-4e1e-8508-1e69703ff538</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/><con:authRepository/><con:tags/></con:soapui-project>
